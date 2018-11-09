@@ -9,16 +9,19 @@ exports.up = function (knex, Promise) {
       table.string('password').notNullable();
       table.integer('phone').unique().notNullable();
       table.boolean('diet').notNullable();
-      // table.integer('location_id').references('id').inTable('Location').notNullable().onDelete('cascade');
+      table.timestamp('created_at').defaultTo(knex.fn.now())
+      table.integer('location_id').references('id').inTable('Local').notNullable()
     }),
-    knex.schema.createTable('Location', (table) => {
+    knex.schema.createTable('Local', (table) => {
       table.increments('id').primary();
       table.string('address').notNullable();
       table.string('city').notNullable();
       table.string('state').notNullable();
       table.string('zip').notNullable();
-      // table.foreign('coord_id')
-      //   .references('Coords.id');
+      table.integer('local_lat').notNullable();
+      table.integer('local_long').notNullable();
+      table.integer('local_id')
+        .references('Food.id');
     }),
     knex.schema.createTable('Food', (table) => {
       table.increments('id').primary();
@@ -26,7 +29,11 @@ exports.up = function (knex, Promise) {
       table.string('item').notNullable();
       table.string('description').notNullable();
       table.integer('price').notNullable();
-      // table.integer('user_id').references('id').inTable('Users').notNullable().onDelete('cascade');
+      table.string('image').notNullable();
+      table.integer('food_lat').notNullable();
+      table.integer('food_long').notNullable();
+      table.timestamp('created_at').defaultTo(knex.fn.now())
+      table.integer('user_id').references('id').inTable('Users').notNullable()
     })
   ]);
 };

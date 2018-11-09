@@ -20,6 +20,9 @@ module.exports = {
     },
     seeds: {
       directory: __dirname + '/db/seeds'
+      // directory: __dirname + '/db/seeds/seed_local.js',
+      // directory: __dirname + '/db/seeds/seed_users.js',
+      // directory: __dirname + '/db/seeds/seed_food.js'
     }
   },
 

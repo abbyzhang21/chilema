@@ -6,10 +6,10 @@ exports.up = function (knex, Promise) {
       table.string('category').notNullable();
       table.string('item').notNullable();
       table.string('description').notNullable();
-      table.integer('price').notNullable();
+      table.string('price').notNullable();
       table.string('image').notNullable();
-      table.integer('food_lat').notNullable();
-      table.integer('food_long').notNullable();
+      table.string('fd_lat').notNullable();
+      table.string('fd_long').notNullable();
       table.timestamp('created_at').defaultTo(knex.fn.now())
       table.integer('user_id')
         .notNullable()
@@ -24,7 +24,7 @@ exports.up = function (knex, Promise) {
       table.string('last').notNullable();
       table.string('email').unique().notNullable();
       table.string('password').notNullable();
-      table.integer('phone').unique().notNullable();
+      table.string('phone').unique().notNullable();
       table.boolean('diet').notNullable();
       table.timestamp('created_at').defaultTo(knex.fn.now())
       table.integer('location_id')
@@ -40,8 +40,8 @@ exports.up = function (knex, Promise) {
       table.string('city').notNullable()
       table.string('state').notNullable()
       table.string('zip').notNullable()
-      table.integer('local_lat').notNullable()
-      table.integer('local_long').notNullable()
+      table.string('local_lat').notNullable()
+      table.string('local_long').notNullable()
     })
   ]);
 };

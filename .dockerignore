@@ -1,0 +1,20 @@
+# ignore all things docker
+.dockerignore
+docker-compose.yml
+docker-compose.prod.yml
+docker-compose.override.yml
+
+# ignore .git, .env, but include .env.example
+.git
+.gitignore
+.env
+.editorconfig
+!.env.example
+
+# ignore node_modules
+node_modules
+
+# ignore any .md and .txt files, but include README.md
+*.txt
+*.md
+!README.md

@@ -38,8 +38,8 @@ const Food = [{
   "description": "dui proin leo odio porttitor id consequat in consequat ut nulla",
   "price": "$14.68",
   "image": "http://dummyimage.com/150x150.png/cc0000/ffffff",
-  "fd_lat": 27.4323703,
-  "fd_long": -99.4882005,
+  "fd_lat": "27.4323703",
+  "fd_long": "-99.4882005",
   "user_id": 3,
   "created_at": "1/18/2018"
 }, {
@@ -49,8 +49,8 @@ const Food = [{
   "description": "donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu",
   "price": "$8.29",
   "image": "http://dummyimage.com/150x150.png/cc0000/ffffff",
-  "fd_lat": 40.5784827,
-  "fd_long": 44.6998779,
+  "fd_lat": "40.5784827",
+  "fd_long": "44.6998779",
   "user_id": 15,
   "created_at": "8/5/2018"
 }, {
@@ -60,8 +60,8 @@ const Food = [{
   "description": "pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat",
   "price": "$15.24",
   "image": "http://dummyimage.com/150x150.png/5fa2dd/ffffff",
-  "fd_lat": -7.348395,
-  "fd_long": 112.7494759,
+  "fd_lat": "-7.348395",
+  "fd_long": "112.7494759",
   "user_id": 7,
   "created_at": "1/29/2018"
 }, {
@@ -71,8 +71,8 @@ const Food = [{
   "description": "massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit",
   "price": "$14.59",
   "image": "http://dummyimage.com/150x150.png/dddddd/000000",
-  "fd_lat": -6.1604549,
-  "fd_long": 106.9054618,
+  "fd_lat": "-6.1604549",
+  "fd_long": "106.9054618",
   "user_id": 3,
   "created_at": "11/27/2017"
 }, {
@@ -93,8 +93,8 @@ const Food = [{
   "description": "dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean",
   "price": "$15.90",
   "image": "http://dummyimage.com/150x150.png/dddddd/000000",
-  "fd_lat": 13.6615154,
-  "fd_long": 123.1900935,
+  "fd_lat": "13.6615154",
+  "fd_long": "123.1900935",
   "user_id": 18,
   "created_at": "10/5/2018"
 }, {
@@ -104,8 +104,8 @@ const Food = [{
   "description": "quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus",
   "price": "$21.18",
   "image": "http://dummyimage.com/150x150.png/5fa2dd/ffffff",
-  "fd_lat": 12.1299094,
-  "fd_long": 7.6724456,
+  "fd_lat": "12.1299094",
+  "fd_long": "7.6724456",
   "user_id": 13,
   "created_at": "6/29/2018"
 }, {
@@ -115,8 +115,8 @@ const Food = [{
   "description": "nisi volutpat eleifend donec ut dolor morbi vel lectus in quam fringilla",
   "price": "$22.23",
   "image": "http://dummyimage.com/150x150.png/ff4444/ffffff",
-  "fd_lat": -24.1973637,
-  "fd_long": -65.2994788,
+  "fd_lat": "-24.1973637",
+  "fd_long": "-65.2994788",
   "user_id": 7,
   "created_at": "1/9/2018"
 }, {
@@ -126,8 +126,8 @@ const Food = [{
   "description": "id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat",
   "price": "$11.43",
   "image": "http://dummyimage.com/150x150.png/dddddd/000000",
-  "fd_lat": -8.4629286,
-  "fd_long": 118.7591541,
+  "fd_lat": "-8.4629286",
+  "fd_long": "118.7591541",
   "user_id": 11,
   "created_at": "4/16/2018"
 }, {
@@ -137,8 +137,8 @@ const Food = [{
   "description": "nibh fusce lacus purus aliquet at feugiat non pretium quis lectus",
   "price": "$10.61",
   "image": "http://dummyimage.com/150x150.png/ff4444/ffffff",
-  "fd_lat": -9.3326512,
-  "fd_long": 32.7548364,
+  "fd_lat": "-9.3326512",
+  "fd_long": "32.7548364",
   "user_id": 6,
   "created_at": "9/5/2018"
 }, {
@@ -148,8 +148,8 @@ const Food = [{
   "description": "fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat",
   "price": "$6.34",
   "image": "http://dummyimage.com/150x150.png/dddddd/000000",
-  "fd_lat": -0.5732343,
-  "fd_long": 117.1323579,
+  "fd_lat": "-0.5732343",
+  "fd_long": "117.1323579",
   "user_id": 10,
   "created_at": "12/6/2017"
 }, {
@@ -159,8 +159,8 @@ const Food = [{
   "description": "sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis",
   "price": "$15.18",
   "image": "http://dummyimage.com/150x150.png/cc0000/ffffff",
-  "fd_lat": 24.094765,
-  "fd_long": 116.00509,
+  "fd_lat": "24.094765",
+  "fd_long": "116.00509",
   "user_id": 10,
   "created_at": "1/26/2018"
 }, {
@@ -170,8 +170,8 @@ const Food = [{
   "description": "turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis",
   "price": "$16.62",
   "image": "http://dummyimage.com/150x150.png/cc0000/ffffff",
-  "fd_lat": 13.5712781,
-  "fd_long": -15.3262905,
+  "fd_lat": "13.5712781",
+  "fd_long": "-15.3262905",
   "user_id": 3,
   "created_at": "12/6/2017"
 }, {
@@ -181,8 +181,8 @@ const Food = [{
   "description": "ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit",
   "price": "$18.64",
   "image": "http://dummyimage.com/150x150.png/cc0000/ffffff",
-  "fd_lat": 30.3276652,
-  "fd_long": -81.6631259,
+  "fd_lat": "30.3276652",
+  "fd_long": "-81.6631259",
   "user_id": 14,
   "created_at": "3/11/2018"
 }, {
@@ -192,8 +192,8 @@ const Food = [{
   "description": "id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas",
   "price": "$21.21",
   "image": "http://dummyimage.com/150x150.png/ff4444/ffffff",
-  "fd_lat": 16.8564272,
-  "fd_long": 120.7963702,
+  "fd_lat": "16.8564272",
+  "fd_long": "120.7963702",
   "user_id": 6,
   "created_at": "4/28/2018"
 }, {
@@ -203,8 +203,8 @@ const Food = [{
   "description": "varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla",
   "price": "$13.89",
   "image": "http://dummyimage.com/150x150.png/5fa2dd/ffffff",
-  "fd_lat": -18.8228804,
-  "fd_long": -40.9050432,
+  "fd_lat": "-18.8228804",
+  "fd_long": "-40.9050432",
   "user_id": 5,
   "created_at": "1/30/2018"
 }, {
@@ -214,8 +214,8 @@ const Food = [{
   "description": "molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est",
   "price": "$8.18",
   "image": "http://dummyimage.com/150x150.png/ff4444/ffffff",
-  "fd_lat": 35.937102,
-  "fd_long": 116.470304,
+  "fd_lat": "35.937102",
+  "fd_long": "116.470304",
   "user_id": 9,
   "created_at": "4/29/2018"
 }, {
@@ -225,8 +225,8 @@ const Food = [{
   "description": "cursus id turpis integer aliquet massa id lobortis convallis tortor risus dapibus augue vel",
   "price": "$22.87",
   "image": "http://dummyimage.com/150x150.png/dddddd/000000",
-  "fd_lat": 23.701262,
-  "fd_long": 117.430061,
+  "fd_lat": "23.701262",
+  "fd_long": "117.430061",
   "user_id": 15,
   "created_at": "9/30/2018"
 }, {
@@ -236,8 +236,8 @@ const Food = [{
   "description": "ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla quisque arcu libero rutrum ac",
   "price": "$8.24",
   "image": "http://dummyimage.com/150x150.png/dddddd/000000",
-  "fd_lat": 58.3619916,
-  "fd_long": 11.9203062,
+  "fd_lat": "58.3619916",
+  "fd_long": "11.9203062",
   "user_id": 2,
   "created_at": "7/8/2018"
 }, {
@@ -258,8 +258,8 @@ const Food = [{
   "description": "luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at",
   "price": "$18.42",
   "image": "http://dummyimage.com/150x150.png/cc0000/ffffff",
-  "fd_lat": -8.0061188,
-  "fd_long": 112.1132142,
+  "fd_lat": "-8.0061188",
+  "fd_long": "112.1132142",
   "user_id": 15,
   "created_at": "11/11/2017"
 }, {
@@ -269,8 +269,8 @@ const Food = [{
   "description": "habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris",
   "price": "$6.53",
   "image": "http://dummyimage.com/150x150.png/ff4444/ffffff",
-  "fd_lat": 47.7728849,
-  "fd_long": 12.9695096,
+  "fd_lat": "47.7728849",
+  "fd_long": "12.9695096",
   "user_id": 2,
   "created_at": "1/15/2018"
 }, {
@@ -280,8 +280,8 @@ const Food = [{
   "description": "elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor",
   "price": "$16.41",
   "image": "http://dummyimage.com/150x150.png/ff4444/ffffff",
-  "fd_lat": 13.9293954,
-  "fd_long": 121.3228399,
+  "fd_lat": "13.9293954",
+  "fd_long": "121.3228399",
   "user_id": 3,
   "created_at": "8/19/2018"
 }, {
@@ -291,8 +291,8 @@ const Food = [{
   "description": "nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer",
   "price": "$13.83",
   "image": "http://dummyimage.com/150x150.png/cc0000/ffffff",
-  "fd_lat": 10.1334914,
-  "fd_long": -65.4193115,
+  "fd_lat": "10.1334914",
+  "fd_long": "-65.4193115",
   "user_id": 10,
   "created_at": "10/17/2018"
 }, {
@@ -313,8 +313,8 @@ const Food = [{
   "description": "donec diam neque vestibulum eget vulputate ut ultrices vel augue vestibulum",
   "price": "$10.39",
   "image": "http://dummyimage.com/150x150.png/ff4444/ffffff",
-  "fd_lat": 46.4846074,
-  "fd_long": -1.7557702,
+  "fd_lat": "46.4846074",
+  "fd_long": "-1.7557702",
   "user_id": 4,
   "created_at": "2/24/2018"
 }, {
@@ -324,8 +324,8 @@ const Food = [{
   "description": "eu sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam",
   "price": "$12.81",
   "image": "http://dummyimage.com/150x150.png/cc0000/ffffff",
-  "fd_lat": -8.2138062,
-  "fd_long": 114.3521951,
+  "fd_lat": "-8.2138062",
+  "fd_long": "114.3521951",
   "user_id": 15,
   "created_at": "5/20/2018"
 }, {
@@ -346,8 +346,8 @@ const Food = [{
   "description": "justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus",
   "price": "$15.22",
   "image": "http://dummyimage.com/150x150.png/cc0000/ffffff",
-  "fd_lat": -10.3931514,
-  "fd_long": 39.1361568,
+  "fd_lat": "-10.3931514",
+  "fd_long": "39.1361568",
   "user_id": 14,
   "created_at": "5/18/2018"
 }, {
@@ -357,8 +357,8 @@ const Food = [{
   "description": "lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et",
   "price": "$6.51",
   "image": "http://dummyimage.com/150x150.png/cc0000/ffffff",
-  "fd_lat": -7.0392183,
-  "fd_long": 109.9020509,
+  "fd_lat": "-7.0392183",
+  "fd_long": "109.9020509",
   "user_id": 4,
   "created_at": "9/5/2018"
 }, {
@@ -368,8 +368,8 @@ const Food = [{
   "description": "donec dapibus duis at velit eu est congue elementum in hac",
   "price": "$9.58",
   "image": "http://dummyimage.com/150x150.png/cc0000/ffffff",
-  "fd_lat": 61.845034,
-  "fd_long": 129.608929,
+  "fd_lat": "61.845034",
+  "fd_long": "129.608929",
   "user_id": 5,
   "created_at": "10/12/2018"
 }, {
@@ -379,8 +379,8 @@ const Food = [{
   "description": "tellus in sagittis dui vel nisl duis ac nibh fusce lacus",
   "price": "$23.87",
   "image": "http://dummyimage.com/150x150.png/ff4444/ffffff",
-  "fd_lat": 50.1157078,
-  "fd_long": 8.6591469,
+  "fd_lat": "50.1157078",
+  "fd_long": "8.6591469",
   "user_id": 6,
   "created_at": "3/4/2018"
 }, {
@@ -390,8 +390,8 @@ const Food = [{
   "description": "lacus at turpis donec posuere metus vitae ipsum aliquam non mauris morbi non lectus",
   "price": "$13.17",
   "image": "http://dummyimage.com/150x150.png/cc0000/ffffff",
-  "fd_lat": 41.805137,
-  "fd_long": 123.4699481,
+  "fd_lat": "41.805137",
+  "fd_long": "123.4699481",
   "user_id": 2,
   "created_at": "2/2/2018"
 }, {
@@ -401,8 +401,8 @@ const Food = [{
   "description": "eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec",
   "price": "$23.01",
   "image": "http://dummyimage.com/150x150.png/cc0000/ffffff",
-  "fd_lat": -16.3846284,
-  "fd_long": -51.2213044,
+  "fd_lat": "-16.3846284",
+  "fd_long": "-51.2213044",
   "user_id": 9,
   "created_at": "11/4/2018"
 }, {
@@ -412,8 +412,8 @@ const Food = [{
   "description": "nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et",
   "price": "$21.92",
   "image": "http://dummyimage.com/150x150.png/5fa2dd/ffffff",
-  "fd_lat": 18.5382815,
-  "fd_long": -72.5293562,
+  "fd_lat": "18.5382815",
+  "fd_long": "-72.5293562",
   "user_id": 3,
   "created_at": "12/13/2017"
 }, {
@@ -423,8 +423,8 @@ const Food = [{
   "description": "viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus",
   "price": "$15.82",
   "image": "http://dummyimage.com/150x150.png/cc0000/ffffff",
-  "fd_lat": 45.3815612,
-  "fd_long": 20.3685737,
+  "fd_lat": "45.3815612",
+  "fd_long": "20.3685737",
   "user_id": 14,
   "created_at": "12/13/2017"
 }, {
@@ -434,8 +434,8 @@ const Food = [{
   "description": "tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum",
   "price": "$20.38",
   "image": "http://dummyimage.com/150x150.png/ff4444/ffffff",
-  "fd_lat": -30.1647807,
-  "fd_long": -53.5608275,
+  "fd_lat": "-30.1647807",
+  "fd_long": "-53.5608275",
   "user_id": 8,
   "created_at": "5/26/2018"
 }, {
@@ -445,8 +445,8 @@ const Food = [{
   "description": "ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices",
   "price": "$24.37",
   "image": "http://dummyimage.com/150x150.png/5fa2dd/ffffff",
-  "fd_lat": 49.5609979,
-  "fd_long": 5.8741913,
+  "fd_lat": "49.5609979",
+  "fd_long": "5.8741913",
   "user_id": 1,
   "created_at": "10/14/2018"
 }, {
@@ -467,8 +467,8 @@ const Food = [{
   "description": "justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus semper",
   "price": "$5.18",
   "image": "http://dummyimage.com/150x150.png/ff4444/ffffff",
-  "fd_lat": 55.6828987,
-  "fd_long": 12.5786568,
+  "fd_lat": "55.6828987",
+  "fd_long": "12.5786568",
   "user_id": 18,
   "created_at": "3/15/2018"
 }, {
@@ -478,8 +478,8 @@ const Food = [{
   "description": "sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque",
   "price": "$12.44",
   "image": "http://dummyimage.com/150x150.png/dddddd/000000",
-  "fd_lat": 20.044412,
-  "fd_long": 110.198286,
+  "fd_lat": "20.044412",
+  "fd_long": "110.198286",
   "user_id": 10,
   "created_at": "11/28/2017"
 }, {
@@ -489,8 +489,8 @@ const Food = [{
   "description": "at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit",
   "price": "$16.08",
   "image": "http://dummyimage.com/150x150.png/dddddd/000000",
-  "fd_lat": -15.4353987,
-  "fd_long": 49.7392575,
+  "fd_lat": "-15.4353987",
+  "fd_long": "49.7392575",
   "user_id": 3,
   "created_at": "11/6/2018"
 }, {
@@ -500,8 +500,8 @@ const Food = [{
   "description": "sed sagittis nam congue risus semper porta volutpat quam pede lobortis ligula",
   "price": "$13.93",
   "image": "http://dummyimage.com/150x150.png/dddddd/000000",
-  "fd_lat": -13.6635336,
-  "fd_long": 48.4537424,
+  "fd_lat": "-13.6635336",
+  "fd_long": "48.4537424",
   "user_id": 16,
   "created_at": "6/27/2018"
 }, {
@@ -511,8 +511,8 @@ const Food = [{
   "description": "magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque",
   "price": "$18.81",
   "image": "http://dummyimage.com/150x150.png/ff4444/ffffff",
-  "fd_lat": 13.8503992,
-  "fd_long": 123.7585154,
+  "fd_lat": "13.8503992",
+  "fd_long": "123.7585154",
   "user_id": 18,
   "created_at": "1/17/2018"
 }, {
@@ -522,8 +522,8 @@ const Food = [{
   "description": "phasellus id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at",
   "price": "$24.20",
   "image": "http://dummyimage.com/150x150.png/cc0000/ffffff",
-  "fd_lat": 41.387384,
-  "fd_long": 128.1744945,
+  "fd_lat": "41.387384",
+  "fd_long": "128.1744945",
   "user_id": 6,
   "created_at": "11/1/2018"
 }, {
@@ -533,8 +533,8 @@ const Food = [{
   "description": "cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit",
   "price": "$11.98",
   "image": "http://dummyimage.com/150x150.png/cc0000/ffffff",
-  "fd_lat": -6.8866676,
-  "fd_long": 109.5389573,
+  "fd_lat": "-6.8866676",
+  "fd_long": "109.5389573",
   "user_id": 14,
   "created_at": "11/4/2018"
 }, {
@@ -544,8 +544,8 @@ const Food = [{
   "description": "tortor sollicitudin mi sit amet lobortis sapien sapien non mi integer ac neque duis bibendum morbi non quam nec",
   "price": "$11.47",
   "image": "http://dummyimage.com/150x150.png/ff4444/ffffff",
-  "fd_lat": 61.5928356,
-  "fd_long": 24.5915028,
+  "fd_lat": "61.5928356",
+  "fd_long": "24.5915028",
   "user_id": 15,
   "created_at": "2/1/2018"
 }, {
@@ -555,8 +555,8 @@ const Food = [{
   "description": "vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis",
   "price": "$14.20",
   "image": "http://dummyimage.com/150x150.png/ff4444/ffffff",
-  "fd_lat": 49.0096906,
-  "fd_long": 2.5479245,
+  "fd_lat": "49.0096906",
+  "fd_long": "2.5479245",
   "user_id": 3,
   "created_at": "1/25/2018"
 }, {
@@ -566,8 +566,8 @@ const Food = [{
   "description": "montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque",
   "price": "$14.66",
   "image": "http://dummyimage.com/150x150.png/dddddd/000000",
-  "fd_lat": -6.858925,
-  "fd_long": 108.2080973,
+  "fd_lat": "-6.858925",
+  "fd_long": "108.2080973",
   "user_id": 16,
   "created_at": "7/17/2018"
 }, {
@@ -577,8 +577,8 @@ const Food = [{
   "description": "ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum",
   "price": "$11.23",
   "image": "http://dummyimage.com/150x150.png/dddddd/000000",
-  "fd_lat": 53.3122864,
-  "fd_long": -6.336393,
+  "fd_lat": "53.3122864",
+  "fd_long": "-6.336393",
   "user_id": 7,
   "created_at": "12/3/2017"
 }, {
@@ -588,8 +588,8 @@ const Food = [{
   "description": "eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum",
   "price": "$13.12",
   "image": "http://dummyimage.com/150x150.png/5fa2dd/ffffff",
-  "fd_lat": 13.9214806,
-  "fd_long": -86.1268337,
+  "fd_lat": "13.9214806",
+  "fd_long": "-86.1268337",
   "user_id": 7,
   "created_at": "1/30/2018"
 }, {
@@ -599,8 +599,8 @@ const Food = [{
   "description": "sit amet consectetuer adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum",
   "price": "$14.01",
   "image": "http://dummyimage.com/150x150.png/5fa2dd/ffffff",
-  "fd_lat": 29.205856,
-  "fd_long": 117.11078,
+  "fd_lat": "29.205856",
+  "fd_long": "117.11078",
   "user_id": 10,
   "created_at": "12/12/2017"
 }, {
@@ -610,8 +610,8 @@ const Food = [{
   "description": "porttitor pede justo eu massa donec dapibus duis at velit eu est congue",
   "price": "$25.00",
   "image": "http://dummyimage.com/150x150.png/cc0000/ffffff",
-  "fd_lat": -7.2284727,
-  "fd_long": -39.3121233,
+  "fd_lat": "-7.2284727",
+  "fd_long": "-39.3121233",
   "user_id": 5,
   "created_at": "4/9/2018"
 }]

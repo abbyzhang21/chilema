@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-
 const PORT = 5000;
 
 // temp_DB mock data
@@ -17,6 +16,14 @@ app.get('/', (req, res) => {
 
 // get all food items in database
 app.get('/food', (req, res) => {
+  // Food
+  //   .fetchAll()
+  //   .then(foods => {
+  //     res.json(foods.serialize())
+  //   })
+  //   .catch(err => {
+  //     console.log('error', err);
+  //   })
   res.json(Food)
 })
 

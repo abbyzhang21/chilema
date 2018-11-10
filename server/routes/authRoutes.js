@@ -18,39 +18,26 @@ authRouter.get('/register', (req, res) => {
 
 authRouter.post('/register', (req, res) => {
   // res.json('post register page')
-  // const { id, name, last, password, email, phone, diet, location_id } = req.body
+  const { name, last, password, email, phone, diet } = req.body
 
-  const item = req.body
-  console.log('REQ.BODY: ', req.body)
-  console.log('SERVER POST: ', item)
+  // const { name } = req.body
+  // console.log(req.body)
+  // console.log(name);
+
+  // res.json(name)
 
   Users
-    .forge(item)
+    .forge(req.body)
     .save()
-    .then(result => {
-      return Users.fetchAll()
-    })
+    // .then(() => {
+    //   return Users.fetchAll()
+    // })
     .then(items => {
       res.json(items.serialize())
     })
     .catch(err => {
       console.log('err: ', err)
     })
-
-  // console.log('REGISTER POST: ', req.body)
-
-  // Users
-  //   .forge({ id, name, last, password, email, phone, diet, location_id })
-  //   .save()
-  //   .then(result => {
-  //     return Users.fetchAll()
-  //   })
-  //   .then(items => {
-  //     res.json(items.serialize())
-  //   })
-  //   .catch(err => {
-  //     console.log('err: ', err)
-  //   })
 
 })
 

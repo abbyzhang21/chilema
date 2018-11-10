@@ -2,8 +2,6 @@ const foodData = require('../../temp_DB/Food.js')
 const localData = require('../../temp_DB/Local.js')
 const userData = require('../../temp_DB/Users.js')
 
-
-
 exports.seed = function (knex, Promise) {
   // Deletes ALL existing entries
   return knex('Users').del()

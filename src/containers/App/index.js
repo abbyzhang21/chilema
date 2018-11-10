@@ -3,21 +3,21 @@ import Header from '../../components/Header.jsx';
 // import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-import FoodList from '../../components/FoodList.jsx';
-
+import { FoodList } from '../../components/FoodComponent';
+console.log("axios....:", React);
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      food: []
+      foodItem: []
     }
   }
   componentDidMount() {
     axios
       .get('/food')
       .then(foods => {
-        console.log('foods', foods.data)
-        this.setState({ food: foods.data })
+        console.log('foodItem', foods.data)
+        this.setState({ foodItem: foods.data })
       })
       .catch(err => {
         console.log('err', err)
@@ -25,11 +25,12 @@ class App extends Component {
   }
 
   render() {
-    const { foods } = this.state;
+    //  const {item} = this.state
+    console.log("this is the state: ", this.state)
     return (
       <div className="App">
         <Header />
-        <FoodList />
+        <FoodList foodItem={this.state.foodItem} />
       </div>
     );
   }

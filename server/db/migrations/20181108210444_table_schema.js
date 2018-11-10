@@ -20,15 +20,15 @@ exports.up = function (knex, Promise) {
     }),
     knex.schema.createTable('Users', (table) => {
       table.increments('id').primary();
-      table.string('name').notNullable();
-      table.string('last').notNullable();
-      table.string('email').unique().notNullable();
-      table.string('password').notNullable();
-      table.string('phone').unique().notNullable();
-      table.boolean('diet').notNullable();
+      table.string('name')
+      table.string('last')
+      table.string('email')
+      table.string('password')
+      table.string('phone')
+      table.boolean('diet')
       table.timestamp('created_at').defaultTo(knex.fn.now())
       table.integer('location_id')
-        .notNullable()
+        // .notNullable()
         .references('id')
         .inTable('Local')
         .onDelete('CASCADE')

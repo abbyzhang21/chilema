@@ -3,16 +3,26 @@ const app = express();
 
 const PORT = 5000;
 
-// bookshelf data models
+// BOOKSHELF DATA MODELS
 const Users = require('./db/models/Users.js')
 const Local = require('./db/models/Local.js')
 const Food = require('./db/models/Food.js')
+
 
 // ROUTES //
 
 // login-homepage
 app.get('/', (req, res) => {
   res.json('hello world!')
+})
+
+app.get('/login', (req, res) => {
+  res.json('<GET> login page')
+})
+
+app.post('/login', (req, res) => {
+  res.json('<POST> login page')
+  console.log('authenticate user function, and add them to database')
 })
 
 // get all food items in database

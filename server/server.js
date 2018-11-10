@@ -3,10 +3,10 @@ const app = express();
 
 const PORT = 5000;
 
-// temp_DB mock data
-const Food = require('./temp_DB/Food.js')
-const Local = require('./temp_DB/Local.js')
-const Users = require('./temp_DB/Users.js')
+// bookshelf data models
+const Users = require('./db/models/Users.js')
+const Local = require('./db/models/Local.js')
+const Food = require('./db/models/Food.js')
 
 // ROUTES //
 
@@ -17,17 +17,42 @@ app.get('/', (req, res) => {
 
 // get all food items in database
 app.get('/food', (req, res) => {
-  res.json(Food)
+  // res.json(Food)
+  Food
+    .fetchAll()
+    .then(items => {
+      res.json(items.serialize())
+    })
+    .catch(err => {
+      console.log('err: ', err)
+    })
+
 })
 
 // get all locations in database
 app.get('/local', (req, res) => {
-  res.json(Local)
+  // res.json(Local)
+  Local
+    .fetchAll()
+    .then(items => {
+      res.json(items.serialize())
+    })
+    .catch(err => {
+      console.log('err: ', err)
+    })
 })
 
 // get all users in database
 app.get('/users', (req, res) => {
-  res.json(Users)
+  // res.json(Users)
+  Users
+    .fetchAll()
+    .then(items => {
+      res.json(items.serialize())
+    })
+    .catch(err => {
+      console.log('err: ', err)
+    })
 })
 
 

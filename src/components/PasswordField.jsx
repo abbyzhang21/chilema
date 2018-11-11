@@ -1,7 +1,7 @@
 import React from 'react';
 import '../stylesheets/_passwordField.css';
 
-export const PasswordFielComponent = () => {
+export const PasswordFieldComponent = () => {
     
     return (
         <div className="password-field-container">

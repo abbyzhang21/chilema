@@ -7,8 +7,9 @@ const Header = () => {
             <Router>
                 <div>
                     <div className='header-bar'>
-                        <Link className='App-title' to='/'>
-                            <p>Chilema</p>
+                        <Link className='App-title' to='/login'>
+                            hello
+                            <img src="../assets/chilema_logo_rev.png" alt="" />
                         </Link>
                         <Link className='App-title' to='/login'>
                             <button>Log In</button>

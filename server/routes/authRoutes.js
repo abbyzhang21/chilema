@@ -3,8 +3,8 @@ const authRouter = express.Router();
 
 // BOOKSHELF DATA MODELS
 const Users = require('../db/models/Users.js')
-const Local = require('../db/models/Local.js')
-const Food = require('../db/models/Food.js')
+// const Local = require('../db/models/Local.js')
+// const Food = require('../db/models/Food.js')
 
 const bodyParser = require('body-parser')
 
@@ -38,6 +38,7 @@ authRouter.post('/login', (req, res) => {
     .fetch()
     .then(user => {
       if (password === user.attributes.password) {
+        req.session.isAuthenticated = true
         res.json("USER AUTHENTICATED")
       }
       else {
@@ -51,11 +52,19 @@ authRouter.post('/login', (req, res) => {
 })
 
 authRouter.post('/logout', (req, res) => {
-
+  req.session.destroy()
+  res.json('User logged out')
+  // implement res.redirect to /login page
 })
 
 authRouter.get('/protected', (req, res) => {
-
+  if (req.session.isAuthenticated) {
+    // do something for only authenticated users
+    res.json('User has permissions')
+  }
+  else {
+    res.json('User has no permissions')
+  }
 })
 
 

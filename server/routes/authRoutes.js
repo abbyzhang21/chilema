@@ -18,31 +18,36 @@ authRouter.get('/register', (req, res) => {
 
 authRouter.post('/register', (req, res) => {
   // res.json('post register page')
-  const { name, last, password, email, phone, diet } = req.body
-
-  // const { name } = req.body
-  // console.log(req.body)
-  // console.log(name);
-
-  // res.json(name)
-
+  // const { name, last, password, email, phone, diet } = req.body
   Users
     .forge(req.body)
     .save()
-    // .then(() => {
-    //   return Users.fetchAll()
-    // })
     .then(items => {
       res.json(items.serialize())
     })
     .catch(err => {
       console.log('err: ', err)
     })
-
 })
 
 authRouter.post('/login', (req, res) => {
-
+  // res.json('post login page')
+  const { email, password } = req.body
+  Users
+    .where({ email })
+    .fetch()
+    .then(user => {
+      if (password === user.attributes.password) {
+        res.json("USER AUTHENTICATED")
+      }
+      else {
+        res.json("INCORRECT PASSWORD")
+      }
+    })
+    .catch(err => {
+      console.log('err', err)
+      res.json(err)
+    })
 })
 
 authRouter.post('/logout', (req, res) => {

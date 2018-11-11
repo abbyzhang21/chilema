@@ -1,7 +1,7 @@
 import React from 'react';
 import '../stylesheets/_usernameField.css';
 
-export const UsernameFieldContainer = () => {
+export const UsernameFieldComponent = () => {
     
     return (
         <div className="username-field-container">

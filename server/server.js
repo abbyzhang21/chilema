@@ -24,8 +24,8 @@ const Local = require('./db/models/Local.js')
 const Food = require('./db/models/Food.js')
 
 // ROUTES //
-const AuthRoutes = require('./routes/authRoutes.js')
-app.use('/auth', AuthRoutes)
+const authRoutes = require('./routes/authRoutes.js')
+app.use('/auth', authRoutes)
 
 // login-homepage
 app.get('/', (req, res) => {
@@ -42,32 +42,35 @@ app.get('/food', (req, res) => {
     })
     .catch(err => {
       console.log('err: ', err)
+      res.json(err)
     })
 })
 
-// get all locations in database
+// get all locations in database by latitude and longitude
 app.get('/local', (req, res) => {
-  // res.json(Local)
+
   Local
-    .fetchAll()
+    .fetchAll({ columns: ['local_lat', 'local_long', 'user_id'] })
     .then(items => {
       res.json(items.serialize())
     })
     .catch(err => {
       console.log('err: ', err)
+      res.json(err)
     })
 })
 
-// get all users in database
+// get all users in database (by name, email, and diet)
 app.get('/users', (req, res) => {
-  // res.json(Users)
+
   Users
-    .fetchAll()
+    .fetchAll({ columns: ['name', 'email', 'diet'] })
     .then(items => {
       res.json(items.serialize())
     })
     .catch(err => {
       console.log('err: ', err)
+      res.json(err)
     })
 })
 

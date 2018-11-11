@@ -3,22 +3,14 @@ const authRouter = express.Router();
 
 // BOOKSHELF DATA MODELS
 const Users = require('../db/models/Users.js')
-// const Local = require('../db/models/Local.js')
-// const Food = require('../db/models/Food.js')
 
-const bodyParser = require('body-parser')
-
-// bodyParser config
-authRouter.use(bodyParser.urlencoded({ extended: false }))
-authRouter.use(bodyParser.json())
-
+// ROUTES
 authRouter.get('/register', (req, res) => {
   res.json('get register page')
 })
 
+// register user
 authRouter.post('/register', (req, res) => {
-  // res.json('post register page')
-  // const { name, last, password, email, phone, diet } = req.body
   Users
     .forge(req.body)
     .save()
@@ -27,11 +19,12 @@ authRouter.post('/register', (req, res) => {
     })
     .catch(err => {
       console.log('err: ', err)
+      res.json(err)
     })
 })
 
+// login user
 authRouter.post('/login', (req, res) => {
-  // res.json('post login page')
   const { email, password } = req.body
   Users
     .where({ email })
@@ -51,22 +44,20 @@ authRouter.post('/login', (req, res) => {
     })
 })
 
-authRouter.post('/logout', (req, res) => {
+// logout user (implement res.redirect to /login page)
+authRouter.get('/logout', (req, res) => {
   req.session.destroy()
-  res.json('User logged out')
-  // implement res.redirect to /login page
+  res.json('USER LOGGED OUT')
 })
 
+// sanity check to test authentication
 authRouter.get('/protected', (req, res) => {
   if (req.session.isAuthenticated) {
-    // do something for only authenticated users
-    res.json('User has permissions')
+    res.json('USER HAS PERMISSIONS')
   }
   else {
-    res.json('User has no permissions')
+    res.json('USER HAS NO PERMISSIONS')
   }
 })
-
-
 
 module.exports = authRouter;

@@ -5,23 +5,24 @@ export const SearchContainer = (props) => {
     console.log('search options', props.foodItem)
 
     const items = props.foodItem;
-    const local = props.itemLocation;
+    // const local = props.itemLocation;
 
     const distinctCategory = [... new Set(items.map(item => item.category))];
 
-    const distinctLocation = [... new Set(local.map(location => location.city))];
+    // const distinctLocation = [... new Set(local.map(location => location.city))];
     
     console.log('items', items)
     console.log('distinctCategory', distinctCategory);
 
-    console.log('local', local);
-    console.log('City location', distinctLocation);
+    // console.log('local', local);
+    // console.log('City location', distinctLocation);
 
     // return props.foodItem.map(item => {
         return (
             <div className="search-container">
                 <div className="categories">
-                    <select>
+                    <select className="select-container">
+                        <option value="default">What do you feel like eating?</option>    
                         {distinctCategory.map(category => (
                             <option value={category}>{category}</option>
                         ))}

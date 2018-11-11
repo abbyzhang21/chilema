@@ -1,4 +1,22 @@
 .search-container {
-    background-color: lightgrey;
-    color: blue;
+    /* background-color: lightgrey;
+    color: blue; */
+
+}
+
+select {
+    outline: none;
+    border: 1px solid #cc6666;
+    width: 50%;
+    background: transparent;
+    z-index: 10;
+    appearance: none;
+    padding: 1%;
+    /* border: none; */
+}
+
+.select-container {
+    background: url('../assets/down-arrow.png') no-repeat;
+    background-size: 2%;
+    background-position: 95% center;
 }

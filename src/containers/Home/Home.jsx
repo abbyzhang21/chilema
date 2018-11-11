@@ -3,7 +3,6 @@ import axios from 'axios';
 import { SearchContainer } from '../../components/Search';
 import './Home.css';
 
-import { UsernameFieldContainer } from '../../components/UsernameField';
 
 class Home extends Component {
     constructor(props) {
@@ -29,7 +28,6 @@ class Home extends Component {
         return (
             <div className="Home-Container">
                 <SearchContainer foodItem={this.state.foodItem} />
-                <UsernameFieldContainer/>
             </div>
         )
     }

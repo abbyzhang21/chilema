@@ -43,8 +43,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <SearchContainer foodItem={this.state.foodItem} itemLocation={this.state.itemLocation} />
-        <FoodList foodItem={this.state.foodItem} />
+        <Home/>
+        {/* <SearchContainer foodItem={this.state.foodItem} itemLocation={this.state.itemLocation} /> */}
+        {/* <FoodList foodItem={this.state.foodItem} /> */}
       </div>
     );
   }

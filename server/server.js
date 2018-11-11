@@ -36,7 +36,12 @@ app.use(passport.session()); // persistent login sessions
 
 // ROUTES //
 const authRoutes = require('./routes/authRoutes.js')
+const foodRoutes = require('./routes/foodRoutes.js')
+const localRoutes = require('./routes/localRoutes.js')
+
 app.use('/auth', authRoutes)
+app.use('/food', foodRoutes)
+app.use('/local', localRoutes)
 
 // login-homepage
 app.get('/', (req, res) => {
@@ -49,18 +54,18 @@ app.get('/welcome', (req, res) => {
 })
 
 // get all food items in database
-app.get('/food', (req, res) => {
-  // res.json(Food)
-  Food
-    .fetchAll()
-    .then(items => {
-      res.json(items.serialize())
-    })
-    .catch(err => {
-      console.log('err: ', err)
-      res.json(err)
-    })
-})
+// app.get('/food', (req, res) => {
+//   // res.json(Food)
+//   Food
+//     .fetchAll()
+//     .then(items => {
+//       res.json(items.serialize())
+//     })
+//     .catch(err => {
+//       console.log('err: ', err)
+//       res.json(err)
+//     })
+// })
 
 // get all locations in database by latitude and longitude
 app.get('/local', (req, res) => {

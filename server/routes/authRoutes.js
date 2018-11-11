@@ -38,7 +38,7 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, don
       console.log('local-storage user: ', user)
       // return user
       console.log('passport localStrategy config password: ', password)
-      console.log('passport localStrategy config user.attributes.password: ', user.attributes.password)
+      console.log('passport localStrategy config user.attributes.password: ', user.attributes.password) // THIS IS WHERE IT IS FAILING
       if (password === user.attributes.password) {
         console.log(true)
       }

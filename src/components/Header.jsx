@@ -1,23 +1,25 @@
 import React from 'react';
 import '../containers/App/App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import chilema_horizontal_logo from '../assets/chilema_horizontal_logo.png'
 const Header = () => {
     return (
         <div >
             <Router>
                 <div>
                     <div className='header-bar'>
-                        <Link className='App-title' to='/login'>
-                            hello
-                            <img src="../assets/chilema_logo_rev.png" alt="" />
+                        <Link className='header-logo' to='/'>
+                            <img src={chilema_horizontal_logo} />
                         </Link>
-                        <Link className='App-title' to='/login'>
-                            <button>Log In</button>
-                        </Link>
-                        <Link className='App-title' to='/newuser'>
+                        <div>
+                            <Link className='header-button' to='/login'>
+                                <button>Log In</button>
+                            </Link>
+                            <Link className='header-button' to='/newuser'>
 
-                            <button>Sign Up</button>
-                        </Link>
+                                <button>Sign Up</button>
+                            </Link>
+                        </div>
                     </div>
                     <div className='body-container'>
                         <Route path='/' component={App} />

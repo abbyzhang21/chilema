@@ -1,21 +1,38 @@
 
-.header-bar{
+.header-bar {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around;
-    background-color: #dddddd;
-    
-
-}
-p{
-    margin-top: 0px;
+    justify-content: space-between;
+    align-items: center;
+    height:50px;
+    border-bottom: 1px solid #edeced;
+    padding: 0 30px;
 }
 
-img{
-    height: 100px;
-    background-color: blue;
+img {
+    height: 50px;
+    padding-top: 7px;
 }
-.body-container{
-    background-color: aqua;
-    height: 700px;
+
+.header-button button{
+    border: none;
+    color: #cc6666;
+    font-size: 16px;
+    margin-right: 8px;
 }
+
+button:hover { 
+    color: white;
+    background-color: #cc6666;    
+    box-shadow: 0px 3px 10px #838383;
+    border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+

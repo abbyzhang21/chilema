@@ -5,6 +5,7 @@ import './App.css';
 import axios from 'axios';
 import { FoodList } from '../../components/FoodComponent';
 import { SearchContainer } from '../../components/Search';
+import Home from '../Home/Home'
 
 console.log("axios....:", React);
 class App extends Component {

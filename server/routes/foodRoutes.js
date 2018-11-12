@@ -17,6 +17,21 @@ foodRouter.get('/', (req, res) => {
     })
 })
 
+// get food item by id from 'Food' table
+foodRouter.get('/detail/:id', (req, res) => {
+  const { id } = req.params
+  Food
+    .where({ id })
+    .fetch()
+    .then((foodItem) => {
+      res.json(foodItem)
+    })
+    .catch((err) => {
+      console.log(err)
+      res.json(err)
+    })
+})
+
 foodRouter.post('/new', (req, res) => {
   Food
     .forge(req.body)
@@ -30,14 +45,37 @@ foodRouter.post('/new', (req, res) => {
     })
 })
 
-foodRouter.put('/', (req, res) => {
-  // update new food item into 'Food' table
+// update new food item into 'Food' table
+foodRouter.put('/update/:id', (req, res) => {
+  const { id } = req.params
+
+  // define constraints of put request
+  const payload = {
+    id: id,
+    category: req.body.category,
+    description: req.body.description,
+    price: req.body.price,
+    image: req.body.image,
+    fd_lat: req.body.fd_lat,
+    fd_long: req.body.food_long,
+    user_id: req.body.user_id
+  }
+  // ORM logic
+  Food
+    .where({ id })
+    .fetch()
+    .then((foodItem) => {
+      return foodItem.save(payload)
+    })
+    .then((result) => {
+      console.log('result', result)
+      res.json(result)
+    })
 })
 
 // delete a food item by 'id' from the 'Food' table
 foodRouter.delete('/delete/:id', (req, res) => {
   const { id } = req.params
-  console.log('typeof id :', typeof id)
   Food
     .where({ id })
     .destroy()

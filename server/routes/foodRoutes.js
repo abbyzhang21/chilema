@@ -6,6 +6,7 @@ const Food = require('../db/models/Food.js')
 
 // get all food items in database
 foodRouter.get('/', (req, res) => {
+
   Food
     .fetchAll()
     .then(items => {
@@ -15,11 +16,13 @@ foodRouter.get('/', (req, res) => {
       console.log('err: ', err)
       res.json(err)
     })
+
 })
 
 // get food item by id from 'Food' table
 foodRouter.get('/detail/:id', (req, res) => {
   const { id } = req.params
+
   Food
     .where({ id })
     .fetch()
@@ -30,9 +33,12 @@ foodRouter.get('/detail/:id', (req, res) => {
       console.log(err)
       res.json(err)
     })
+
 })
 
+// post new food item into 'Food' table
 foodRouter.post('/new', (req, res) => {
+
   Food
     .forge(req.body)
     .save()
@@ -43,6 +49,7 @@ foodRouter.post('/new', (req, res) => {
       console.log('err: ', err)
       res.json(err)
     })
+
 })
 
 // update new food item into 'Food' table
@@ -60,6 +67,7 @@ foodRouter.put('/update/:id', (req, res) => {
     fd_long: req.body.food_long,
     user_id: req.body.user_id
   }
+
   // ORM logic
   Food
     .where({ id })
@@ -71,11 +79,13 @@ foodRouter.put('/update/:id', (req, res) => {
       console.log('result', result)
       res.json(result)
     })
+
 })
 
 // delete a food item by 'id' from the 'Food' table
 foodRouter.delete('/delete/:id', (req, res) => {
   const { id } = req.params
+
   Food
     .where({ id })
     .destroy()
@@ -86,6 +96,7 @@ foodRouter.delete('/delete/:id', (req, res) => {
       console.log('err: ', err)
       res.json(err)
     })
+
 })
 
 module.exports = foodRouter

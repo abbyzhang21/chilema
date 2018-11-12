@@ -17,16 +17,69 @@ usersRouter.get('/', (req, res) => {
     })
 })
 
-usersRouter.post('/', (req, res) => {
-  // post new food item into 'Food' table
+// get user by id from 'Users' table
+usersRouter.get('/detail/:id', (req, res) => {
+  const { id } = req.params
+
+  Users
+    .where({ id })
+    .fetch()
+    .then((location) => {
+      res.json(location)
+    })
+    .catch((err) => {
+      console.log(err)
+      res.json(err)
+    })
+
 })
 
-usersRouter.put('/', (req, res) => {
-  // update new food item into 'Food' table
+// update a user entry in the 'Users' table
+usersRouter.put('/update/:id', (req, res) => {
+  const { id } = req.params
+
+  console.log(id)
+
+  // define constraints of put request
+  const payload = {
+    id: id,
+    name: req.body.name,
+    last: req.body.last,
+    email: req.body.email,
+    password: req.body.password,
+    phone: req.body.phone,
+    diet: req.body.diet,
+  }
+
+  // ORM logic
+  Users
+    .where({ id })
+    .fetch()
+    .then((userProfile) => {
+      return userProfile.save(payload)
+    })
+    .then((result) => {
+      console.log('result', result)
+      res.json(result)
+    })
+
 })
 
-usersRouter.delete('/', (req, res) => {
-  // delete a food item from the database
+// delete a user by 'id' from the 'Users' table
+usersRouter.delete('/delete/:id', (req, res) => {
+  const { id } = req.params
+
+  Users
+    .where({ id })
+    .destroy()
+    .then(
+      res.redirect('/users')
+    )
+    .catch(err => {
+      console.log('err: ', err)
+      res.json(err)
+    })
+
 })
 
 module.exports = usersRouter

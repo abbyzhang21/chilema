@@ -38,10 +38,12 @@ app.use(passport.session()); // persistent login sessions
 const authRoutes = require('./routes/authRoutes.js')
 const foodRoutes = require('./routes/foodRoutes.js')
 const localRoutes = require('./routes/localRoutes.js')
+const userRoutes = require('./routes/userRoutes.js')
 
 app.use('/auth', authRoutes)
 app.use('/food', foodRoutes)
 app.use('/local', localRoutes)
+app.use('/users', userRoutes)
 
 // login-homepage
 app.get('/', (req, res) => {
@@ -68,32 +70,32 @@ app.get('/welcome', (req, res) => {
 // })
 
 // get all locations in database by latitude and longitude
-app.get('/local', (req, res) => {
+// app.get('/local', (req, res) => {
 
-  Local
-    .fetchAll({ columns: ['local_lat', 'local_long', 'user_id'] })
-    .then(items => {
-      res.json(items.serialize())
-    })
-    .catch(err => {
-      console.log('err: ', err)
-      res.json(err)
-    })
-})
+//   Local
+//     .fetchAll({ columns: ['local_lat', 'local_long', 'user_id'] })
+//     .then(items => {
+//       res.json(items.serialize())
+//     })
+//     .catch(err => {
+//       console.log('err: ', err)
+//       res.json(err)
+//     })
+// })
 
 // get all users in database (by name, email, and diet)
-app.get('/users', (req, res) => {
+// app.get('/users', (req, res) => {
 
-  Users
-    .fetchAll({ columns: ['name', 'email', 'diet'] })
-    .then(items => {
-      res.json(items.serialize())
-    })
-    .catch(err => {
-      console.log('err: ', err)
-      res.json(err)
-    })
-})
+//   Users
+//     .fetchAll({ columns: ['name', 'email', 'diet'] })
+//     .then(items => {
+//       res.json(items.serialize())
+//     })
+//     .catch(err => {
+//       console.log('err: ', err)
+//       res.json(err)
+//     })
+// })
 
 
 app.listen(PORT, () => {

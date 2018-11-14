@@ -1,6 +1,4 @@
 @import './_header.css';
-/* 
-.test {
-    background-color: red;
-    height:100px;
-} */
+@import './_foodDetail.css';
+@import './_foodList.css';
+

@@ -22,7 +22,7 @@ const Header = () => {
                         </div>
                     </div>
                     <div className='body-container'>
-                        <Route path='/' component={App} />
+                        {/* <Route path='/' component={App} /> */}
                         <Route path='/login' component={LogIn} />
                         <Route path='/newuser' component={NewUser} />
                     </div>
@@ -35,9 +35,9 @@ const Header = () => {
 
 
 //temp components to test on router
-function App(props) {
-    return <div>this is home page</div>
-}
+// function App(props) {
+//     return <div>this is home page</div>
+// }
 function LogIn(props) {
     return <div>login page....</div>
 }

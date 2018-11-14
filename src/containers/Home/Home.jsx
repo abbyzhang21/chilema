@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { SearchContainer } from '../../components/Search';
+import { SearchContainer } from '../../components/DropDownComponents';
 import './Home.css';
 import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
 

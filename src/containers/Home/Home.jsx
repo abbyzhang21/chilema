@@ -4,6 +4,8 @@ import { SearchContainer } from '../../components/Search';
 import './Home.css';
 import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
 
+import { LetsEatButtonComponent } from '../../components/LetsEatButton';
+
 
 class Home extends Component {
     constructor(props) {
@@ -32,8 +34,9 @@ class Home extends Component {
                     <img src={chilema_logo_rev} alt="" className="home-image"/>
                 </div>    
                 <div className="searchBar">
-                     <SearchContainer foodItem={this.state.foodItem} />    
+                    <SearchContainer foodItem={this.state.foodItem} />  
                 </div>  
+                <LetsEatButtonComponent/>
             </div>
         )
     }

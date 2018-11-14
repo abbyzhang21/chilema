@@ -5,7 +5,7 @@ export const LetsEatButtonComponent = () => {
 
     return (
         <div className="lets-eat-button-containter">
-            <button>LET'S EAT!</button>
+            <button className="button">LET'S EAT!</button>
         </div>
     )
 }

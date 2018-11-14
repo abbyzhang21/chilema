@@ -21,11 +21,16 @@ const Header = () => {
                             </Link>
                         </div>
                     </div>
+<<<<<<< HEAD
                     <div className='body-container'>
                         {/* <Route path='/' component={App} /> */}
+=======
+                    {/* <div className='body-container'>
+                        <Route path='/' component={App} />
+>>>>>>> 692ca06494118291c94eb5b2c43629d22b97a98a
                         <Route path='/login' component={LogIn} />
                         <Route path='/newuser' component={NewUser} />
-                    </div>
+                    </div> */}
                 </div>
             </Router>
         </div>

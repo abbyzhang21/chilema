@@ -4,7 +4,6 @@ import { SearchContainer } from '../../components/Search';
 import './Home.css';
 import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
 
-import { LetsEatButtonComponent } from '../../components/LetsEatButton';
 
 
 class Home extends Component {
@@ -36,7 +35,6 @@ class Home extends Component {
                 <div className="searchBar">
                     <SearchContainer foodItem={this.state.foodItem} />  
                 </div>  
-                <LetsEatButtonComponent/>
             </div>
         )
     }

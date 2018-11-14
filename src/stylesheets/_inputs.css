@@ -6,6 +6,15 @@ input[type=text], input[type=password] {
     margin: 1%;
 }
 
-input[type=text] {
+/* input[type=text] {
     margin-top: 5%;
+} */
+
+.address-field-component {
+    display: flex;
+    flex-direction: column;
+}
+
+.address-field-container {
+    display: flex;
 }

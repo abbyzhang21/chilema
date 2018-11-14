@@ -7,7 +7,8 @@ import axios from 'axios';
 import { FoodList } from '../../components/FoodComponent';
 import { SearchContainer } from '../../components/DropDownComponents';
 import Home from '../Home/Home';
-import LogIn from '../LogIn/LogIn'
+import LogIn from '../LogIn/LogIn';
+import NewUser from '../NewUser/NewUser';
 
 
 console.log("axios....:", React);
@@ -53,7 +54,8 @@ class App extends Component {
           <Route exact path='/' component={Home}/>
           {/* <SearchContainer foodItem={this.state.foodItem} itemLocation={this.state.itemLocation} /> */}
             {/* <FoodList foodItem={this.state.foodItem} /> */}
-          <Route exact path='/login' component={LogIn}/>  
+            <Route exact path='/login' component={LogIn} />  
+            <Route exact path='/newuser' component={NewUser}/>  
         </div>
       </Router>   
       </div>    

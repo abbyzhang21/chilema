@@ -4,58 +4,66 @@ const authRouter = express.Router();
 // BOOKSHELF DATA MODELS
 const Users = require('../db/models/Users.js')
 
-// PASPORT & BCRYPT LIBRARIES
+// PASSPORT LIBRARY
 const passport = require('passport')
 const LocalStrategy = require('passport-local')
-const bcrypt = require('bcrypt')
 
+// BCRYPT LIBRARY
+const bcrypt = require('bcrypt')
+const saltRounds = 12;
 // upon successful login, get user from database, save
 // save user into Redis session store
 passport.serializeUser((user, done) => {
   console.log('serializing user: ', user)
-  done(null, user.id)
+  done(null, {
+    id: user.id,
+    email: user.email,
+    password: user.password
+  })
 })
 
 // upon successful authorization request, take information from the session
 // for example userId, to retrieve the user record from the db, and put it into req.user
 passport.deserializeUser((user, done) => {
   console.log('deserializing users: ', user)
-  // console.log(req.user)
   done(null, {
-    id: user.attributes.id,
-    email: user.attributes.email
+    // id: user.attributes.id,
+    // email: user.attributes.email
   })
 })
 
 // passport config
 passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
-  console.log('LS EMAIL: ', email)
-  console.log('LS PASSWORD: ', password)
   Users
     .where({ email })
     .fetch()
     .then((user) => {
-      console.log('local-storage user: ', user)
-      // return user
-      console.log('passport localStrategy config password: ', password)
-      console.log('passport localStrategy config user.attributes.password: ', user.attributes.password) // THIS IS WHERE IT IS FAILING
+      // WITHOUT BCRYPT //
       if (password === user.attributes.password) {
-        console.log(true)
+        done(null, user.attributes)
+        console.log('SUCCESS!')
+      } else {
+        done(null, false)
+        console.log('FAILURE!')
       }
-      bcrypt.compare(password, user.attributes.password)
-        .then((result) => {
-          console.log('passport localStrategy config result: ', result)
-          if (result === true) {
-            console.log('user has correct credentials')
-            done(null, user.attributes)
-          } else {
-            console.log('user has incorrect credentials')
-            done(null, false)
-          }
-        })
-        .catch(err => {
-          done(err)
-        })
+      /// WITH BCRYPT //
+      // if (password === user.attributes.password) {
+      //   console.log(true)
+      //   done(null, user.attributes)
+      // bcrypt.compare(password, user.attributes.password)
+      //   .then((result) => {
+      //     console.log('passport localStrategy config result: ', result)
+      //     if (result === true) {
+      //       console.log('user has correct credentials')
+      //       done(null, user.attributes)
+      //     } else {
+      //       console.log('user has incorrect credentials')
+      //       done(null, false)
+      //     }
+      //   })
+      //   .catch(err => {
+      //     done(err)
+      //   })
     })
     .catch((err) => {
       done(err)
@@ -67,18 +75,62 @@ authRouter.get('/register', (req, res) => {
   res.json('get register page')
 })
 
-// register user
+// register user new user and add them to the database
 authRouter.post('/register', (req, res) => {
-  Users
-    .forge(req.body)
-    .save()
-    .then(items => {
-      res.json(items.serialize())
+
+  const { name, last, email, password, phone, diet } = req.body;
+
+  console.log('email: ', email)
+  console.log('password', password)
+
+  // const plainTextPassword = req.body.password;
+  // console.log("PTP: ", plainTextPassword)
+
+  // const encrypted = bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
+  //   // Store hash in your password DB.
+  //   console.log('req.body.password: ', req.body.password)
+  //   console.log('encrypted: ', encrypted)
+  // });
+
+  bcrypt.genSalt(saltRounds)
+    .then(salt => {
+      console.log('salt: ', salt)
+      return bcrypt.hash(password, salt)
+    })
+    .then(hash => {
+      console.log('hash: ', hash)
+      return Users
+        .forge({
+          name: name,
+          last: last,
+          email: email,
+          password: hash,
+          phone: phone,
+          diet: diet
+        })
+        .save()
+    })
+    .then(user => {
+      user = user.toJSON()
+      res.json(user) // Never send the entire user object back to client! It has their password!
+      // res.sendStatus(200)
+      // res.redirect('/api/auth/secret')
     })
     .catch(err => {
-      console.log('err: ', err)
+      console.log('HASH ERROR: ', err)
       res.json(err)
     })
+
+  // Users
+  //   .forge(req.body)
+  //   .save()
+  //   .then(items => {
+  //     res.json(items.serialize())
+  //   })
+  //   .catch(err => {
+  //     console.log('err: ', err)
+  //     res.json(err)
+  //   })
 })
 
 authRouter.post('/login', passport.authenticate('local', { sucessRedirect: '/welcome', failureRedirect: '/' }), (req, res) => {
@@ -95,7 +147,8 @@ authRouter.post('/login', passport.authenticate('local', { sucessRedirect: '/wel
 // logout user (implement res.redirect to /login page)
 authRouter.get('/logout', (req, res) => {
   req.logout()
-  res.json('USER LOGGED OUT')
+  console.log('USER LOGGED OUT')
+  res.redirect('/')
 })
 
 // sanity check to test authentication

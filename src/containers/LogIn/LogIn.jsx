@@ -4,6 +4,7 @@ import axios from 'axios';
 import { UsernameFieldComponent, PasswordFieldComponent } from '../../components/InputComponents';
 import { GetStartedButtonComponent } from '../../components/ButtonComponents';
 import './LogIn.css';
+import GlobalHeader from '../../components/GlobalHeaderComponent';
 
 class LogIn extends Component {
     constructor(props) {
@@ -15,10 +16,14 @@ class LogIn extends Component {
 
     render() {
         return (
-            <div className="Login-Container">
-                <UsernameFieldComponent />
-                <PasswordFieldComponent />
-                <GetStartedButtonComponent/>
+            <div className='wrapper'>
+
+                <div className="Login-Container">
+                    <GlobalHeader />
+                    <UsernameFieldComponent />
+                    <PasswordFieldComponent />
+                    <GetStartedButtonComponent />
+                </div>
             </div>
         )
     }

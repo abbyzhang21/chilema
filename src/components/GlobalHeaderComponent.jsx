@@ -1,23 +1,23 @@
 import React from 'react';
-import '../stylesheets/_header.css';
+import '../stylesheets/_globalHeader.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import chilema_horizontal_logo from '../assets/chilema_horizontal_logo.png';
 import { Redirect } from 'react-router-dom';
 
-const Header = () => {
+const GlobalHeader = () => {
     return (
         <div >
             <Router>
                 <div>
-                    <div className='header-bar'>
+                    <div className='header'>
                         <Link className='header-logo' to='/'>
                             <img src={chilema_horizontal_logo} />
                         </Link>
-                        <div>
-                            <Link className='header-button' to='./login'>
+                        <div className='global-header-button'>
+                            <Link to='./login'>
                                 <button>Log In</button>
                             </Link>
-                            <Link className='header-button signup-button' to='/newuser'>
+                            <Link to='/newuser'>
 
                                 <button>Sign Up</button>
                             </Link>
@@ -32,6 +32,7 @@ const Header = () => {
             </Router>
         </div>
 
+
     );
 };
 
@@ -40,11 +41,11 @@ const Header = () => {
 // function App(props) {
 //     return <div>this is home page</div>
 // }
-function LogIn(props) {
-    return <div>login page....</div>
-}
-function NewUser(props) {
-    return <div>Sign up plz</div>
-}
+// function LogIn(props) {
+//     return <div>login page....</div>
+// }
+// function NewUser(props) {
+//     return <div>Sign up plz</div>
+// }
 
-export default Header;
+export default GlobalHeader;

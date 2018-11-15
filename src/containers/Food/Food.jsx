@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FoodList } from '../../components/FoodComponent';
 import './Food.css';
 import axios from 'axios';
-import Header from '../../components/Header';
+import GlobalHeader from '../../components/GlobalHeaderComponent';
 
 class Food extends Component {
     constructor(props) {
@@ -24,7 +24,7 @@ class Food extends Component {
     render() {
         return (
             <div className='foodPage-container'>
-                <Header />
+                <GlobalHeader />
                 <FoodList foodItem={this.state.foodItem} />
             </div>
         )

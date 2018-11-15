@@ -29,7 +29,7 @@ class Home extends Component {
 
     render() {
         return (
-            <div className='wrapper'>
+            <div className='home-wrapper'>
                 <div>
                     <Header />
                 </div>

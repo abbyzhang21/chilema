@@ -1,3 +1,7 @@
+h1 {
+    color: #cc6666;
+}
+
 .NewUser-Container{
     display: flex; 
     flex-direction: row;

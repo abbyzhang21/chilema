@@ -18,7 +18,11 @@ class NewUser extends Component {
     render() {
         return (
             <div className="wrapper">
-                <GlobalHeader />     
+                <GlobalHeader />  
+                <h1>HAVE YOU EATEN? 
+                    <br />
+                    LOG IN
+                </h1>
                 <div className="NewUser-Container">
                     <div className="User-Fields">
                         <FirstNameFieldComponent />

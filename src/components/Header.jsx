@@ -9,7 +9,7 @@ const Header = () => {
         <div >
             <Router>
                 <div>
-                    <div className='header-bar'>
+                    <div className='header-bar'>   
                         <Link className='header-logo' to='/'>
                             <img src={chilema_horizontal_logo} />
                         </Link>
@@ -20,7 +20,7 @@ const Header = () => {
                             <Link className='header-button signup-button' to='/newuser'>
 
                                 <button>Sign Up</button>
-                            </Link>
+                                </Link>   
                         </div>
                     </div>
                     {/* <div className='body-container'>

@@ -20,12 +20,16 @@ class NewUser extends Component {
             <div className="wrapper">
                 <GlobalHeader />     
                 <div className="NewUser-Container">
-                    <FirstNameFieldComponent />
-                    <LastNameFieldComponent />
-                    <EmailFieldComponent />
-                    <UsernameFieldComponent />
-                    <PasswordFieldComponent />
-                    <AddressFieldComponent />
+                    <div className="User-Fields">
+                        <FirstNameFieldComponent />
+                        <LastNameFieldComponent />    
+                        <EmailFieldComponent />
+                        <UsernameFieldComponent />
+                        <PasswordFieldComponent />
+                    </div>  
+                    <div className="Address-Fields">
+                        <AddressFieldComponent />
+                    </div>
                 </div>
                 <GetStartedButtonComponent/>
             </div>

@@ -37,32 +37,18 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, don
     .where({ email })
     .fetch()
     .then((user) => {
-      // WITHOUT BCRYPT //
-      if (password === user.attributes.password) {
-        done(null, user.attributes)
-        console.log('SUCCESS!')
-      } else {
-        done(null, false)
-        console.log('FAILURE!')
-      }
-      /// WITH BCRYPT //
-      // if (password === user.attributes.password) {
-      //   console.log(true)
-      //   done(null, user.attributes)
-      // bcrypt.compare(password, user.attributes.password)
-      //   .then((result) => {
-      //     console.log('passport localStrategy config result: ', result)
-      //     if (result === true) {
-      //       console.log('user has correct credentials')
-      //       done(null, user.attributes)
-      //     } else {
-      //       console.log('user has incorrect credentials')
-      //       done(null, false)
-      //     }
-      //   })
-      //   .catch(err => {
-      //     done(err)
-      //   })
+      // validate user input vs decrypted password in db
+      bcrypt.compare(password, user.attributes.password)
+        .then((result) => {
+          if (result) {
+            done(null, user)
+          } else {
+            done(null, false)
+          }
+        })
+        .catch((err) => {
+          console.log("BCRYPT ERR: ", err)
+        })
     })
     .catch((err) => {
       done(err)

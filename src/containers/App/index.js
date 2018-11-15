@@ -11,7 +11,7 @@ import Food from '../Food/Food';
 import Home from '../Home/Home';
 import LogIn from '../LogIn/LogIn';
 
-import CheckoutForm from '../../components/CheckoutForm.jsx';
+import PaymentForm from '../Payment/Payment.jsx';
 
 
 console.log("axios....:", React);
@@ -50,14 +50,13 @@ class App extends Component {
     console.log("this is the state: ", this.state)
     return (
       <div>
-        <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
+        {/* <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
           <div className="example">
-            <h1>React Stripe Elements Example</h1>
             <Elements>
               <CheckoutForm />
             </Elements>
           </div>
-        </StripeProvider>
+        </StripeProvider> */}
 
         <Router>
           <div className="App">
@@ -66,6 +65,8 @@ class App extends Component {
             {/* <FoodList foodItem={this.state.foodItem} /> */}
             <Route exact path='/login' component={Food} />
             <Route exact path='/food' component={Food} />
+            <Route exact path='/payment' component={PaymentForm} />
+
           </div>
         </Router>
       </div>

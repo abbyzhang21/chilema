@@ -5,9 +5,10 @@ import Header from '../../components/Header.jsx';
 import './App.css';
 import axios from 'axios';
 import Food from '../Food/Food';
-import { SearchContainer } from '../../components/DropDownComponents';
+// import { SearchContainer } from '../../components/DropDownComponents';
 import Home from '../Home/Home';
 import LogIn from '../LogIn/LogIn';
+import NewUser from '../NewUser/NewUser';
 
 
 
@@ -54,6 +55,7 @@ class App extends Component {
             {/* <FoodList foodItem={this.state.foodItem} /> */}
             <Route exact path='/login' component={LogIn} />
             <Route exact path='/food' component={Food} />
+            <Route exact path='/newuser' component={NewUser}/>
           </div>
         </Router>
       </div>

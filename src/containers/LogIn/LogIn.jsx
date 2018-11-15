@@ -17,9 +17,9 @@ class LogIn extends Component {
     render() {
         return (
             <div className='wrapper'>
-
-                <div className="Login-Container">
                     <GlobalHeader />
+                <div className="Login-Container">
+
                     <UsernameFieldComponent />
                     <PasswordFieldComponent />
                     <GetStartedButtonComponent />

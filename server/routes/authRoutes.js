@@ -11,8 +11,8 @@ const LocalStrategy = require('passport-local')
 // BCRYPT LIBRARY
 const bcrypt = require('bcrypt')
 const saltRounds = 12;
-// upon successful login, get user from database, save
-// save user into Redis session store
+
+// upon successful login, retrieve user from db and store in Redis session
 passport.serializeUser((user, done) => {
   console.log('serializing user: ', user)
   done(null, {
@@ -22,8 +22,7 @@ passport.serializeUser((user, done) => {
   })
 })
 
-// upon successful authorization request, take information from the session
-// for example userId, to retrieve the user record from the db, and put it into req.user
+// upon successful authorization request, take information from session
 passport.deserializeUser((user, done) => {
   console.log('deserializing users: ', user)
   done(null, {
@@ -80,18 +79,6 @@ authRouter.post('/register', (req, res) => {
 
   const { name, last, email, password, phone, diet } = req.body;
 
-  console.log('email: ', email)
-  console.log('password', password)
-
-  // const plainTextPassword = req.body.password;
-  // console.log("PTP: ", plainTextPassword)
-
-  // const encrypted = bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
-  //   // Store hash in your password DB.
-  //   console.log('req.body.password: ', req.body.password)
-  //   console.log('encrypted: ', encrypted)
-  // });
-
   bcrypt.genSalt(saltRounds)
     .then(salt => {
       console.log('salt: ', salt)
@@ -112,33 +99,22 @@ authRouter.post('/register', (req, res) => {
     })
     .then(user => {
       user = user.toJSON()
-      res.json(user) // Never send the entire user object back to client! It has their password!
-      // res.sendStatus(200)
-      // res.redirect('/api/auth/secret')
+      res.json(user)
     })
     .catch(err => {
       console.log('HASH ERROR: ', err)
       res.json(err)
     })
-
-  // Users
-  //   .forge(req.body)
-  //   .save()
-  //   .then(items => {
-  //     res.json(items.serialize())
-  //   })
-  //   .catch(err => {
-  //     console.log('err: ', err)
-  //     res.json(err)
-  //   })
 })
 
+// LOCAL STRATEGY
 authRouter.post('/login', passport.authenticate('local', { sucessRedirect: '/welcome', failureRedirect: '/' }), (req, res) => {
   console.log('USER AUTHENTICATED')
   // req.session.isAuthenticated = true;
   res.send('USER AUTHENTICATED')
 });
 
+// GOOGLE OAUTH
 // authRouter.post('/login/google', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
 //   console.log('GOOGLE AUTHENTICATION')
 //   res.json('GOOGLE AUTHENTICATION')

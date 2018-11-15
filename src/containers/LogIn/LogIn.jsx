@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 import { UsernameFieldComponent, PasswordFieldComponent } from '../../components/InputComponents';
 import { GetStartedButtonComponent } from '../../components/ButtonComponents';

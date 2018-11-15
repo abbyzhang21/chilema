@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 // import GlobalHeader from '../../components/GlobalHeaderComponent';
-// import { CheckoutForm } from '../../components/CheckoutForm.jsx';
 import { CardElement, injectStripe } from 'react-stripe-elements';
 import '../../stylesheets/_stripeElements.css';
 import { Elements, StripeProvider } from 'react-stripe-elements';

@@ -5,6 +5,8 @@ import './Home.css';
 import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
 import Header from '../../components/Header.jsx';
 
+import CheckoutForm from '../../components/CheckoutForm.jsx'
+
 
 
 class Home extends Component {

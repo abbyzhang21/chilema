@@ -1,27 +1,16 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Header from '../../components/Header.jsx';
-=======
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Elements, StripeProvider } from 'react-stripe-elements';
 
-// import Header from '../../components/Header.jsx';
->>>>>>> stripe
 // import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import Food from '../Food/Food';
-<<<<<<< HEAD
 import { SearchContainer } from '../../components/DropDownComponents';
 import Home from '../../containers/Home/Home';
 import LogIn from '../../containers/LogIn/LogIn';
 import NewUser from '../../containers/NewUser/NewUser';
-=======
-// import { SearchContainer } from '../../components/DropDownComponents';
-import Home from '../Home/Home';
-import LogIn from '../LogIn/LogIn';
->>>>>>> stripe
 
 import PaymentForm from '../Payment/Payment.jsx';
 
@@ -61,7 +50,6 @@ class App extends Component {
     //  const {item} = this.state
     console.log("this is the state: ", this.state)
     return (
-<<<<<<< HEAD
 
       //       {/* <SearchContainer foodItem={this.state.foodItem} itemLocation={this.state.itemLocation} /> */}
       //       {/* <FoodList foodItem={this.state.foodItem} /> */}
@@ -74,32 +62,11 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/login" component={LogIn} />
             <Route path="/newuser" component={NewUser} />
+            <Route exact path='/food' component={Food} />
+            <Route exact path='/payment' component={PaymentForm} />
           </Switch>
         </div>
       </Router>
-=======
-      <div>
-        {/* <StripeProvider apiKey="pk_test_TYooMQauvdEDq54NiTphI7jx">
-          <div className="example">
-            <Elements>
-              <CheckoutForm />
-            </Elements>
-          </div>
-        </StripeProvider> */}
-
-        <Router>
-          <div className="App">
-            <Route exact path='/' component={Home} />
-            {/* <SearchContainer foodItem={this.state.foodItem} itemLocation={this.state.itemLocation} /> */}
-            {/* <FoodList foodItem={this.state.foodItem} /> */}
-            <Route exact path='/login' component={Food} />
-            <Route exact path='/food' component={Food} />
-            <Route exact path='/payment' component={PaymentForm} />
-
-          </div>
-        </Router>
-      </div>
->>>>>>> stripe
 
 
 

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Header from '../../components/Header.jsx';
 // import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import Food from '../Food/Food';
 import { SearchContainer } from '../../components/DropDownComponents';
-import Home from '../Home/Home';
-import LogIn from '../LogIn/LogIn';
+import Home from '../../containers/Home/Home';
+import LogIn from '../../containers/LogIn/LogIn';
 
 
 
@@ -46,17 +46,20 @@ class App extends Component {
     //  const {item} = this.state
     console.log("this is the state: ", this.state)
     return (
-      <div>
-        <Router>
-          <div className="App">
-            <Route exact path='/' component={Home} />
-            {/* <SearchContainer foodItem={this.state.foodItem} itemLocation={this.state.itemLocation} /> */}
-            {/* <FoodList foodItem={this.state.foodItem} /> */}
-            <Route exact path='/login' component={LogIn} />
-            <Route exact path='/food' component={Food} />
-          </div>
-        </Router>
-      </div>
+
+      //       {/* <SearchContainer foodItem={this.state.foodItem} itemLocation={this.state.itemLocation} /> */}
+      //       {/* <FoodList foodItem={this.state.foodItem} /> */}
+      //       <Route exact path='/login' component={LogIn} />
+      //       <Route exact path='/food' component={Food} />
+
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/login" component={LogIn} />
+          </Switch>
+        </div>
+      </Router>
 
     );
   }

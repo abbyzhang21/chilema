@@ -6,30 +6,18 @@ import { Redirect } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div >
-            <Router>
-                <div>
-                    <div className='header-bar'>
-                        <Link className='header-logo' to='/'>
-                            <img src={chilema_horizontal_logo} />
-                        </Link>
-                        <div>
-                            <Link className='header-button' to='./login'>
-                                <button>Log In</button>
-                            </Link>
-                            <Link className='header-button signup-button' to='/newuser'>
-
-                                <button>Sign Up</button>
-                            </Link>
-                        </div>
-                    </div>
-                    {/* <div className='body-container'>
-                        <Route path='/' component={App} />
-                        <Route path='/login' component={LogIn} />
-                        <Route path='/newuser' component={NewUser} />
-                    </div> */}
-                </div>
-            </Router>
+        <div className='header-bar'>
+            <Link className='header-logo' to='/'>
+                <img src={chilema_horizontal_logo} />
+            </Link>
+            <div>
+                <Link className='header-button' to='/login'>
+                    <button>Log In</button>
+                </Link>
+                <Link className='header-button signup-button' to='/newuser'>
+                    <button>Sign Up</button>
+                </Link>
+            </div>
         </div>
 
     );
@@ -40,11 +28,11 @@ const Header = () => {
 // function App(props) {
 //     return <div>this is home page</div>
 // }
-function LogIn(props) {
-    return <div>login page....</div>
-}
-function NewUser(props) {
-    return <div>Sign up plz</div>
-}
+// function LogIn(props) {
+//     return <div>login page....</div>
+// }
+// function NewUser(props) {
+//     return <div>Sign up plz</div>
+// }
 
 export default Header;

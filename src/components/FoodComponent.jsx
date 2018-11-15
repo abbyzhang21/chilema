@@ -1,5 +1,7 @@
 import React from 'react';
 import '../containers/App/App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 export const FoodList = (props) => {
     console.log('food list:', props.foodItem)
@@ -25,6 +27,7 @@ export const FoodList = (props) => {
                             </a>
                         </li>
                         <li>
+                            <FontAwesomeIcon icon={faUserCircle} color='#666633' className='user-icon' />
                             {item.description}
                         </li>
                     </ul>

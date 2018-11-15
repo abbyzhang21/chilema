@@ -1,7 +1,9 @@
 import React from 'react';
 import '../containers/App/App.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import chilema_horizontal_logo from '../assets/chilema_horizontal_logo.png'
+import chilema_horizontal_logo from '../assets/chilema_horizontal_logo.png';
+import { Redirect } from 'react-router-dom';
+
 const Header = () => {
     return (
         <div >
@@ -12,22 +14,17 @@ const Header = () => {
                             <img src={chilema_horizontal_logo} />
                         </Link>
                         <div>
-                            <Link className='header-button' to='/login'>
+                            <Link className='header-button' to='./login'>
                                 <button>Log In</button>
                             </Link>
-                            <Link className='header-button' to='/newuser'>
+                            <Link className='header-button signup-button' to='/newuser'>
 
                                 <button>Sign Up</button>
                             </Link>
                         </div>
                     </div>
-<<<<<<< HEAD
-                    <div className='body-container'>
-                        {/* <Route path='/' component={App} /> */}
-=======
                     {/* <div className='body-container'>
                         <Route path='/' component={App} />
->>>>>>> 692ca06494118291c94eb5b2c43629d22b97a98a
                         <Route path='/login' component={LogIn} />
                         <Route path='/newuser' component={NewUser} />
                     </div> */}

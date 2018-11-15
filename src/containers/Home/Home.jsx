@@ -3,6 +3,7 @@ import axios from 'axios';
 import { SearchContainer } from '../../components/DropDownComponents';
 import './Home.css';
 import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
+import Header from '../../components/Header.jsx';
 
 
 
@@ -15,26 +16,31 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        axios 
+        axios
             .get('/food')
             .then(foods => {
                 console.log('foodItem', foods.data)
-            this.setState({foodItem:foods.data})    
+                this.setState({ foodItem: foods.data })
             })
             .catch(err => {
                 console.log('err', err)
-        })
+            })
     }
 
     render() {
         return (
-            <div className="Home-Container">
+            <div className='wrapper'>
                 <div>
-                    <img src={chilema_logo_rev} alt="" className="home-image"/>
-                </div>    
-                <div className="searchBar">
-                    <SearchContainer foodItem={this.state.foodItem} />  
-                </div>  
+                    <Header />
+                </div>
+                <div className="Home-Container">
+                    <div>
+                        <img src={chilema_logo_rev} alt="" className="home-image" />
+                    </div>
+                    <div className="searchBar">
+                        <SearchContainer foodItem={this.state.foodItem} />
+                    </div>
+                </div>
             </div>
         )
     }

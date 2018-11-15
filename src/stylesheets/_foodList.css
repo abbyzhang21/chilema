@@ -9,10 +9,9 @@
     justify-content: flex-start;
     align-items: center;
     width: 70%;
-    margin: 10px 30px;
     border-bottom: 1px solid #edeced;
     color: black;
-
+    padding: 20px;
 }
 .list {
     display: flex;
@@ -21,6 +20,11 @@
     align-items: flex-start;
     margin: 10px 20px;
     text-transform: capitalize;
+    
+}
+
+a {
+    color: #666633;
 
 }
 .list li h3 {
@@ -40,4 +44,8 @@
 .foodList img {
     height: 80%;
     border-radius: 10%;
+}
+
+.user-icon {
+    margin: 0 5px;
 }

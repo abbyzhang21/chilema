@@ -2,4 +2,12 @@
     height: 25%;
     width: 50%;
     margin: 2% 2% 5% 2%;
+
+}
+
+.wrapper {
+    height:600px;
+    background-image: url('https://cdn.junglecreations.com/wp/junglecms/2018/01/GettyImages-674708451-compressor-850x437.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }

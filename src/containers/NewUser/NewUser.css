@@ -1,0 +1,19 @@
+h1 {
+    color: #cc6666;
+}
+
+.NewUser-Container{
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.User-Fields {
+    margin: 2%;
+    width: 100vw;
+}
+
+.Address-Fields {
+    margin: 1.5% 2% 2% 2%;
+    width: 100vw;
+}

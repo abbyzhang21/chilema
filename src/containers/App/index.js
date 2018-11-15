@@ -8,6 +8,7 @@ import Food from '../Food/Food';
 import { SearchContainer } from '../../components/DropDownComponents';
 import Home from '../../containers/Home/Home';
 import LogIn from '../../containers/LogIn/LogIn';
+import NewUser from '../../containers/NewUser/NewUser';
 
 
 
@@ -57,6 +58,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/login" component={LogIn} />
+            <Route path="/newuser" component={NewUser} />
           </Switch>
         </div>
       </Router>

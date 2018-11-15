@@ -1,0 +1,5 @@
+version: '3'
+services:
+  chilema:
+    build: .
+    image: ngambino0192/chilema:local

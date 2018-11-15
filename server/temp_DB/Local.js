@@ -1,227 +1,227 @@
 const Local = [{
-  "id": 1,
-  "address": "990 Montana Alley",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96820",
-  "local_lat": "21.351",
-  "local_long": "-157.8795"
-}, {
-  "id": 2,
-  "address": "35 Elgar Trail",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96810",
-  "local_lat": "21.3062",
-  "local_long": "-157.8585"
-}, {
-  "id": 3,
-  "address": "03501 Almo Alley",
+  "address": "424 Grasskamp Parkway",
   "city": "Honolulu",
   "state": "Hawaii",
   "zip": "96840",
   "local_lat": "21.3068",
-  "local_long": "-157.8607"
+  "local_long": "-157.8607",
+  "user_id": 10
 }, {
-  "id": 4,
-  "address": "930 Briar Crest Way",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96815",
-  "local_lat": "21.2811",
-  "local_long": "-157.8266"
-}, {
-  "id": 5,
-  "address": "99809 Butterfield Court",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96845",
-  "local_lat": "21.3278",
-  "local_long": "-157.8294"
-}, {
-  "id": 6,
-  "address": "9 Pearson Junction",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96845",
-  "local_lat": "21.3278",
-  "local_long": "-157.8294"
-}, {
-  "id": 7,
-  "address": "6087 Dennis Plaza",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96835",
-  "local_lat": "21.3278",
-  "local_long": "-157.8294"
-}, {
-  "id": 8,
-  "address": "3321 Bashford Place",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96825",
-  "local_lat": "21.2987",
-  "local_long": "-157.6985"
-}, {
-  "id": 9,
-  "address": "32 Hansons Place",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96810",
-  "local_lat": "21.3062",
-  "local_long": "-157.8585"
-}, {
-  "id": 10,
-  "address": "05388 Maple Wood Place",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96820",
-  "local_lat": "21.351",
-  "local_long": "-157.8795"
-}, {
-  "id": 11,
-  "address": "8378 Ilene Place",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96810",
-  "local_lat": "21.3062",
-  "local_long": "-157.8585"
-}, {
-  "id": 12,
-  "address": "23 Summerview Pass",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96815",
-  "local_lat": "21.2811",
-  "local_long": "-157.8266"
-}, {
-  "id": 13,
-  "address": "7 Loftsgordon Place",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96850",
-  "local_lat": "21.3095",
-  "local_long": "-157.863"
-}, {
-  "id": 14,
-  "address": "28 Manitowish Crossing",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96815",
-  "local_lat": "21.2811",
-  "local_long": "-157.8266"
-}, {
-  "id": 15,
-  "address": "0639 Havey Drive",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96810",
-  "local_lat": "21.3062",
-  "local_long": "-157.8585"
-}, {
-  "id": 16,
-  "address": "117 Milwaukee Trail",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96815",
-  "local_lat": "21.2811",
-  "local_long": "-157.8266"
-}, {
-  "id": 17,
-  "address": "8095 Eagan Hill",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96815",
-  "local_lat": "21.2811",
-  "local_long": "-157.8266"
-}, {
-  "id": 18,
-  "address": "60523 Union Center",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96815",
-  "local_lat": "21.2811",
-  "local_long": "-157.8266"
-}, {
-  "id": 19,
-  "address": "162 Brown Lane",
+  "address": "73 Dottie Park",
   "city": "Honolulu",
   "state": "Hawaii",
   "zip": "96805",
   "local_lat": "21.3062",
-  "local_long": "-157.8585"
+  "local_long": "-157.8585",
+  "user_id": 21
 }, {
-  "id": 20,
-  "address": "1504 Prairie Rose Court",
+  "address": "8583 Di Loreto Place",
   "city": "Honolulu",
   "state": "Hawaii",
-  "zip": "96840",
-  "local_lat": "21.3068",
-  "local_long": "-157.8607"
+  "zip": "96805",
+  "local_lat": "21.3062",
+  "local_long": "-157.8585",
+  "user_id": 2
 }, {
-  "id": 21,
-  "address": "37559 Melrose Road",
+  "address": "3817 Warner Crossing",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96825",
+  "local_lat": "21.2987",
+  "local_long": "-157.6985",
+  "user_id": 10
+}, {
+  "address": "08 Vernon Road",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96835",
+  "local_lat": "21.3278",
+  "local_long": "-157.8294",
+  "user_id": 14
+}, {
+  "address": "914 Jay Park",
   "city": "Honolulu",
   "state": "Hawaii",
   "zip": "96850",
   "local_lat": "21.3095",
-  "local_long": "-157.863"
+  "local_long": "-157.863",
+  "user_id": 7
 }, {
-  "id": 22,
-  "address": "71596 5th Hill",
+  "address": "887 Sunnyside Trail",
   "city": "Honolulu",
   "state": "Hawaii",
-  "zip": "96845",
-  "local_lat": "21.3278",
-  "local_long": "-157.8294"
+  "zip": "96825",
+  "local_lat": "21.2987",
+  "local_long": "-157.6985",
+  "user_id": 1
 }, {
-  "id": 23,
-  "address": "14 Westend Hill",
+  "address": "14 Crownhardt Lane",
   "city": "Honolulu",
   "state": "Hawaii",
-  "zip": "96815",
-  "local_lat": "21.2811",
-  "local_long": "-157.8266"
+  "zip": "96850",
+  "local_lat": "21.3095",
+  "local_long": "-157.863",
+  "user_id": 5
 }, {
-  "id": 24,
-  "address": "01 Continental Place",
+  "address": "0087 North Circle",
   "city": "Honolulu",
   "state": "Hawaii",
   "zip": "96820",
   "local_lat": "21.351",
-  "local_long": "-157.8795"
+  "local_long": "-157.8795",
+  "user_id": 25
 }, {
-  "id": 25,
-  "address": "45 Morrow Avenue",
+  "address": "8689 Bunker Hill Park",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96815",
+  "local_lat": "21.2811",
+  "local_long": "-157.8266",
+  "user_id": 5
+}, {
+  "address": "07 Killdeer Point",
   "city": "Honolulu",
   "state": "Hawaii",
   "zip": "96840",
   "local_lat": "21.3068",
-  "local_long": "-157.8607"
+  "local_long": "-157.8607",
+  "user_id": 10
 }, {
-  "id": 26,
-  "address": "05388 Miller Street",
+  "address": "192 Onsgard Drive",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96835",
+  "local_lat": "21.3278",
+  "local_long": "-157.8294",
+  "user_id": 13
+}, {
+  "address": "990 Sauthoff Hill",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96835",
+  "local_lat": "21.3278",
+  "local_long": "-157.8294",
+  "user_id": 12
+}, {
+  "address": "04836 Starling Center",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96835",
+  "local_lat": "21.3278",
+  "local_long": "-157.8294",
+  "user_id": 12
+}, {
+  "address": "40438 Bayside Drive",
   "city": "Honolulu",
   "state": "Hawaii",
   "zip": "96850",
   "local_lat": "21.3095",
-  "local_long": "-157.863"
+  "local_long": "-157.863",
+  "user_id": 13
 }, {
-  "id": 27,
-  "address": "9 Clove Drive",
-  "city": "Honolulu",
-  "state": "Hawaii",
-  "zip": "96810",
-  "local_lat": "21.3062",
-  "local_long": "-157.8585"
-}, {
-  "id": 28,
-  "address": "94 Debra Drive",
+  "address": "3572 Troy Place",
   "city": "Honolulu",
   "state": "Hawaii",
   "zip": "96845",
   "local_lat": "21.3278",
-  "local_long": "-157.8294"
+  "local_long": "-157.8294",
+  "user_id": 6
+}, {
+  "address": "1 Comanche Way",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96815",
+  "local_lat": "21.2811",
+  "local_long": "-157.8266",
+  "user_id": 17
+}, {
+  "address": "8839 Haas Road",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96810",
+  "local_lat": "21.3062",
+  "local_long": "-157.8585",
+  "user_id": 4
+}, {
+  "address": "5 Thierer Alley",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96835",
+  "local_lat": "21.3278",
+  "local_long": "-157.8294",
+  "user_id": 26
+}, {
+  "address": "2708 Merchant Street",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96825",
+  "local_lat": "21.2987",
+  "local_long": "-157.6985",
+  "user_id": 6
+}, {
+  "address": "53567 Southridge Center",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96815",
+  "local_lat": "21.2811",
+  "local_long": "-157.8266",
+  "user_id": 25
+}, {
+  "address": "1 Lake View Center",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96820",
+  "local_lat": "21.351",
+  "local_long": "-157.8795",
+  "user_id": 27
+}, {
+  "address": "8468 Mifflin Way",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96820",
+  "local_lat": "21.351",
+  "local_long": "-157.8795",
+  "user_id": 14
+}, {
+  "address": "40 Novick Lane",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96845",
+  "local_lat": "21.3278",
+  "local_long": "-157.8294",
+  "user_id": 21
+}, {
+  "address": "01 Vernon Hill",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96805",
+  "local_lat": "21.3062",
+  "local_long": "-157.8585",
+  "user_id": 27
+}, {
+  "address": "781 Schurz Point",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96825",
+  "local_lat": "21.2987",
+  "local_long": "-157.6985",
+  "user_id": 10
+}, {
+  "address": "549 Buhler Crossing",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96850",
+  "local_lat": "21.3095",
+  "local_long": "-157.863",
+  "user_id": 13
+}, {
+  "address": "08 Heath Street",
+  "city": "Honolulu",
+  "state": "Hawaii",
+  "zip": "96805",
+  "local_lat": "21.3062",
+  "local_long": "-157.8585",
+  "user_id": 3
 }]
 
 module.exports = Local;

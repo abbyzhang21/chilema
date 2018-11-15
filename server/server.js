@@ -1,42 +1,56 @@
-const express = require("express");
-const app = express();
+const express = require('express')
+const app = express()
 const PORT = 5000;
 
-// temp_DB mock data
-const Food = require('./temp_DB/Food.js')
-const Local = require('./temp_DB/Local.js')
-const Users = require('./temp_DB/Users.js')
+// BOOKSHELF DATA MODELS
+const Users = require('./db/models/Users.js')
+const Local = require('./db/models/Local.js')
+const Food = require('./db/models/Food.js')
+
+// MIDDLEWARE
+const session = require('express-session')
+const RedisStore = require('connect-redis')(session)
+const bodyParser = require('body-parser')
+const passport = require('passport')
+
+// app.use(express.static('public'));
+
+// bodyParser config
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+// redis session store
+app.use(session({
+  store: new RedisStore({ url: 'redis://redis-session-store:6379', logErrors: true }),
+  secret: 'appetito',
+  resave: false,
+  saveUninitialized: true
+}))
+
+// passport config
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
 
 // ROUTES //
+const authRoutes = require('./routes/authRoutes.js')
+const foodRoutes = require('./routes/foodRoutes.js')
+const localRoutes = require('./routes/localRoutes.js')
+const userRoutes = require('./routes/userRoutes.js')
+
+app.use('/auth', authRoutes)
+app.use('/food', foodRoutes)
+app.use('/local', localRoutes)
+app.use('/users', userRoutes)
 
 // login-homepage
 app.get('/', (req, res) => {
-  res.json('hello world!')
+  res.json('HOMEPAGE REDIRECT')
 })
 
-// get all food items in database
-app.get('/food', (req, res) => {
-  // Food
-  //   .fetchAll()
-  //   .then(foods => {
-  //     res.json(foods.serialize())
-  //   })
-  //   .catch(err => {
-  //     console.log('error', err);
-  //   })
-  res.json(Food)
+// welcome-page (placeholder)
+app.get('/welcome', (req, res) => {
+  res.json('WELCOME PAGE REDIRECT')
 })
-
-// get all locations in database
-app.get('/local', (req, res) => {
-  res.json(Local)
-})
-
-// get all users in database
-app.get('/users', (req, res) => {
-  res.json(Users)
-})
-
 
 app.listen(PORT, () => {
   console.log(`app listening on ${PORT}`)

@@ -5,7 +5,8 @@ import './Home.css';
 import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
 import Header from '../../components/Header.jsx';
 
-import CheckoutForm from '../../components/CheckoutForm.jsx'
+import Map from '../Map/Map.jsx';
+
 
 
 
@@ -31,6 +32,7 @@ class Home extends Component {
 
     render() {
         return (
+
             <div className='home-wrapper'>
                 <div>
                     <Header />
@@ -42,8 +44,10 @@ class Home extends Component {
                     <div className="searchBar">
                         <SearchContainer foodItem={this.state.foodItem} />
                     </div>
+                    <br />
                 </div>
             </div>
+
         )
     }
 }

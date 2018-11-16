@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Header from '../../components/Header.jsx';
+
+import { CardElement, injectStripe } from 'react-stripe-elements';
+import '../../stylesheets/_stripeElements.css';
 import { Elements, StripeProvider } from 'react-stripe-elements';
 
 // import logo from './logo.svg';
@@ -13,6 +16,7 @@ import LogIn from '../../containers/LogIn/LogIn';
 import NewUser from '../../containers/NewUser/NewUser';
 
 import PaymentForm from '../Payment/Payment.jsx';
+import myMap from '../Map/Map.jsx';
 
 
 console.log("axios....:", React);
@@ -64,6 +68,7 @@ class App extends Component {
             <Route path="/newuser" component={NewUser} />
             <Route exact path='/food' component={Food} />
             <Route exact path='/payment' component={PaymentForm} />
+            <Route exact path='/map' component={myMap} />
           </Switch>
         </div>
       </Router>

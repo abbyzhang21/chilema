@@ -1,13 +1,17 @@
 import React from 'react';
 import '../stylesheets/_buttons.css';
+import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom';
 
 export const LetsEatButtonComponent = () => {
 
     return (
         <div className="button-containter">
-            <button className="button">
-                LET'S EAT!
-            </button>
+            <Link to='/'>    
+                <button className="button">
+                    LET'S EAT!
+                </button>
+            </Link>
         </div>
     )
 }
@@ -29,9 +33,11 @@ export const GetStartedButtonComponent = () => {
 
     return (
         <div className="button-containter">
-            <button className="button">
-                GET STARTED
-            </button>
+            <Link to='/'>    
+                <button className="button">
+                    GET STARTED
+                </button>
+            </Link>
         </div>
     )
 }
@@ -40,11 +46,13 @@ export const GetStartedButtonComponent = () => {
 export const LoginButtonComponent = () => {
 
     return (
-        <div className="button-container">
-            <button className="button">
-                LOGIN
-            </button>
-        </div>
+            <div className="button-container">
+                <Link to='/login'>
+                    <button className="button">
+                        LOGIN
+                    </button>
+                </Link>
+            </div>  
     )
 }
 
@@ -53,9 +61,11 @@ export const SignUpButtonComponent = () => {
 
     return (
         <div className="button-container">
-            <button className="button">
-                SIGN UP
-            </button>
+            <Link to='/newuser'>
+                <button className="button">
+                    SIGN UP
+                </button>
+            </Link>
         </div>
     )
 }

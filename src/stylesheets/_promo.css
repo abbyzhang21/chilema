@@ -16,22 +16,25 @@
   height: 100%;
   
 }
+
+.promo-elem:hover {
+    box-shadow: 7px 8px 20px #cc6666;
+}
 .promo-image {
     width:100%;
-
     padding-top: 0; 
     height: 150px;;
    
 }
 .promo-elem p {
     text-align: center;
-    padding: 10px 20px;
+    padding: 10px 30px;
     text-transform: capitalize;
 }
 
 
-h3 {
+h2 {
     display: block;
     text-transform: uppercase;
-    color: #d15555;
+    color: #cc6666;
 }

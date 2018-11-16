@@ -1,10 +1,7 @@
 import React from 'react';
 import '../stylesheets/_promo.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import { icecreamtaco } from '../assets/icecreamtaco.jpg';
-import { indian } from '../assets/indian.jpg';
 
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 const Promo = (props) => {
     const items = props.foodItem;
@@ -33,12 +30,14 @@ const Promo = (props) => {
         return (
 
             < div className='promo-container' >
-                <div className='promo-elem'>
-                    <img src={item.image} className='promo-image'></img>
-                    <p>
-                        {item.category}
-                    </p>
-                </div>
+                <Link to='/food'>
+                    <div className='promo-elem'>
+                        <img src={item.image} className='promo-image'></img>
+                        <p>
+                            {item.category}
+                        </p>
+                    </div>
+                </Link>
             </div >
 
         )

@@ -31,25 +31,16 @@ const Promo = (props) => {
     console.log("this is randomly:", randomArr);
     return randomArr.map(item => {
         return (
-            < div className='promo-container' >
-                <div>
-                    <div className='promo-image'>
-                        {item.image}
-                    </div>
-                    <li> {item.description}</li>
-                    <li>{item.item}</li>
-                    <li>{item.price}</li>
 
+            < div className='promo-container' >
+                <div className='promo-elem'>
+                    <img src={item.image} className='promo-image'></img>
+                    <p>
+                        {item.category}
+                    </p>
                 </div>
-                {/* <h3>Have you eaten?</h3>
-                <div key={items.id} className='promoItem'>
-                    <li>{item}</li>
-                    <li><img src={item.image} alt=''></img></li>
-                    <li>{item.category}</li>
-                    <li><FontAwesomeIcon icon={faUserCircle} color='#666633' className='user-icon' />
-                        {item.description}</li>
-                </div> */}
             </div >
+
         )
     })
 

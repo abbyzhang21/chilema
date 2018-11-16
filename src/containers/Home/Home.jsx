@@ -47,6 +47,7 @@ class Home extends Component {
 
                 </div>
                 <div className='home-bottom'>
+                    <h3>have you eaten ?</h3>
                     <Promo foodItem={this.state.foodItem} />
                 </div>
             </div>

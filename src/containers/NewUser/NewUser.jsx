@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 import { FirstNameFieldComponent, LastNameFieldComponent, EmailFieldComponent, UsernameFieldComponent, PasswordFieldComponent, AddressFieldComponent } from '../../components/InputComponents';
+import { DietaryRestrictionComponent } from '../../components/DropDownComponents'; 
 import { GetStartedButtonComponent } from '../../components/ButtonComponents';
 
 import './NewUser.css';
@@ -17,12 +18,13 @@ class NewUser extends Component {
 
     render() {
         return (
-            <div className="wrapper">
-                <GlobalHeader />  
+            <div>
+            <GlobalHeader />
                 <h1>HUNGRY? 
                     <br />
                     CREATE AN ACCOUNT
                 </h1>
+                <div className="NewUser">
                 <div className="NewUser-Container">
                     <div className="User-Fields">
                         <FirstNameFieldComponent />
@@ -32,11 +34,16 @@ class NewUser extends Component {
                         <PasswordFieldComponent />
                     </div>  
                     <div className="Address-Fields">
-                        <AddressFieldComponent />
+                            <AddressFieldComponent />
+                            <DietaryRestrictionComponent/>
+
                     </div>
+                    
                 </div>
                 <GetStartedButtonComponent/>
             </div>
+            </div>
+
         )
     }
 }

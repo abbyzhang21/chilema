@@ -36,6 +36,9 @@ export const DietaryRestrictionComponent = () => {
     return (
         <div className="dropdown-container">
             <select className="select-container">
+                <option value="default">
+                    Any Dietary Restrictions?
+                </option>    
                 <option value="Yes">
                     YES
                 </option>

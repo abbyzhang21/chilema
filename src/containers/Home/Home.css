@@ -15,6 +15,11 @@
     background-size: 100% 100%;
     
 }
+
+.searchBar {
+    margin: auto;
+    width: 50%;
+}
 /* .home-bottom {
    margin: 0 auto;
    

@@ -15,6 +15,7 @@ class Food extends Component {
         axios
             .get('/food')
             .then(food => {
+                // console.log(food.data)
                 this.setState({ foodItem: food.data })
             })
             .catch(err => {
@@ -24,6 +25,9 @@ class Food extends Component {
     render() {
         return (
             <div className='foodPage-container'>
+                <div>
+                    <h1>SANITY CHECK</h1>
+                </div>
                 <GlobalHeader />
                 <FoodList foodItem={this.state.foodItem} />
             </div>

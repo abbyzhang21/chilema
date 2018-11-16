@@ -9,17 +9,18 @@ import '../../stylesheets/_stripeElements.css';
 // import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-import Food from '../Food/Food';
+import Food from '../Food/Food.jsx';
+import FoodDetail from '../FoodDetail/FoodDetail.jsx'
 // import { SearchContainer } from '../../components/DropDownComponents';
 // import { Promo } from '../../components/PromoComponent.jsx';
-import Home from '../../containers/Home/Home';
-import LogIn from '../../containers/LogIn/LogIn';
-import NewUser from '../../containers/NewUser/NewUser';
+import Home from '../../containers/Home/Home.jsx';
+import LogIn from '../../containers/LogIn/LogIn.jsx';
+import NewUser from '../../containers/NewUser/NewUser.jsx';
 
 import PaymentForm from '../Payment/Payment.jsx';
 import myMap from '../Map/Map.jsx';
-import Landing from '../Landing/Landing';
-import EditAccount from '../EditAccount/EditAccount';
+import Landing from '../Landing/Landing.jsx';
+import EditAccount from '../EditAccount/EditAccount.jsx';
 
 // console.log("axios....:", React);
 class App extends Component {
@@ -70,6 +71,7 @@ class App extends Component {
             <Route path="/landing" component={Landing} />
             <Route path="/edit" component={EditAccount} />
             <Route exact path='/food' component={Food} />
+            <Route exact path='/food/detail/:id' component={FoodDetail} />
             <Route exact path='/payment' component={PaymentForm} />
             <Route exact path='/map' component={myMap} />
           </Switch>

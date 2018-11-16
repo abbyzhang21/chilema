@@ -19,7 +19,7 @@ import NewUser from '../../containers/NewUser/NewUser';
 import PaymentForm from '../Payment/Payment.jsx';
 import myMap from '../Map/Map.jsx';
 import Landing from '../Landing/Landing';
-
+import EditAccount from '../EditAccount/EditAccount';
 
 console.log("axios....:", React);
 class App extends Component {
@@ -67,7 +67,8 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/login" component={LogIn} />
             <Route path="/newuser" component={NewUser} />
-            <Route path ="/landing" component={Landing}/>
+            <Route path="/landing" component={Landing} />
+            <Route path="/edit" component={EditAccount}/>
             <Route exact path='/food' component={Food} />
             <Route exact path='/payment' component={PaymentForm} />
             <Route exact path='/map' component={myMap} />

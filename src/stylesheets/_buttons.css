@@ -1,8 +1,10 @@
 .button { 
-    margin: 2%;
+    margin: 3%;
     height: 5vh;
     width: 15vw;
     background-color: #cc6666;
     color: white;
     border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
 }

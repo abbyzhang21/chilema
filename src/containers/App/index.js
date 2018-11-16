@@ -11,6 +11,7 @@ import './App.css';
 import axios from 'axios';
 import Food from '../Food/Food';
 import { SearchContainer } from '../../components/DropDownComponents';
+import { Promo } from '../../components/PromoComponent.jsx';
 import Home from '../../containers/Home/Home';
 import LogIn from '../../containers/LogIn/LogIn';
 import NewUser from '../../containers/NewUser/NewUser';
@@ -52,7 +53,6 @@ class App extends Component {
   }
 
   render() {
-    //  const {item} = this.state
     console.log("this is the state: ", this.state)
     return (
 

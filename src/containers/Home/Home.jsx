@@ -7,6 +7,8 @@ import Header from '../../components/Header.jsx';
 
 import Map from '../Map/Map.jsx';
 
+import Promo from '../../components/PromoComponent.jsx';
+import CheckoutForm from '../../components/CheckoutForm.jsx'
 
 
 
@@ -34,17 +36,23 @@ class Home extends Component {
         return (
 
             <div className='home-wrapper'>
-                <div>
-                    <Header />
-                </div>
-                <div className="Home-Container">
+                <div className='home-top'>
                     <div>
-                        <img src={chilema_logo_rev} alt="" className="home-image" />
+                        <Header />
                     </div>
-                    <div className="searchBar">
-                        <SearchContainer foodItem={this.state.foodItem} />
+                    <div className="home-Container">
+                        <div>
+                            <img src={chilema_logo_rev} alt="" className="home-image" />
+                        </div>
+                        <div className="searchBar">
+                            <SearchContainer foodItem={this.state.foodItem} />
+                        </div>
                     </div>
-                    <br />
+
+                </div>
+                <div className='home-bottom'>
+                    <h3>have you eaten ?</h3>
+                    <Promo foodItem={this.state.foodItem} />
                 </div>
             </div>
 

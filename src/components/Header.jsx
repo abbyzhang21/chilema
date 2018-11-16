@@ -24,15 +24,4 @@ const Header = () => {
 };
 
 
-//temp components to test on router
-// function App(props) {
-//     return <div>this is home page</div>
-// }
-// function LogIn(props) {
-//     return <div>login page....</div>
-// }
-// function NewUser(props) {
-//     return <div>Sign up plz</div>
-// }
-
 export default Header;

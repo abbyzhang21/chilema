@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import GlobalHeader from '../../components/GlobalHeaderComponent';
-import { CardElement, injectStripe } from 'react-stripe-elements';
+import { CardElement } from 'react-stripe-elements';
+// add injectStripe in to 'react-stripe-elements' library
 import '../../stylesheets/_stripeElements.css';
 import { Elements, StripeProvider } from 'react-stripe-elements';
 

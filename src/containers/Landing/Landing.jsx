@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 
 import { LoginButtonComponent, SignUpButtonComponent } from '../../components/ButtonComponents';
 
 class Landing extends Component {
-    constructor(props) {
-        super(props)
+    // constructor(props) {
+    //     super(props)
 
-    }
+    // }
 
     render() {
         return (
             <div className="landing-container">
-            <GlobalHeader/>    
+                <GlobalHeader />
                 <div className="login">
-                    <LoginButtonComponent/>
+                    <LoginButtonComponent />
                 </div>
                 <div className="signup">
-                    <SignUpButtonComponent/>
+                    <SignUpButtonComponent />
                 </div>
             </div>
         )

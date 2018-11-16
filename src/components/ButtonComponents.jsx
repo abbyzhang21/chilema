@@ -1,13 +1,14 @@
 import React from 'react';
 import '../stylesheets/_buttons.css';
-import { BrowserRouter as Router, Link } from 'react-router-dom'
-import { Redirect } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom'
+// add Router if needed ^^
+// import { Redirect } from 'react-router-dom';
 
 export const LetsEatButtonComponent = () => {
 
     return (
         <div className="button-containter">
-            <Link to='/'>    
+            <Link to='/'>
                 <button className="button">
                     LET'S EAT!
                 </button>
@@ -18,7 +19,7 @@ export const LetsEatButtonComponent = () => {
 
 
 export const UploadButtonComponent = () => {
-    
+
     return (
         <div className="button-containter">
             <button className="button">
@@ -33,7 +34,7 @@ export const GetStartedButtonComponent = () => {
 
     return (
         <div className="button-containter">
-            <Link to='/'>    
+            <Link to='/'>
                 <button className="button">
                     GET STARTED
                 </button>
@@ -46,13 +47,13 @@ export const GetStartedButtonComponent = () => {
 export const LoginButtonComponent = () => {
 
     return (
-            <div className="button-container">
-                <Link to='/login'>
-                    <button className="button">
-                        LOGIN
+        <div className="button-container">
+            <Link to='/login'>
+                <button className="button">
+                    LOGIN
                     </button>
-                </Link>
-            </div>  
+            </Link>
+        </div>
     )
 }
 
@@ -96,7 +97,7 @@ export const DoneButtonComponent = () => {
 
 
 export const OnMyWayButtonComponent = () => {
-    
+
     return (
         <div className="button-container">
             <button className="button">

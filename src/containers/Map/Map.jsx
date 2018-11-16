@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import { Map, TileLayer, Marker } from 'react-leaflet'
+// you can add 'Popup' into reac-leaflet library later
 import './Map.css'
 
 
@@ -34,6 +35,7 @@ class myMap extends Component {
           this.state.forEach((element) => {
             console.log("MAP ELEMENT: ", element)
           })
+          return 'success'
         })
       })
       .catch(err => {

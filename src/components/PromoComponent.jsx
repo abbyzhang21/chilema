@@ -1,10 +1,11 @@
 import React from 'react';
 import '../stylesheets/_promo.css';
 
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom';
+// Add Router, Route if needed ^^
 
 const Promo = (props) => {
-    const items = props.foodItem;
+    // const items = props.foodItem;
     const randomArr = [{ id: 15, category: "japanese", item: "lacus", description: "dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum", price: "$8.59", image: "https://media.istockphoto.com/photos/sushi-set-nigiri-and-sashimi-with-tea-picture-id508032520?k=6&m=508032520&s=612x612&w=0&h=JXr7IfjX1uMolwhKsTUCyRm_tcPFEGmsnAXJTMgWN_M=" }, { id: 75, category: "italian", item: "ligula vehicula", description: "ultrices phasellus id sapien in sapien iaculis con… adipiscing molestie hendrerit at vulputate vitae", price: "$19.78", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFJ5ETRMUw7tSRnhVbexLZ1lCoH8eJbxLItVlplnpdW-pHiTigxw" }, {
         "category": "american",
         "item": "consequat dui",
@@ -32,7 +33,7 @@ const Promo = (props) => {
             < div className='promo-container' >
                 <Link to='/food'>
                     <div className='promo-elem'>
-                        <img src={item.image} className='promo-image'></img>
+                        <img src={item.image} className='promo-image' alt=""></img>
                         <p>
                             {item.category}
                         </p>

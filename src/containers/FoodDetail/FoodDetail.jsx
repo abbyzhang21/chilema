@@ -50,7 +50,6 @@ class FoodDetail extends Component {
                 {this.state.foodItem.description}
               </li>
             </ul>
-
           </div>
         </div >
       </div>

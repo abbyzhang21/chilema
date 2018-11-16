@@ -36,6 +36,8 @@ class PaymentForm extends Component {
   }
 }
 
-export default PaymentForm;
+// when injecting dependancy, react errors out
+// export default injectStripe(PaymentForm)
+export default PaymentForm
 
 

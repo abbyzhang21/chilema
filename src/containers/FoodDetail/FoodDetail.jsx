@@ -28,7 +28,6 @@ class FoodDetail extends Component {
   render() {
     return (
       <div className='foodPage-container'>
-        <h1>SANITY CHECK</h1>
         <GlobalHeader />
         <div className='foodList-container' >
           <div key={this.state.foodItem.id} className="foodList" >

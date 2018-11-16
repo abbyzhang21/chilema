@@ -25,9 +25,6 @@ class Food extends Component {
     render() {
         return (
             <div className='foodPage-container'>
-                <div>
-                    <h1>SANITY CHECK</h1>
-                </div>
                 <GlobalHeader />
                 <FoodList foodItem={this.state.foodItem} />
             </div>

@@ -1,3 +1,14 @@
 .promo-container {
-    background-color: aquamarine;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 80%
+}
+
+.promo-image {
+    height: 20%;
+}
+
+.promo-container li {
+    list-style: none;
 }

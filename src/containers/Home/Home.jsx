@@ -4,7 +4,7 @@ import { SearchContainer } from '../../components/DropDownComponents';
 import './Home.css';
 import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
 import Header from '../../components/Header.jsx';
-
+import Promo from '../../components/PromoComponent.jsx';
 import CheckoutForm from '../../components/CheckoutForm.jsx'
 
 
@@ -32,16 +32,22 @@ class Home extends Component {
     render() {
         return (
             <div className='home-wrapper'>
-                <div>
-                    <Header />
-                </div>
-                <div className="Home-Container">
+                <div className='home-top'>
                     <div>
-                        <img src={chilema_logo_rev} alt="" className="home-image" />
+                        <Header />
                     </div>
-                    <div className="searchBar">
-                        <SearchContainer foodItem={this.state.foodItem} />
+                    <div className="home-Container">
+                        <div>
+                            <img src={chilema_logo_rev} alt="" className="home-image" />
+                        </div>
+                        <div className="searchBar">
+                            <SearchContainer foodItem={this.state.foodItem} />
+                        </div>
                     </div>
+
+                </div>
+                <div className='home-bottom'>
+                    <Promo foodItem={this.state.foodItem} />
                 </div>
             </div>
         )

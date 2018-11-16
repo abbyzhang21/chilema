@@ -19,9 +19,9 @@ class NewUser extends Component {
         return (
             <div className="wrapper">
                 <GlobalHeader />  
-                <h1>HAVE YOU EATEN? 
+                <h1>HUNGRY? 
                     <br />
-                    LOG IN
+                    CREATE AN ACCOUNT
                 </h1>
                 <div className="NewUser-Container">
                     <div className="User-Fields">

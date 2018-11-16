@@ -17,9 +17,12 @@ class LogIn extends Component {
     render() {
         return (
             <div className='wrapper'>
-                    <GlobalHeader />
+                <GlobalHeader />
+                <h1>ARE YOU HUNGRY?
+                    <br />
+                    LOG IN
+                </h1>
                 <div className="Login-Container">
-
                     <UsernameFieldComponent />
                     <PasswordFieldComponent />
                     <GetStartedButtonComponent />

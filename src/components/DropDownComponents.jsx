@@ -2,30 +2,32 @@ import React from 'react';
 import '../stylesheets/_dropdowns.css';
 
 export const SearchContainer = (props) => {
-    console.log('search options', props.foodItem)
+    console.log('search options', props)
 
-    const items = props.foodItem;
+    // const items = props.foodItem;
 
-    const distinctCategory = [...new Set(items.map(item => item.category))];
+    // const distinctCategory = [...new Set(props.foodItem.map(item => item.category))];
 
-    console.log('items', items)
-    console.log('distinctCategory', distinctCategory);
+    // console.log('distinctCategory', distinctCategory);
     return (
-        <div className="dropdown-container">
-            <div className="categories">
-                <select className="select-container">
-                    <option value="default">What do you feel like eating?</option>
-                    {distinctCategory.map(category => (
-                        <option value={category}>{category}</option>
-                    ))}
-                </select>
-                {/* <select>
-                        {distinctLocation.map(location => (
-                            <option value={location}>{location}</option>
-                        ) )}
-                    </select> */}
-            </div>
+        <div>
+            HI
         </div>
+        // <div className="dropdown-container">
+        //     <div className="categories">
+        //         <select className="select-container">
+        //             <option value="default">What do you feel like eating?</option>
+        //             {distinctCategory.map(category => (
+        //                 <option value={category}>{category}</option>
+        //             ))}
+        //         </select>
+        //         {/* <select>
+        //                 {distinctLocation.map(location => (
+        //                     <option value={location}>{location}</option>
+        //                 ) )}
+        //             </select> */}
+        //     </div>
+        // </div>
     )
     // })
 }

@@ -4,7 +4,7 @@ import './Food.css';
 import axios from 'axios';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 
-import { getAllItems } from '../../actions/actions.js';
+import { getFoodItems } from '../../actions/actions.js';
 import { connect } from 'react-redux';
 
 
@@ -12,13 +12,12 @@ import { connect } from 'react-redux';
 class Food extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            foodItem: []
-        }
+
     }
     componentDidMount() {
         console.log('food this.props', this.props)
-        this.props.dispatch(getAllItems())
+
+        this.props.dispatch(getFoodItems())
         // axios
         //     .get('/food')
         //     .then(food => {
@@ -34,7 +33,7 @@ class Food extends Component {
         return (
             <div className='foodPage-container'>
                 <GlobalHeader />
-                <FoodList foodItem={this.foodItem} />
+                <FoodList foodItem={foodItem} />
             </div>
         )
     }

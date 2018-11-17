@@ -3,7 +3,8 @@ import axios from 'axios';
 
 export const GET_ALL_ITEMS = 'GET_ALL_ITEMS';
 
-export const getAllItems = () => {
+export const getFoodItems = () => {
+  console.log("hi I hit action..js");
   return dispatch => {
     axios
     .get('/food')
@@ -15,6 +16,7 @@ export const getAllItems = () => {
     })
   }
 }
+
 
 const addItem = (item) => {
 

@@ -17,6 +17,7 @@ foodRouter.get('/', (req, res) => {
   Food
     .fetchAll()
     .then(items => {
+      console.log("itemsd", items.serialize());
       res.json(items.serialize())
     })
     .catch(err => {

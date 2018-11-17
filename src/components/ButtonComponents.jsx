@@ -7,9 +7,9 @@ export const LetsEatButtonComponent = () => {
 
     return (
         <div className="button-containter">
-            <Link to='/'>
+            <Link to='/payment'>
                 <button className="button">
-                    LET'S EAT!
+                    LET'S EAT !
                 </button>
             </Link>
         </div>
@@ -87,9 +87,11 @@ export const DoneButtonComponent = () => {
 
     return (
         <div className="button-container">
-            <button className="button">
-                DONE
-            </button>
+            <Link to='/login'>
+                <button className="button">
+                    DONE
+                </button>
+            </Link>
         </div>
     )
 }

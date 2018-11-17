@@ -4,8 +4,10 @@ import './FoodDetail.css';
 import axios from 'axios';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 import MyMap from '../Map/Map.jsx';
+import { LetsEatButtonComponent } from '../../components/ButtonComponents';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+
 
 
 class FoodDetail extends Component {
@@ -39,22 +41,28 @@ class FoodDetail extends Component {
           <div className='food-detail-title'>
             <div>
               <h2>{food.item}</h2>
-              <p>{food.price}</p>
-              <p>{food.category}</p>
+              <div className='food-detail-info'>
+                <span>{food.price}</span>
+                <span>{food.category}</span>
+              </div>
+
             </div>
+
             <MyMap />
+
           </div>
           <div className='food-detail-img'>
-            <img src={food.image} alt=''></img>
-            <img src={food.image} alt=''></img>
-            <img src={food.image} alt=''></img>
+            <img src={food.image} alt='' className='promo-elem'></img>
+            <img src={food.image} alt='' className='promo-elem'></img>
+            <img src={food.image} alt='' className='promo-elem'></img>
           </div>
           <div className='food-detail-description'>
+            <FontAwesomeIcon icon={faUserCircle} color='#666633' className='user-icon' />
             {food.description}
           </div>
-          <button className='detail-button'>I Want It </button>
-
-
+          <div>
+            <LetsEatButtonComponent />
+          </div>
         </div>
       </div>
 

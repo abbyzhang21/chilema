@@ -6,6 +6,7 @@ import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
 import Header from '../../components/Header.jsx';
 
 import addItem from '../../actions/actions.js';
+import GlobalHeader from '../../components/GlobalHeaderComponent';
 
 class AddFood extends Component {
   constructor(props) {
@@ -73,8 +74,10 @@ class AddFood extends Component {
   render() {
     return (
       <div>
+        <GlobalHeader/>
         <h1>FOOD/NEW SANITY CHECK</h1>
-        <form action="/food/new" method="POST" onSubmit={this.handleSubmit}>
+        <div className="new-food-container">
+        <form action="/food/new" method="POST" onSubmit={this.handleSubmit}> 
           <div className="field-component">
             <input type="text" placeholder="Select Category" name="category" value={this.state.category} onChange={this.handleChange} />
           </div>
@@ -103,6 +106,7 @@ class AddFood extends Component {
             <input type="submit" value="Submit" />
           </div>
         </form>
+        </div>
       </div>
     )
   }

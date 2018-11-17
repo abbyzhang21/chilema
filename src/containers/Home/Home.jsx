@@ -3,6 +3,7 @@ import axios from 'axios';
 import { SearchContainer } from '../../components/DropDownComponents';
 import './Home.css';
 import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
+import chilema_white_logo from '../../assets/chilema_logo_rev_white.png';
 import Header from '../../components/Header.jsx';
 
 // import Map from '../Map/Map.jsx';
@@ -42,7 +43,7 @@ class Home extends Component {
                     </div>
                     <div className="home-Container">
                         <div>
-                            <img src={chilema_logo_rev} alt="" className="home-image" />
+                            <img src={chilema_white_logo} alt="" className="home-image" />
                         </div>
                         <div className="searchBar">
                             <SearchContainer foodItem={this.state.foodItem} />

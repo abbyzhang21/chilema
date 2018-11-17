@@ -19,7 +19,7 @@ class AddFood extends Component {
       image: null,
       fd_lat: 45.521777,
       fd_long: 4.2552114,
-      user_id: 10
+      // user_id: null
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -29,14 +29,14 @@ class AddFood extends Component {
   handleChange(event) {
     event.preventDefault();
     this.setState({
-      category: event.target.value,
-      item: event.target.value,
-      description: event.target.value,
-      price: event.target.value,
-      image: event.target.value,
+      category: event.target.category,
+      item: event.target.item,
+      description: event.target.description,
+      price: event.target.price,
+      image: event.target.image,
       fd_lat: 45.521777,
       fd_long: 4.2552114,
-      user_id: 10
+      user_id: event.target.user_id
     });
     console.log(this.state)
   }
@@ -99,9 +99,9 @@ class AddFood extends Component {
           <div className="field-component">
             <input type="text" placeholder="Longitude" name="longitude" value={this.state.fd_long} onChange={this.handleChange} />
           </div>
-          <div>
+          {/* <div>
             <input type="text" placeholder="user_id" name="user_id" value={this.state.user_id} onChange={this.handleChange} />
-          </div>
+          </div> */}
           <div>
             <input type="submit" value="Submit" />
           </div>

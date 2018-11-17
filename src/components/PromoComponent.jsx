@@ -1,7 +1,7 @@
 import React from 'react';
 import '../stylesheets/_promo.css';
 
-import { BrowserRouter as Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // Add Router, Route if needed ^^
 
 const Promo = (props) => {

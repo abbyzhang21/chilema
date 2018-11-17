@@ -23,6 +23,8 @@ import myMap from '../Map/Map.jsx';
 import Landing from '../Landing/Landing.jsx';
 import EditAccount from '../EditAccount/EditAccount.jsx';
 
+import { connect } from 'react-redux';
+
 // console.log("axios....:", React);
 class App extends Component {
   constructor(props) {
@@ -87,6 +89,8 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = storeState => ({ foodItem: storeState });
 
+const ConnectedApp = connect(mapStateToProps)(App);
 
-export default App;
+export default ConnectedApp;

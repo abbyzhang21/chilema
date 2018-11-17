@@ -15,8 +15,8 @@ class LogIn extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            email: null,
-            password: null
+            email: "",
+            password: ""
         }
         this.handleLogin = this.handleLogin.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -40,13 +40,13 @@ class LogIn extends Component {
     }
 
     handleChange(event) {
-        event.preventDefault();
+        const target = event.target
 
+        event.preventDefault();
         this.setState({
-            email: event.target.email,
-            password: event.target.password,
-        });
-        console.log(this.state)
+            [target.name]: event.target.value
+        })
+        console.log('this.state', this.state)
     }
 
 
@@ -67,7 +67,7 @@ class LogIn extends Component {
                     </div>
                     {/* <PasswordFieldComponent /> */}
                     <div className="field-container">
-                        <input type="password" placeholder="Enter Password" name="password" />
+                        <input type="password" placeholder="Enter Password" name="password" value={this.state.password} onChange={this.handleChange} />
                     </div>
                     {/* <GetStartedButtonComponent /> */}
                     <div className="button-containter">

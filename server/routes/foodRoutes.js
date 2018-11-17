@@ -40,16 +40,6 @@ foodRouter.get('/detail/:id', (req, res) => {
 
 // post new food item into 'Food' table
 foodRouter.post('/new', (req, res) => {
-  const payload = {
-    id: id,
-    category: req.body.category,
-    description: req.body.description,
-    price: req.body.price,
-    image: req.body.image,
-    fd_lat: Number(req.body.fd_lat),
-    fd_long: Number(req.body.food_long),
-    user_id: Number(req.body.user_id)
-  }
 
   Food
     .forge(req.body)
@@ -75,9 +65,9 @@ foodRouter.put('/update/:id', (req, res) => {
     description: req.body.description,
     price: req.body.price,
     image: req.body.image,
-    fd_lat: req.body.fd_lat,
-    fd_long: req.body.food_long,
-    user_id: Number(req.body.user_id)
+    fd_lat: Number(req.body.fd_lat),
+    fd_long: Number(req.body.food_long),
+    // user_id: Number(req.body.user_id)
   }
 
   // ORM logic

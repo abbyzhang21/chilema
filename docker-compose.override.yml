@@ -9,7 +9,7 @@ services:
     container_name: chilema
     volumes:
       - ".:/app/:rw"
-      - "node-modules-volume:/app/node_modules  "
+      - "node-modules-volume:/app/node_modules"
     env_file: .env
     environment:
       NODE_ENV: development

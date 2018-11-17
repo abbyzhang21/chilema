@@ -30,6 +30,7 @@
     "react-stripe-elements": "^2.0.1",
     "redis": "^2.8.0",
     "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
     "sass-loader": "^7.1.0"
   },
   "scripts": {

@@ -15,6 +15,9 @@ const GlobalHeader = () => {
                 <Link to='/login'>
                     <button>Log In</button>
                 </Link>
+                <Link to='/'>
+                    <button>Log Out</button>
+                </Link>
                 <Link to='/newuser'>
                     <button>Sign Up</button>
                 </Link>

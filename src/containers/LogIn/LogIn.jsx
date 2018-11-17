@@ -22,20 +22,27 @@ class LogIn extends Component {
         this.handleChange = this.handleChange.bind(this)
     }
 
-    handleLogin(e) {
-        console.log('click handled')
-        // localStorage.setItem('localStorage', 'test')
+    handleLogin(event) {
+        event.preventDefault()
 
-        axios.post('/auth/login', this.state)
+        // set the user's email in localStorage
+        localStorage.setItem('LS_email', this.state.email)
+        // execute helper function
+        this.loginUser(this.state)
+    }
+
+    loginUser(item) {
+        console.log(item)
+        // call server route to validate credentials against db
+        axios
+            .post('auth/login', item)
             .then((response) => {
-                console.log("POSTED ITEM: ", this.state.email)
-                console.log('response.data: ', this.state.password)
+                console.log("POSTED ITEM: ", item)
+                console.log('response.data: ', response.data)
             })
             .catch((err) => {
                 console.log('err', err)
             })
-
-
 
     }
 

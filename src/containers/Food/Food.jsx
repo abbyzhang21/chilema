@@ -5,6 +5,7 @@ import axios from 'axios';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 
 import { getAllItems } from '../../actions/actions.js';
+import { connect } from 'react-redux';
 
 
 
@@ -16,8 +17,8 @@ class Food extends Component {
         }
     }
     componentDidMount() {
-
-        this.props.getAllItems();
+        console.log('food this.props', this.props)
+        this.props.dispatch(getAllItems())
         // axios
         //     .get('/food')
         //     .then(food => {
@@ -39,4 +40,9 @@ class Food extends Component {
     }
 }
 
-export default Food;
+const mapStateToProps = state => {
+    return {
+        foodItem: state.foodItem
+    }
+}
+export default connect(mapStateToProps)(Food);

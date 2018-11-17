@@ -9,12 +9,13 @@ services:
     container_name: chilema
     volumes:
       - ".:/app/:rw"
+      - "node-modules-volume:/app/node_modules  "
     env_file: .env
     environment:
       NODE_ENV: development
     ports:
       - "${EXPRESS_HOST_PORT}:${EXPRESS_CONTAINER_PORT}"
-      - "4200:4200"
+      - "3000:3000"
     networks:
       - my-app-network
   postgres-primary-db:
@@ -39,5 +40,6 @@ services:
 volumes: 
   pg-data-volume:
   redis-data-volume:
+  node-modules-volume:
 networks:
   my-app-network:

@@ -8,6 +8,9 @@ import Header from '../../components/Header.jsx';
 import addItem from '../../actions/actions.js';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 
+import { connect } from 'react-redux';
+// import { addItem } from '../../actions/actions';
+
 class AddFood extends Component {
   constructor(props) {
     super(props)
@@ -44,8 +47,6 @@ class AddFood extends Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log('INPUT VALUES ', this.state);
-
-    addItem(this.state)
 
     // axios
     //   .post('/food/new', event)

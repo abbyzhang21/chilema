@@ -8,7 +8,7 @@ import './Map.css'
 import axios from 'axios';
 
 
-class myMap extends Component {
+class MyMap extends Component {
   constructor(props) {
     super(props)
     this.state =
@@ -69,4 +69,4 @@ class myMap extends Component {
   }
 }
 
-export default myMap;
+export default MyMap;

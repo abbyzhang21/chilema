@@ -6,19 +6,20 @@ import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
 import Header from '../../components/Header.jsx';
 
 import addItem from '../../actions/actions.js';
+import GlobalHeader from '../../components/GlobalHeaderComponent';
 
 class AddFood extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      category: null,
-      item: null,
-      description: null,
-      price: null,
-      image: null,
-      fd_lat: 45.521777,
-      fd_long: 4.2552114,
-      user_id: 10
+      category: "",
+      item: "",
+      description: "",
+      price: "",
+      image: "",
+      fd_lat: "",
+      fd_long: "",
+      // user_id: null
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -28,14 +29,14 @@ class AddFood extends Component {
   handleChange(event) {
     event.preventDefault();
     this.setState({
-      category: event.target.value,
-      item: event.target.value,
-      description: event.target.value,
-      price: event.target.value,
-      image: event.target.value,
-      fd_lat: 45.521777,
-      fd_long: 4.2552114,
-      user_id: 10
+      category: event.target.category,
+      item: event.target.item,
+      description: event.target.description,
+      price: event.target.price,
+      image: event.target.image,
+      fd_lat: event.target.fd_lat,
+      fd_long: event.target.fd_long,
+      // user_id: event.target.user_id
     });
     console.log(this.state)
   }
@@ -73,10 +74,12 @@ class AddFood extends Component {
   render() {
     return (
       <div>
+        <GlobalHeader/>
         <h1>FOOD/NEW SANITY CHECK</h1>
-        <form action="/food/new" method="POST" onSubmit={this.handleSubmit}>
+        <div className="new-food-container">
+        <form action="/food/new" method="POST" onSubmit={this.handleSubmit}> 
           <div className="field-component">
-            <input type="text" placeholder="Select Category" name="category" value={this.state.category} onChange={this.handleChange} />
+            <input type="text" placeholder="Select Category" name="item" value={this.state.category} onChange={this.handleChange} />
           </div>
           <div className="field-component">
             <input type="text" placeholder="Enter name of dish" name="item" value={this.state.item} onChange={this.handleChange} />
@@ -96,13 +99,14 @@ class AddFood extends Component {
           <div className="field-component">
             <input type="text" placeholder="Longitude" name="longitude" value={this.state.fd_long} onChange={this.handleChange} />
           </div>
-          <div>
+          {/* <div>
             <input type="text" placeholder="user_id" name="user_id" value={this.state.user_id} onChange={this.handleChange} />
-          </div>
+          </div> */}
           <div>
             <input type="submit" value="Submit" />
           </div>
         </form>
+        </div>
       </div>
     )
   }

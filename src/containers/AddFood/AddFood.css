@@ -1,0 +1,24 @@
+h1 {
+    margin-top:2%;
+    margin-bottom: 2%;
+}
+
+.new-food-container {
+      width: 70%;
+      margin:auto;
+}
+
+.field-component {
+    padding: 0;
+}
+
+input[type=submit] {
+    margin: 2%;
+    height: 5vh;
+    width: 15vw;
+    background-color: #cc6666;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;  
+}

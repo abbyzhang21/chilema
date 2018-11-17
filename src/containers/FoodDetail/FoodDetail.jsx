@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-// import { BrowserRouter as Link } from 'react-router-dom';
-
-// import { FoodList } from '../../components/FoodComponent';
+import { FoodList } from '../../components/FoodComponent';
 import './FoodDetail.css';
 import axios from 'axios';
 import GlobalHeader from '../../components/GlobalHeaderComponent';

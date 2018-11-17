@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { FoodList } from '../../components/FoodComponent';
+import { FoodList } from '../../components/FoodComponent';
 import './FoodDetail.css';
 import axios from 'axios';
 import GlobalHeader from '../../components/GlobalHeaderComponent';

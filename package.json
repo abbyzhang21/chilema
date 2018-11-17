@@ -11,6 +11,7 @@
     "body-parser": "^1.18.3",
     "bookshelf": "^0.13.3",
     "connect-redis": "^3.4.0",
+    "cors": "^2.8.5",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
@@ -42,7 +43,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "localhost:5000",
+  "proxy": "http://localhost:5000",
   "browserslist": [
     ">0.2%",
     "not dead",

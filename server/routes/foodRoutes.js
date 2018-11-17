@@ -23,6 +23,8 @@ foodRouter.get('/', (req, res) => {
 foodRouter.get('/detail/:id', (req, res) => {
   const { id } = req.params
 
+  console.log('FOOD SERVER HIT')
+
   Food
     .where({ id })
     .fetch()

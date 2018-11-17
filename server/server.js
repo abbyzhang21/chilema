@@ -12,12 +12,16 @@ const session = require('express-session')
 const RedisStore = require('connect-redis')(session)
 const bodyParser = require('body-parser')
 const passport = require('passport')
+const cors = require('cors')
 
 // app.use(express.static('public'));
 
 // bodyParser config
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+
+// cors
+app.use(cors())
 
 // redis session store
 app.use(session({

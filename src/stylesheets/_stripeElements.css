@@ -1,15 +1,17 @@
 p, h1 {
   margin: auto;
-  width: 50%;
+  width: 80%;
   text-align: center;
   padding: 5px;
+  color: #cc6666;
 }
 
 .checkoutWrapper {
-  border: 1px solid  #666633;
-  width: 50%;
+  /* border: 1px solid  #666633; */
+  width: 80%;
   margin: auto;
   border-radius: 4px;
+  padding-top: 3%;
 }
 
 #strBtnWrapper {

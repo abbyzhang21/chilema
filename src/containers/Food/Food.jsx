@@ -15,6 +15,7 @@ class Food extends Component {
         axios
             .get('/food')
             .then(food => {
+                // console.log(food.data)
                 this.setState({ foodItem: food.data })
             })
             .catch(err => {

@@ -38,7 +38,7 @@ export const DietaryRestrictionComponent = () => {
             <select className="select-container">
                 <option value="default">
                     Any Dietary Restrictions?
-                </option>    
+                </option>
                 <option value="Yes">
                     YES
                 </option>

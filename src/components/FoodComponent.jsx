@@ -4,11 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 export const FoodList = (props) => {
-    console.log('food list:', props.foodItem)
+    // console.log('food list:', props.foodItem)
 
     return props.foodItem.map(item => {
-        console.log(item.image)
-
+        // console.log(item.image)
         return (
             <div className='foodList-container' >
                 <div key={item.id} className="foodList" >
@@ -18,11 +17,11 @@ export const FoodList = (props) => {
 
                     <ul className='list'>
                         <li>
-                            <a href="#"><h3>{item.item}</h3></a>
+                            <a href={'food/detail/' + item.id}><h3>{item.item}</h3></a>
                         </li>
                         <li>
                             {item.price}
-                            <a href="#">
+                            <a href="google.com">
                                 <p>{item.category}</p>
                             </a>
                         </li>

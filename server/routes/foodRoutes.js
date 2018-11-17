@@ -4,6 +4,13 @@ const foodRouter = express.Router()
 // BOOKSHELF DATA MODELS
 const Food = require('../db/models/Food.js')
 
+
+// export const getAllFood = () => new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve(Food.slice())
+//   }, 500)
+// });
+
 // get all food items in database
 foodRouter.get('/', (req, res) => {
 

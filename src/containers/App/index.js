@@ -23,6 +23,7 @@ import myMap from '../Map/Map.jsx';
 import Landing from '../Landing/Landing.jsx';
 import EditAccount from '../EditAccount/EditAccount.jsx';
 
+// import { getAllItems } from '../../actions/actions';
 import { connect } from 'react-redux';
 
 // console.log("axios....:", React);

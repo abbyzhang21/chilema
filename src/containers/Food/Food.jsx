@@ -4,6 +4,10 @@ import './Food.css';
 import axios from 'axios';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 
+import { getAllItems } from '../../actions/actions.js';
+
+
+
 class Food extends Component {
     constructor(props) {
         super(props)
@@ -12,21 +16,24 @@ class Food extends Component {
         }
     }
     componentDidMount() {
-        axios
-            .get('/food')
-            .then(food => {
-                // console.log(food.data)
-                this.setState({ foodItem: food.data })
-            })
-            .catch(err => {
-                console.log('err', err)
-            })
+
+        this.props.getAllItems();
+        // axios
+        //     .get('/food')
+        //     .then(food => {
+        //         // console.log(food.data)
+        //         this.setState({ foodItem: food.data })
+        //     })
+        //     .catch(err => {
+        //         console.log('err', err)
+        //     })
     }
     render() {
+        const { foodItem } = this.props;
         return (
             <div className='foodPage-container'>
                 <GlobalHeader />
-                <FoodList foodItem={this.state.foodItem} />
+                <FoodList foodItem={this.foodItem} />
             </div>
         )
     }

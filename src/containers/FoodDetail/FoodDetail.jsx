@@ -3,8 +3,10 @@ import { FoodList } from '../../components/FoodComponent';
 import './FoodDetail.css';
 import axios from 'axios';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
+import MyMap from '../Map/Map.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+
 
 class FoodDetail extends Component {
   constructor(props) {
@@ -15,6 +17,7 @@ class FoodDetail extends Component {
   }
   componentDidMount() {
     const url = this.props.location
+    console.log('location:', url)
     axios
       .get(url.pathname)
       .then(foodItem => {
@@ -26,33 +29,35 @@ class FoodDetail extends Component {
       })
   }
   render() {
+    const food = this.state.foodItem;
     return (
       <div className='foodPage-container'>
         <GlobalHeader />
-        <div className='foodList-container' >
-          <div key={this.state.foodItem.id} className="foodList" >
-            <div>
-              <img src={this.state.foodItem.image} alt="" />
-            </div>
+        {/* <DetailFood foodItem={this.state.foodItem} /> */}
 
-            <ul className='list'>
-              <li>
-                <a href="google.com"><h3>{this.state.foodItem.item}</h3></a>
-              </li>
-              <li>
-                {this.state.foodItem.price}
-                <a href="google.com">
-                  <p>{this.state.foodItem.category}</p>
-                </a>
-              </li>
-              <li>
-                <FontAwesomeIcon icon={faUserCircle} color='#666633' className='user-icon' />
-                {this.state.foodItem.description}
-              </li>
-            </ul>
+        <div key={food.id} className='food-detail-wrapper'>
+          <div className='food-detail-title'>
+            <div>
+              <h2>{food.item}</h2>
+              <p>{food.price}</p>
+              <p>{food.category}</p>
+            </div>
+            <MyMap />
           </div>
-        </div >
+          <div className='food-detail-img'>
+            <img src={food.image} alt=''></img>
+            <img src={food.image} alt=''></img>
+            <img src={food.image} alt=''></img>
+          </div>
+          <div className='food-detail-description'>
+            {food.description}
+          </div>
+          <button className='detail-button'>I Want It </button>
+
+
+        </div>
       </div>
+
     )
   }
 }

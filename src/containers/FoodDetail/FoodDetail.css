@@ -11,14 +11,23 @@
 .food-detail-title {
     display: flex;
     flex-flow: row wrap;
-    width: 80%;
+    width: 90%;
     height: 40%;
     justify-content: space-around;
     align-items: flex-start;
 }
+.food-detail-info {
+    display: flex;
+    justify-content: space-around;
+
+}
+.food-detail-info span {
+    color: black;
+    text-transform: capitalize;
+}
 
 .food-detail-img {
-    width: 80%;
+    width: 90%;
     height: 40%;
 }
 
@@ -38,18 +47,3 @@
     padding:10px 0;
 }
 
-.detail-button {
-    /* width:100px; */
-    /* height: 50px; */
-    /* background-color: #cc6666; */
-    padding: 10px;
-    font-size: 24px;
-    color: #cc6666;
-    border-radius: 8px;
-}
-.detail-button:hover {
-    background-color: #cc6666;
-    color: white;
-    border-radius: 8px;
-
-}

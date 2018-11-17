@@ -47,12 +47,5 @@ const Promo = (props) => {
 
 
 }
-// const items = props.foodItem;
-// function item(items) {
-//     // let randomArr = [];
-//     for (let i = 0; i < 4; i++) {
-//         randomArr.push(items[Math.floor(Math.random() * items.length)])
-//     }
-//     return randomArr;
-// }
+
 export default Promo;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import { Map, TileLayer, Marker } from 'react-leaflet'
+// add popup if needed  ^^
 import './Map.css'
 
 
@@ -13,7 +14,7 @@ class myMap extends Component {
       markerArr: [],
       currentLocal: {
         lat: 21.3919243,
-        lng: -157.7705164
+        lng: -157.7705164,
       }
     }
   }
@@ -26,7 +27,7 @@ class myMap extends Component {
         local.data.map((item) => {
           let location = [
             item.local_lat,
-            item.local_long
+            item.local_long,
           ]
           this.state.markerArr.push(location)
         })
@@ -34,7 +35,6 @@ class myMap extends Component {
       .catch(err => {
         console.log('err', err)
       })
-
   }
 
   // get current location of user, and set it to state
@@ -62,11 +62,11 @@ class myMap extends Component {
     //   }
     // })
 
-    this.state.tempLocal = obj;
+    this.state.currentLocal = obj;
 
-    this.setState({
-      ['currentLocal']: this.state.tempLocal
-    })
+    // this.setState({
+    //   ['currentLocal']: this.state.tempLocal
+    // })
 
     console.log("THIS.STATE: ", this.state)
 
@@ -74,16 +74,17 @@ class myMap extends Component {
 
 
   render() {
-    console.log("RENDER: ", this.state)
-    console.log(this.state.currentLocal)
+    // console.log("RENDER THIS.STATE: ", this.state)
+    // console.log(this.state.currentLocal)
 
     let position = [this.state.currentLocal.lat, this.state.currentLocal.lng]
     const geoArr = this.state.markerArr;
+    // console.log(geoArr)
     const currentLocation = this.state.currentLocal
 
-    console.log("CURRENT: ", this.state.currentLocal)
+    // console.log("CURRENT LOCATION: ", this.state.currentLocal)
     return (
-      <div class='leaflet-container'>
+      <div className='leaflet-container'>
         <div>
           <button onClick={this.geoLocate} >
             Show my location

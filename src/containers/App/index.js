@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Header from '../../components/Header.jsx';
+// import Header from '../../components/Header.jsx';
 
-import { CardElement, injectStripe } from 'react-stripe-elements';
+// import { CardElement, injectStripe } from 'react-stripe-elements';
 import '../../stylesheets/_stripeElements.css';
-import { Elements, StripeProvider } from 'react-stripe-elements';
+// import { Elements, StripeProvider } from 'react-stripe-elements';
 
 // import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import Food from '../Food/Food';
-import { SearchContainer } from '../../components/DropDownComponents';
+// import { SearchContainer } from '../../components/DropDownComponents';
 import Home from '../../containers/Home/Home';
 import LogIn from '../../containers/LogIn/LogIn';
 import NewUser from '../../containers/NewUser/NewUser';
@@ -19,7 +19,7 @@ import PaymentForm from '../Payment/Payment.jsx';
 import myMap from '../Map/Map.jsx';
 
 
-console.log("axios....:", React);
+// console.log("axios....:", React);
 class App extends Component {
   constructor(props) {
     super(props)
@@ -32,7 +32,7 @@ class App extends Component {
     axios
       .get('/food')
       .then(foods => {
-        console.log('foodItem', foods.data)
+        // console.log('foodItem', foods.data)
         this.setState({ foodItem: foods.data })
       })
       .catch(err => {
@@ -42,7 +42,7 @@ class App extends Component {
     axios
       .get('/local')
       .then(location => {
-        console.log('location', location.data)
+        // console.log('location', location.data)
         this.setState({ itemLocation: location.data })
       })
       .catch(err => {
@@ -52,7 +52,7 @@ class App extends Component {
 
   render() {
     //  const {item} = this.state
-    console.log("this is the state: ", this.state)
+    // console.log("this is the state: ", this.state)
     return (
 
       //       {/* <SearchContainer foodItem={this.state.foodItem} itemLocation={this.state.itemLocation} /> */}

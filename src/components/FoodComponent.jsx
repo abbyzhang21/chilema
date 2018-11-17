@@ -18,11 +18,11 @@ export const FoodList = (props) => {
 
                     <ul className='list'>
                         <li>
-                            <a href="#"><h3>{item.item}</h3></a>
+                            <a href="google.com"><h3>{item.item}</h3></a>
                         </li>
                         <li>
                             {item.price}
-                            <a href="#">
+                            <a href="google.com">
                                 <p>{item.category}</p>
                             </a>
                         </li>

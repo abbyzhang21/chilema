@@ -5,7 +5,7 @@ export const SearchContainer = (props) => {
     console.log('search options', props.foodItem)
 
     const items = props.foodItem;
-    const local = props.itemLocation;
+    // const local = props.itemLocation;
 
     const distinctCategory = [...new Set(items.map(item => item.category))];
 

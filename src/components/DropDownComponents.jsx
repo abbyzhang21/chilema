@@ -1,5 +1,6 @@
 import React from 'react';
 import '../stylesheets/_dropdowns.css';
+import Select from 'react-select';
 
 export const SearchContainer = (props) => {
     console.log('search options', props.foodItem)
@@ -8,22 +9,25 @@ export const SearchContainer = (props) => {
 
     const distinctCategory = [...new Set(items.map(item => item.category))];
 
+    // const newItems = [...new Set(items)];
+
     console.log('items', items)
     console.log('distinctCategory', distinctCategory);
+    let options = [];
+    distinctCategory.map(e => {
+        let local = {};
+        local.value = e;
+        local.label = e;
+        options.push(local);
+    })
+
     return (
         <div className="dropdown-container">
             <div className="categories">
-                <select className="select-container">
-                    <option value="default">What do you feel like eating?</option>
-                    {distinctCategory.map(category => (
-                        <option value={category}>{category}</option>
-                    ))}
-                </select>
-                {/* <select>
-                        {distinctLocation.map(location => (
-                            <option value={location}>{location}</option>
-                        ) )}
-                    </select> */}
+                <Select className='drop-down-elem'
+                    placeholder='what would you like to eat ...'
+                    options={options}
+                />
             </div>
         </div>
     )

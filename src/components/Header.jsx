@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import '../stylesheets/_header.css';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 // add Router, Route to 'react-router-dom' library if needed

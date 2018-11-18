@@ -16,9 +16,12 @@ class GlobalHeader extends Component {
 
     handleLogout() {
         console.log('handleLogout')
+        localStorage.clear()
         axios.get('/auth/logout')
             .then((response) => {
-                localStorage.clear()
+                // localStorage.clear()
+                // localStorage.setItem('isAuth', false)
+                window.location = '/'
                 console.log(response)
             })
             .catch((err) => {
@@ -27,21 +30,27 @@ class GlobalHeader extends Component {
     }
 
     render() {
+        const isAuth = localStorage.isAuth;
         return (
             <div className='header'>
                 <Link className='header-logo' to='/'>
                     <img src={chilema_horizontal_logo} alt="" />
                 </Link>
                 <div className='global-header-button'>
+                    {!isAuth ? (
+                    <div>
                     <Link to='/login'>
                         <button>Log In</button>
                     </Link>
-                    <Link to='/'>
-                        <button onClick={this.handleLogout}>Log Out</button>
-                    </Link>
                     <Link to='/newuser'>
                         <button>Sign Up</button>
+                    </Link>       
+                    </div>
+                    ) : (
+                    <Link to='/auth/logout'>
+                        <button onClick={this.handleLogout}>Log Out</button>
                     </Link>
+                    )}
                 </div>
             </div>
         )

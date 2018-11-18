@@ -40,6 +40,9 @@ class LogIn extends Component {
                 console.log("POSTED ITEM: ", item)
                 console.log('response.data: ', response.data)
             })
+            .then(() => {
+                window.location='/'
+            })
             .catch((err) => {
                 console.log('err', err)
             })

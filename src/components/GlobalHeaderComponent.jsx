@@ -9,7 +9,9 @@ import axios from 'axios';
 class GlobalHeader extends Component {
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = {
+            
+        }
     }
 
     handleLogout() {

@@ -6,9 +6,10 @@ import { FirstNameFieldComponent, LastNameFieldComponent, EmailFieldComponent, U
 import { DietaryRestrictionComponent } from '../../components/DropDownComponents';
 import { GetStartedButtonComponent } from '../../components/ButtonComponents';
 
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 
 import './NewUser.css';
+import axios from 'axios';
 
 class NewUser extends Component {
     constructor(props) {
@@ -37,8 +38,18 @@ class NewUser extends Component {
 
     }
 
-    handleSubmit() {
-        console.log('NEWUSER handleSubmit')
+    handleSubmit(event) {
+        console.log('NEWUSER handleSubmit', this.state)
+        event.preventDefault();
+        axios.post('/auth/register', this.state)
+            .then((response) => {
+                console.log(response)
+                window.location = '/login'
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+
     }
 
     render() {
@@ -65,9 +76,9 @@ class NewUser extends Component {
                                 <input type="text" placeholder="Enter Email Address" name="email" value={this.state.email} onChange={this.handleChange} />
                             </div>
                             {/* <UsernameFieldComponent /> */}
-                            {/* <div className="field-container">
-                                <input type="text" placeholder="Enter Username" name="username" />
-                            </div> */}
+                            <div className="field-container">
+                                <input type="text" placeholder="Enter Phone Number" name="phone" value={this.state.phone} onChange={this.handleChange} />
+                            </div>
                             {/* <PasswordFieldComponent /> */}
                             <div className="field-container">
                                 <input type="password" placeholder="Enter Password" name="password" value={this.state.password} onChange={this.handleChange} />
@@ -83,14 +94,14 @@ class NewUser extends Component {
                             </div>
                             {/* <DietaryRestrictionComponent /> */}
                             <div className="dropdown-container">
-                                <select className="select-container">
-                                    <option value="default">
+                                <select name="diet" onChange={this.handleChange} value={this.state.diet} className="select-container">
+                                    <option name="diet" value="default">
                                         Any Dietary Restrictions?
                                     </option>
-                                    <option value="Yes">
+                                    <option name="diet" value="true">
                                         YES
                                     </option>
-                                    <option value="No">
+                                    <option selected name="diet" value="false">
                                         NO
                                     </option>
                                 </select>
@@ -101,14 +112,14 @@ class NewUser extends Component {
                     </div>
                     {/* <GetStartedButtonComponent /> */}
                     <div className="button-containter">
-                        <Link to='/newuser'>
+                        <Link to='/login'>
                             <button className="button" onClick={this.handleSubmit}>
-                                GET STARTED
+                                CREATE ACCOUNT
                             </button>
                         </Link>
                     </div>
                 </div>
-            </div>
+            </div >
 
         )
     }

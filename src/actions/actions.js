@@ -17,6 +17,18 @@ export const getFoodItems = () => {
   }
 }
 
+export const getFoodById = (id) => {
+  console.log("hitting food by id?");
+  return dispatch => {
+    axios
+      .get(`/food/detail/${id}`)
+      .then(item => {
+
+      })
+  }
+}
+
+
 
 const addItem = (item) => {
 

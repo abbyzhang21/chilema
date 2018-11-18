@@ -38,7 +38,8 @@
     "seed": "POSTGRES_HOSTNAME=localhost POSTGRES_CONTAINER_PORT=8765 npx knex --knexfile ./server/knexfile.js seed:run",
     "flush": "POSTGRES_HOSTNAME=localhost POSTGRES_CONTAINER_PORT=8765 npx knex migrate:rollback ; POSTGRES_HOSTNAME=localhost POSTGRES_CONTAINER_PORT=8765 npx knex migrate:latest ; POSTGRES_HOSTNAME=localhost POSTGRES_CONTAINER_PORT=8765 npx knex seed:run",
     "rollback": "POSTGRES_HOSTNAME=localhost POSTGRES_CONTAINER_PORT=8765 npx knex --knexfile ./server/knexfile.js migrate:rollback",
-    "start": "react-scripts start & npx nodemon ./server/server.js",
+    "start": "npx nodemon ./server/server.js",
+    "start:react": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

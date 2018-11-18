@@ -10,6 +10,7 @@ import '../../stylesheets/_stripeElements.css';
 import './App.css';
 import axios from 'axios';
 import Food from '../Food/Food.jsx';
+import User from '../User/User.jsx';
 import FoodDetail from '../FoodDetail/FoodDetail.jsx'
 import AddFood from '../AddFood/AddFood.jsx'
 // import { SearchContainer } from '../../components/DropDownComponents';
@@ -35,7 +36,8 @@ class App extends Component {
     super(props)
     this.state = {
       foodItem: [],
-      itemLocation: []
+      itemLocation: [],
+      users: []
     }
   }
   componentDidMount() {
@@ -55,6 +57,16 @@ class App extends Component {
       .then(location => {
         // console.log('location', location.data)
         this.setState({ itemLocation: location.data })
+      })
+      .catch(err => {
+        console.log('err', err)
+      })
+
+    axios
+      .get('/users')
+      .then(user => {
+        console.log('user', user.data)
+        this.setState({ users: user.data })
       })
       .catch(err => {
         console.log('err', err)
@@ -89,6 +101,7 @@ class App extends Component {
               <Route exact path='/food' component={Food} />
               <Route exact path='/receipt' component={Receipt} />
               <Route exact path='/food/detail/:id' component={FoodDetail} />
+              <Route exact path='/users/detail/:id' component={User} />
               <Route exact path='/food/new' component={AddFood} />
               <Route exact path='/payment' component={PaymentForm} />
               <Route exact path='/map' component={myMap} />
@@ -113,6 +126,11 @@ class App extends Component {
               <Redirect from='/food/detail/:id' to='/' />
               <Redirect from='/receipt' to='/' />
               <Redirect from='/edit' to='/' />
+              {/* <Redirect from='/users/detail/:id' to='/' /> change to protected */}
+
+              <Route exact path='/users/detail/:id' component={User} />
+
+
 
 
             </Switch>

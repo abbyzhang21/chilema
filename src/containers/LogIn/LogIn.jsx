@@ -26,7 +26,6 @@ class LogIn extends Component {
         event.preventDefault()
 
         // set the user's email in localStorage
-        localStorage.setItem('LS_email', this.state.email)
         // execute helper function
         this.loginUser(this.state)
     }
@@ -37,6 +36,7 @@ class LogIn extends Component {
         axios
             .post('auth/login', item)
             .then((response) => {
+                localStorage.setItem('LS_email', this.state.email)
                 console.log("POSTED ITEM: ", item)
                 console.log('response.data: ', response.data)
             })

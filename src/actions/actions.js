@@ -16,17 +16,5 @@ const addItem = (item) => {
 
 }
 
-// const loginUser = (item) => {
-//   console.log('LOGIN item', item)
-// }
-
-// const loginUser = (user) => {
-
-//   console.log('ACTION loginUser: ', user)
-
-// }
-
-// export default { addItem, loginUser };
-// export const loginUser
 export default addItem
 

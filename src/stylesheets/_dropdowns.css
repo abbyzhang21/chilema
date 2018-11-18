@@ -1,20 +1,16 @@
 
-select {
-    outline: none;
-    border: 1px solid #cc6666;
-    width: 100%;
+.drop-down-elem{
+    color: #cc666666;
+    text-transform: capitalize;
     background: transparent;
-    z-index: 10;
-    appearance: none;
-    padding: 1.5% 2% 2% 2%;
-    color: grey;
-    margin-top: 2%;
-    /* border: none; */
+    font-weight: bold;
+    margin: 5% auto;
+    box-shadow:10px 10px 30px  #cc666666;
+    opacity: 0.8;
+
 }
 
-.select-container {
-    background: url('../assets/dropdown-arrow.jpg');
-    background-size: 95%;
-    background-position: 95% center;
+.drop-down-elem div {
+    margin-top: 0;
     
 }

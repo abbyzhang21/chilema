@@ -110,7 +110,8 @@ authRouter.post('/login', passport.authenticate('local', { sucessRedirect: '/wel
 authRouter.get('/logout', (req, res) => {
   req.logout()
   console.log('USER LOGGED OUT')
-  res.redirect('/')
+  // res.redirect('/')
+  res.json('USER LOGGED OUT')
 })
 
 // sanity check to test authentication

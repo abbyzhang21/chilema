@@ -19,7 +19,7 @@ class AddFood extends Component {
       image: "",
       fd_lat: "",
       fd_long: "",
-      // user_id: null
+      user_id: 1 //TODO: need to link to the local storage with the current user's id if they are logged in
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -27,34 +27,19 @@ class AddFood extends Component {
   }
 
   handleChange(event) {
+    const target = event.target;
+
     event.preventDefault();
     this.setState({
-      category: event.target.category,
-      item: event.target.item,
-      description: event.target.description,
-      price: event.target.price,
-      image: event.target.image,
-      fd_lat: event.target.fd_lat,
-      fd_long: event.target.fd_long,
-      // user_id: event.target.user_id
+      [target.name]: event.target.value,
     });
-    console.log(this.state)
+    console.log('new dish',this.state)
   }
 
   handleSubmit(event) {
     event.preventDefault();
     console.log('INPUT VALUES ', this.state);
-
     addItem(this.state)
-
-    // axios
-    //   .post('/food/new', event)
-    //   .then((response) => {
-    //     console.log('response.data: ', response.data)
-    //   })
-    //   .catch((err) => {
-    //     console.log('err', err)
-    //   })
   }
 
   componentDidMount() {
@@ -79,7 +64,7 @@ class AddFood extends Component {
         <div className="new-food-container">
         <form action="/food/new" method="POST" onSubmit={this.handleSubmit}> 
           <div className="field-component">
-            <input type="text" placeholder="Select Category" name="item" value={this.state.category} onChange={this.handleChange} />
+            <input type="text" placeholder="Select Category" name="category" value={this.state.category} onChange={this.handleChange} />
           </div>
           <div className="field-component">
             <input type="text" placeholder="Enter name of dish" name="item" value={this.state.item} onChange={this.handleChange} />
@@ -94,10 +79,10 @@ class AddFood extends Component {
             <input type="text" placeholder="Image Upload" name="image" value={this.state.image} onChange={this.handleChange} />
           </div>
           <div className="field-component">
-            <input type="text" placeholder="Latitude" name="latitude" value={this.state.fd_lat} onChange={this.handleChange} />
+            <input type="text" placeholder="Latitude" name="fd_lat" value={this.state.fd_lat} onChange={this.handleChange} />
           </div>
           <div className="field-component">
-            <input type="text" placeholder="Longitude" name="longitude" value={this.state.fd_long} onChange={this.handleChange} />
+            <input type="text" placeholder="Longitude" name="fd_long" value={this.state.fd_long} onChange={this.handleChange} />
           </div>
           {/* <div>
             <input type="text" placeholder="user_id" name="user_id" value={this.state.user_id} onChange={this.handleChange} />

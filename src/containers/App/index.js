@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect, withRouter } from 'react-router-dom'
 // import Header from '../../components/Header.jsx';
 
 // import { CardElement, injectStripe } from 'react-stripe-elements';
@@ -23,6 +23,12 @@ import myMap from '../Map/Map.jsx';
 import Landing from '../Landing/Landing.jsx';
 import EditAccount from '../EditAccount/EditAccount.jsx';
 
+// const isAuthenticated = localStorage.getItem('isAuth')
+// console.log('isAuthenticated', isAuthenticated)
+
+// const AuthContext = React.createContext(true)
+// console.log('AuthContext', AuthContext.Provider)
+
 // console.log("axios....:", React);
 class App extends Component {
   constructor(props) {
@@ -33,6 +39,7 @@ class App extends Component {
     }
   }
   componentDidMount() {
+
     axios
       .get('/food')
       .then(foods => {
@@ -55,39 +62,95 @@ class App extends Component {
   }
 
   render() {
+    // console.log('ISAUTH : ', localStorage.getItem('isAuth'))
+    const isAuth = localStorage.isAuth
+    console.log('isAuth', isAuth)
+    console.log('typeof isAuth', typeof isAuth)
+    // const PrivateRoute = ({ component: Component, ...rest }) => (
+    //   <Route {...rest} render={(props) => (
+    //     isAuth === true
+    //       ? <Component {...props} />
+    //       : <Redirect to='/landing' />
+    //   )} />
+    // )
+
+    // console.log(PrivateRoute)
+
+
     // console.log("this is the state: ", this.state)
-    return (
 
-      //       {/* <SearchContainer foodItem={this.state.foodItem} itemLocation={this.state.itemLocation} /> */}
-      //       {/* <FoodList foodItem={this.state.foodItem} /> */}
-      //       <Route exact path='/login' component={LogIn} />
-      //       <Route exact path='/food' component={Food} />
+    if (isAuth === "true") {
+      return (
+        <Router>
+          <div className="App">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/edit" component={EditAccount} />
+              <Route exact path='/food' component={Food} />
+              <Route exact path='/receipt' component={Receipt} />
+              <Route exact path='/food/detail/:id' component={FoodDetail} />
+              <Route exact path='/food/new' component={AddFood} />
+              <Route exact path='/payment' component={PaymentForm} />
+              <Route exact path='/map' component={myMap} />
+            </Switch>
+          </div>
+        </Router>
+      )
+    } else {
+      return (
+        <Router>
+          <div className="App">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/login" component={LogIn} />
+              <Route path="/newuser" component={NewUser} />
+              <Route path="/landing" component={Landing} />
+              <Route exact path='/food' component={Food} />
+              {/* PROTECTED */}
+              <Redirect from='/payment' to='/' />
+              <Redirect from='/map' to='/' />
+              <Redirect from='/food/new' to='/' />
+              <Redirect from='/food/detail/:id' to='/' />
+              <Redirect from='/receipt' to='/' />
+              <Redirect from='/edit' to='/' />
 
-      <Router>
-        <div className="App">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/login" component={LogIn} />
-            <Route path="/newuser" component={NewUser} />
-            <Route path="/landing" component={Landing} />
-            <Route path="/edit" component={EditAccount} />
-            <Route exact path='/food' component={Food} />
-            <Route exact path='/receipt' component={Receipt} />
-            <Route exact path='/food/detail/:id' component={FoodDetail} />
-            <Route exact path='/food/new' component={AddFood} />
-            <Route exact path='/payment' component={PaymentForm} />
-            <Route exact path='/map' component={myMap} />
-          </Switch>
-        </div>
-      </Router>
+
+            </Switch>
+          </div>
+        </Router>
+      )
+    }
+
+    // return (
+
+    //       {/* <SearchContainer foodItem={this.state.foodItem} itemLocation={this.state.itemLocation} /> */}
+    //       {/* <FoodList foodItem={this.state.foodItem} /> */}
+    //       <Route exact path='/login' component={LogIn} />
+    //       <Route exact path='/food' component={Food} />
+
+    // <Router>
+    //   <div className="App">
+    //     <Switch>
+    //       <Route exact path="/" component={Home} />
+    //       <Route path="/login" component={LogIn} />
+    //       <Route path="/newuser" component={NewUser} />
+    //       <Route path="/landing" component={Landing} />
+    //       <Route path="/edit" component={EditAccount} />
+    //       <Route exact path='/food' component={Food} />
+    //       <Route exact path='/receipt' component={Receipt} />
+    //       <Route exact path='/food/detail/:id' component={FoodDetail} />
+    //       <Route exact path='/food/new' component={AddFood} />
+    //       <Route exact path='/payment' component={PaymentForm} />
+    //       <Route exact path='/map' component={myMap} />
+    //       {/* <PrivateRoute path="/payment" component={PaymentForm} /> */}
+    //     </Switch>
+    //   </div>
+    // </Router>
 
 
 
 
-    );
+    // );
   }
 }
-
-
-
 export default App;

@@ -9,6 +9,7 @@ import addItem from '../../actions/actions.js';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 
 class AddFood extends Component {
+
   constructor(props) {
     super(props)
     this.state = {
@@ -33,7 +34,7 @@ class AddFood extends Component {
     this.setState({
       [target.name]: event.target.value,
     });
-    console.log('new dish',this.state)
+    console.log('new dish', this.state)
   }
 
   handleSubmit(event) {
@@ -43,6 +44,7 @@ class AddFood extends Component {
   }
 
   componentDidMount() {
+
     // axios
     //     .post('food/new')
     //     .then( => {
@@ -59,38 +61,38 @@ class AddFood extends Component {
   render() {
     return (
       <div>
-        <GlobalHeader/>
+        <GlobalHeader />
         <h1>FOOD/NEW SANITY CHECK</h1>
         <div className="new-food-container">
-        <form action="/food/new" method="POST" onSubmit={this.handleSubmit}> 
-          <div className="field-component">
-            <input type="text" placeholder="Select Category" name="category" value={this.state.category} onChange={this.handleChange} />
-          </div>
-          <div className="field-component">
-            <input type="text" placeholder="Enter name of dish" name="item" value={this.state.item} onChange={this.handleChange} />
-          </div>
-          <div className="field-component">
-            <input type="text" placeholder="Enter your dish description" name="description" value={this.state.description} onChange={this.handleChange} />
-          </div>
-          <div className="field-component">
-            <input type="text" placeholder="Enter your dish price" name="price" value={this.state.price} onChange={this.handleChange} />
-          </div>
-          <div className="field-component">
-            <input type="text" placeholder="Image Upload" name="image" value={this.state.image} onChange={this.handleChange} />
-          </div>
-          <div className="field-component">
-            <input type="text" placeholder="Latitude" name="fd_lat" value={this.state.fd_lat} onChange={this.handleChange} />
-          </div>
-          <div className="field-component">
-            <input type="text" placeholder="Longitude" name="fd_long" value={this.state.fd_long} onChange={this.handleChange} />
-          </div>
-          {/* <div>
+          <form action="/food/new" method="POST" onSubmit={this.handleSubmit}>
+            <div className="field-component">
+              <input type="text" placeholder="Select Category" name="category" value={this.state.category} onChange={this.handleChange} />
+            </div>
+            <div className="field-component">
+              <input type="text" placeholder="Enter name of dish" name="item" value={this.state.item} onChange={this.handleChange} />
+            </div>
+            <div className="field-component">
+              <input type="text" placeholder="Enter your dish description" name="description" value={this.state.description} onChange={this.handleChange} />
+            </div>
+            <div className="field-component">
+              <input type="text" placeholder="Enter your dish price" name="price" value={this.state.price} onChange={this.handleChange} />
+            </div>
+            <div className="field-component">
+              <input type="text" placeholder="Image Upload" name="image" value={this.state.image} onChange={this.handleChange} />
+            </div>
+            <div className="field-component">
+              <input type="text" placeholder="Latitude" name="fd_lat" value={this.state.fd_lat} onChange={this.handleChange} />
+            </div>
+            <div className="field-component">
+              <input type="text" placeholder="Longitude" name="fd_long" value={this.state.fd_long} onChange={this.handleChange} />
+            </div>
+            {/* <div>
             <input type="text" placeholder="user_id" name="user_id" value={this.state.user_id} onChange={this.handleChange} />
           </div> */}
-          <div>
-            <input type="submit" value="Submit" />
-          </div>
-        </form>
+            <div>
+              <input type="submit" value="Submit" />
+            </div>
+          </form>
         </div>
       </div>
     )

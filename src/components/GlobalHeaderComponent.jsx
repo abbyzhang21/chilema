@@ -9,9 +9,7 @@ import axios from 'axios';
 class GlobalHeader extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-            
-        }
+
     }
 
     handleLogout() {
@@ -31,6 +29,7 @@ class GlobalHeader extends Component {
 
     render() {
         const isAuth = localStorage.isAuth;
+        
         return (
             <div className='header'>
                 <Link className='header-logo' to='/'>

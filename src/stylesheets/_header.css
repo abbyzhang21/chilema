@@ -7,7 +7,7 @@
     height:50px;
     /* border-bottom: 1px solid #edeced; */
     padding: 0 30px;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 img {
@@ -43,6 +43,26 @@ button:hover {
     background-color: white;
     color:#cc6666;
     border: none;
+}
+
+.logout-button button {
+    border: 1px solid #cc6666;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 4px;
+}
+
+.logout-button button:hover {
+    background-color: white;
+    color:#cc6666;
+    border: none;
+}
+
+.profile-image {
+    margin-top: 10px;
+    height: 8%;
+    width: 8%;
+    border-radius: 50%;
 }
 
 

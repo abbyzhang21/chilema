@@ -39,17 +39,7 @@ class AddFood extends Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log('INPUT VALUES ', this.state);
-
     addItem(this.state)
-
-    // axios
-    //   .post('/food/new', event)
-    //   .then((response) => {
-    //     console.log('response.data: ', response.data)
-    //   })
-    //   .catch((err) => {
-    //     console.log('err', err)
-    //   })
   }
 
   componentDidMount() {

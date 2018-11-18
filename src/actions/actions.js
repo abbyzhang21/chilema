@@ -16,5 +16,5 @@ const addItem = (item) => {
 
 }
 
-export default addItem;
+export default addItem
 

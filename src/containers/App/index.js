@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-// import Header from '../../components/Header.jsx';
-
-// import { CardElement, injectStripe } from 'react-stripe-elements';
 import '../../stylesheets/_stripeElements.css';
 // import { Elements, StripeProvider } from 'react-stripe-elements';
 
@@ -10,6 +7,7 @@ import '../../stylesheets/_stripeElements.css';
 import './App.css';
 import axios from 'axios';
 import Food from '../Food/Food.jsx';
+import User from '../User/User.jsx';
 import FoodDetail from '../FoodDetail/FoodDetail.jsx'
 import AddFood from '../AddFood/AddFood.jsx'
 // import { SearchContainer } from '../../components/DropDownComponents';
@@ -29,7 +27,8 @@ class App extends Component {
     super(props)
     this.state = {
       foodItem: [],
-      itemLocation: []
+      itemLocation: [],
+      users: []
     }
   }
   componentDidMount() {
@@ -48,6 +47,16 @@ class App extends Component {
       .then(location => {
         // console.log('location', location.data)
         this.setState({ itemLocation: location.data })
+      })
+      .catch(err => {
+        console.log('err', err)
+      })
+
+    axios
+      .get('/users')
+      .then(user => {
+        console.log('user', user.data)
+        this.setState({ users: user.data })
       })
       .catch(err => {
         console.log('err', err)
@@ -71,6 +80,7 @@ class App extends Component {
             <Route path="/newuser" component={NewUser} />
             <Route path="/landing" component={Landing} />
             <Route path="/edit" component={EditAccount} />
+            <Route exact path='/users/detail/:id' component={User} />
             <Route exact path='/food' component={Food} />
             <Route exact path='/receipt' component={Receipt} />
             <Route exact path='/food/detail/:id' component={FoodDetail} />

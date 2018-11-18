@@ -1,0 +1,41 @@
+.user-wrapper {
+    height: 100%;
+    width: 100%;
+}
+.user-profile-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 8% auto;
+    width: 100%;
+    background-color: #cc666666;
+    position: relative;
+    height: 150px;
+
+
+}
+
+.user-container {
+    box-shadow: 5px 10px 40px #888888;
+    width: 80%;
+    margin: 0 auto;
+
+}
+.user-profile-top img {
+    /* width: 30%; */
+    height: 80%;
+    border-radius: 50%;
+    position: absolute;
+    top: 60%;
+    left: center;
+    
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20%;
+    
+    
+}

@@ -120,37 +120,6 @@ class App extends Component {
         </Router>
       )
     }
-
-    // return (
-
-    //       {/* <SearchContainer foodItem={this.state.foodItem} itemLocation={this.state.itemLocation} /> */}
-    //       {/* <FoodList foodItem={this.state.foodItem} /> */}
-    //       <Route exact path='/login' component={LogIn} />
-    //       <Route exact path='/food' component={Food} />
-
-    // <Router>
-    //   <div className="App">
-    //     <Switch>
-    //       <Route exact path="/" component={Home} />
-    //       <Route path="/login" component={LogIn} />
-    //       <Route path="/newuser" component={NewUser} />
-    //       <Route path="/landing" component={Landing} />
-    //       <Route path="/edit" component={EditAccount} />
-    //       <Route exact path='/food' component={Food} />
-    //       <Route exact path='/receipt' component={Receipt} />
-    //       <Route exact path='/food/detail/:id' component={FoodDetail} />
-    //       <Route exact path='/food/new' component={AddFood} />
-    //       <Route exact path='/payment' component={PaymentForm} />
-    //       <Route exact path='/map' component={myMap} />
-    //       {/* <PrivateRoute path="/payment" component={PaymentForm} /> */}
-    //     </Switch>
-    //   </div>
-    // </Router>
-
-
-
-
-    // );
   }
 }
 export default App;

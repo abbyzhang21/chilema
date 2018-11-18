@@ -60,7 +60,7 @@ class FoodDetail extends Component {
             <FontAwesomeIcon icon={faUserCircle} color='#666633' className='user-icon' />
             {food.description}
           </div>
-          <div>
+          <div className='food-detail-button'>
             <LetsEatButtonComponent />
           </div>
         </div>

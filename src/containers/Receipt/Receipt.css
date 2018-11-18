@@ -1,0 +1,41 @@
+.receipt-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 600px;
+    width: 70%;
+    margin: 5% auto;
+    box-shadow: 5px 10px 40px #888888;
+
+}
+.receipt-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #cc6666;
+    width: 100%;
+    padding-top: 5%;
+
+}
+.receipt-top h1 {
+    color: white;
+}
+h3 {
+    text-transform: uppercase;
+}
+
+.check-icon {
+    font-size: 24px;
+    color: white;
+}
+
+.direction-icon {
+    color: black;
+    margin: 0 5px 0 20px;
+}
+.receipt-direction {
+    margin: 5% auto;
+}
+

@@ -17,7 +17,7 @@ import AddFood from '../AddFood/AddFood.jsx'
 import Home from '../../containers/Home/Home.jsx';
 import LogIn from '../../containers/LogIn/LogIn.jsx';
 import NewUser from '../../containers/NewUser/NewUser.jsx';
-
+import { Receipt } from '../../containers/Receipt/Receipt.jsx';
 import PaymentForm from '../Payment/Payment.jsx';
 import myMap from '../Map/Map.jsx';
 import Landing from '../Landing/Landing.jsx';
@@ -72,6 +72,7 @@ class App extends Component {
             <Route path="/landing" component={Landing} />
             <Route path="/edit" component={EditAccount} />
             <Route exact path='/food' component={Food} />
+            <Route exact path='/receipt' component={Receipt} />
             <Route exact path='/food/detail/:id' component={FoodDetail} />
             <Route exact path='/food/new' component={AddFood} />
             <Route exact path='/payment' component={PaymentForm} />

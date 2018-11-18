@@ -87,7 +87,7 @@ export const DoneButtonComponent = () => {
 
     return (
         <div className="button-container">
-            <Link to='/login'>
+            <Link to='/receipt'>
                 <button className="button">
                     DONE
                 </button>

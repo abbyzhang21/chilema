@@ -17,6 +17,7 @@ class GlobalHeader extends Component {
         axios.get('/auth/logout')
             .then((response) => {
                 localStorage.clear()
+                // localStorage.setItem('isAuth', false)
                 console.log(response)
             })
             .catch((err) => {

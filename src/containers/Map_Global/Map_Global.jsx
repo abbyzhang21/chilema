@@ -1,11 +1,22 @@
 import React, { Component } from 'react'
-import { Map, TileLayer, Marker } from 'react-leaflet'
-// you can add 'Popup' into reac-leaflet library later
-import './Map_Global.css'
+import {
+  Circle,
+  FeatureGroup,
+  LayerGroup,
+  LayersControl,
+  Map,
+  Marker,
+  Popup,
+  Rectangle,
+  TileLayer
+} from 'react-leaflet'
 
+import './Map_Global.css'
 
 // axios call to database
 import axios from 'axios';
+
+const { BaseLayer, Overlay } = LayersControl
 
 
 class Map_Global extends Component {
@@ -33,7 +44,7 @@ class Map_Global extends Component {
           this.state.push(location)
           // console.log('THIS.STATE: ', this.state)
           this.state.forEach((element) => {
-            console.log("MAP ELEMENT: ", element)
+            // console.log("MAP ELEMENT: ", element)
           })
           return 'success'
         })
@@ -50,9 +61,13 @@ class Map_Global extends Component {
     return (
       <div class='leaflet-container'>
         <Map center={position} zoom={13}>
-          <TileLayer
+          {/* <TileLayer
             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          /> */}
+          <TileLayer
+            attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
+            url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png"
           />
           <Marker position={position}>
             {geoArr.map((geoPoints) => {

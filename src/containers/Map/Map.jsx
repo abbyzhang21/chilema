@@ -51,8 +51,8 @@ class MyMap extends Component {
       <div class='leaflet-container'>
         <Map center={position} zoom={13}>
           <TileLayer
-            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
+            url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png"
           />
           <Marker position={position}>
             {geoArr.map((geoPoints) => {

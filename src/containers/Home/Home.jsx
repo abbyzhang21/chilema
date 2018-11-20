@@ -6,7 +6,7 @@ import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
 import chilema_white_logo from '../../assets/chilema_logo_rev_white.png';
 import Header from '../../components/Header.jsx';
 
-// import Map from '../Map/Map.jsx';
+import Map_Global from '../Map_Global/Map_Global.jsx';
 
 import Promo from '../../components/PromoComponent.jsx';
 // import CheckoutForm from '../../components/CheckoutForm.jsx'
@@ -54,6 +54,7 @@ class Home extends Component {
                 <div className='home-bottom'>
                     <h2>have you eaten ?</h2>
                     <Promo foodItem={this.state.foodItem} />
+                    <Map_Global />
                 </div>
             </div>
 

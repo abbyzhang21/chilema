@@ -21,6 +21,7 @@ import NewUser from '../../containers/NewUser/NewUser.jsx';
 import { Receipt } from '../../containers/Receipt/Receipt.jsx';
 import PaymentForm from '../Payment/Payment.jsx';
 import myMap from '../Map/Map.jsx';
+import Map_Global from '../Map_Global/Map_Global.jsx'
 import Landing from '../Landing/Landing.jsx';
 import EditAccount from '../EditAccount/EditAccount.jsx';
 
@@ -99,12 +100,17 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/edit" component={EditAccount} />
               <Route exact path='/food' component={Food} />
+              <Route exact path='/food/american' component={Food} />
+              <Route exact path='/food/chinese' component={Food} />
+              <Route exact path='/food/italian' component={Food} />
+              <Route exact path='/food/japanese' component={Food} />
               <Route exact path='/receipt' component={Receipt} />
               <Route exact path='/food/detail/:id' component={FoodDetail} />
               <Route exact path='/users/detail/:id' component={User} />
               <Route exact path='/food/new' component={AddFood} />
               <Route exact path='/payment' component={PaymentForm} />
               <Route exact path='/map' component={myMap} />
+              <Route exact path='/global' component={Map_Global} />
             </Switch>
           </div>
         </Router>
@@ -119,6 +125,11 @@ class App extends Component {
               <Route path="/newuser" component={NewUser} />
               <Route path="/landing" component={Landing} />
               <Route exact path='/food' component={Food} />
+              <Route exact path='/food/american' component={Food} />
+              <Route exact path='/food/chinese' component={Food} />
+              <Route exact path='/food/italian' component={Food} />
+              <Route exact path='/food/japanese' component={Food} />
+
               {/* PROTECTED */}
               <Redirect from='/payment' to='/' />
               <Redirect from='/map' to='/' />

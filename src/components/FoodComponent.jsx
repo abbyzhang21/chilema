@@ -17,7 +17,7 @@ export const FoodList = (props) => {
 
                     <ul className='list'>
                         <li>
-                            <a href={'food/detail/' + item.id}><h3>{item.item}</h3></a>
+                            <a href={'detail/' + item.id}><h3>{item.item}</h3></a>
                         </li>
                         <li>
                             {item.price}

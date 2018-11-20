@@ -12,11 +12,35 @@ class Food extends Component {
         }
     }
     componentDidMount() {
+        // console.log(window.location.pathname)
+        let pathname = window.location.pathname
+        console.log(pathname)
         axios
             .get('/food')
             .then(food => {
-                // console.log(food.data)
-                this.setState({ foodItem: food.data })
+                if (pathname === '/food/italian') {
+                    let italianFood = food.data.filter((item) => {
+                        return item.category === 'italian';
+                    });
+                    this.setState({ foodItem: italianFood })
+                } else if (pathname === '/food/chinese') {
+                    let chineseFood = food.data.filter((item) => {
+                        return item.category === 'chinese';
+                    })
+                    this.setState({ foodItem: chineseFood })
+                } else if (pathname === '/food/japanese') {
+                    let japaneseFood = food.data.filter((item) => {
+                        return item.category === 'japanese';
+                    })
+                    this.setState({ foodItem: japaneseFood })
+                } else if (pathname === '/food/american') {
+                    let americanFood = food.data.filter((item) => {
+                        return item.category === 'american';
+                    })
+                    this.setState({ foodItem: americanFood })
+                } else {
+                    console.log('REDIRECT TO 404')
+                }
             })
             .catch(err => {
                 console.log('err', err)

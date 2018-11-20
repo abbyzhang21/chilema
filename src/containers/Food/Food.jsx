@@ -3,6 +3,8 @@ import { FoodList } from '../../components/FoodComponent';
 import './Food.css';
 import axios from 'axios';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
+import MyMap from '../Map/Map.jsx';
+
 
 class Food extends Component {
     constructor(props) {
@@ -24,9 +26,18 @@ class Food extends Component {
     }
     render() {
         return (
-            <div className='foodPage-container'>
+            <div className='food-page-container'>
                 <GlobalHeader />
-                <FoodList foodItem={this.state.foodItem} />
+                <div className='food-page-body'>
+                    <div className='food-page-map'>
+                        <MyMap />
+                    </div>
+                    <div>
+                        <FoodList foodItem={this.state.foodItem} />
+                    </div>
+
+
+                </div>
             </div>
         )
     }

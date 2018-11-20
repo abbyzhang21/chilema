@@ -16,7 +16,7 @@ export const FoodList = (props) => {
                     </div>
 
                     <div className='food-list-info'>
-                        <a href={'food/detail/' + item.id}><h3>{item.item}</h3></a>
+                        <a href={'food/detail/' + item.id}><h3 class='foot-list-title'>{item.item}</h3></a>
                         <div className='food-list-category'>
                             {item.price}
                             <FontAwesomeIcon icon={faGlobe} color='#666633' size='2px' className='dot-icon' />

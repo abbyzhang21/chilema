@@ -1,3 +1,37 @@
-.foodPage-container {
+.food-page-container {
     width: 100%;
+}
+@media only screen and (min-width: 800px){
+    .food-page-body{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        width: 80%;
+    }
+    .food-page-map {
+        position: fixed;
+        left: 58%;
+        top: 12%;
+    }
+    .foodList {
+        width: 80%;
+    }
+}
+
+.food-page-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+.food-page-map {
+    /* width: 90%; */
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 700px) {
+    .food-list-info {
+        margin-left: 10%;
+    }
 }

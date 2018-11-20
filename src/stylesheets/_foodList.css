@@ -1,9 +1,9 @@
 .foodList-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
 
 }
 
@@ -12,40 +12,44 @@
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: flex-start;
-    width: 60%;
+    width: 80%;
     border-bottom: 1px solid #edeced;
     color: black;
     padding: 20px;
 }
 
+  h3.foot-list-title:after {
+  content: '';
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  border-bottom: 1px solid;
+  opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(0,1);
+	transform: scale(0,1);
+}
 
-.food-list-info a {
-    background:
-       linear-gradient(to right, #cc6666 0%, #cc6666 1px, transparent 2px
-       );
-    background-repeat: repeat-x;
-    background-size: 100%;
-    padding-left: 10px;
-    text-decoration: none;
-    color: #666633;
-  }
-  
-  .food-list-info a:hover {
-    background:
-       linear-gradient(to right, #cc6666 0%,#cc6666 1px,transparent
-       );
-  }
+h3.foot-list-title:hover:after {
+  opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+
 .foodList img {
     height: 70%;
     border-radius: 10%;
 }
 
 h3 {
-    margin: 3px auto;
+    margin: 0 auto;
+    color: #666633;
 }
 
 .user-icon {
-    margin: 0 6px 0 0;
+    margin: 0 1% 0 0;
 }
 
 .dot-icon {

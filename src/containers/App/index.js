@@ -106,6 +106,11 @@ class App extends Component {
               <Route path="/newuser" component={NewUser} />
               <Route path="/landing" component={Landing} />
               <Route exact path='/food' component={Food} />
+              <Route exact path='/food/american' component={Food} />
+              <Route exact path='/food/chinese' component={Food} />
+              <Route exact path='/food/italian' component={Food} />
+              <Route exact path='/food/japanese' component={Food} />
+
               {/* PROTECTED */}
               <Redirect from='/payment' to='/' />
               <Redirect from='/map' to='/' />

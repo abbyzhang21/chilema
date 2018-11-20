@@ -24,6 +24,7 @@ import myMap from '../Map/Map.jsx';
 import Map_Global from '../Map_Global/Map_Global.jsx'
 import Landing from '../Landing/Landing.jsx';
 import EditAccount from '../EditAccount/EditAccount.jsx';
+import _404 from '../404/_404.jsx'
 
 // const isAuthenticated = localStorage.getItem('isAuth')
 // console.log('isAuthenticated', isAuthenticated)
@@ -111,6 +112,7 @@ class App extends Component {
               <Route exact path='/payment' component={PaymentForm} />
               <Route exact path='/map' component={myMap} />
               <Route exact path='/global' component={Map_Global} />
+              <Route exact path='/404' component={_404} />
             </Switch>
           </div>
         </Router>

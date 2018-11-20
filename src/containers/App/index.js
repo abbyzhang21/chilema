@@ -20,6 +20,7 @@ import NewUser from '../../containers/NewUser/NewUser.jsx';
 import { Receipt } from '../../containers/Receipt/Receipt.jsx';
 import PaymentForm from '../Payment/Payment.jsx';
 import myMap from '../Map/Map.jsx';
+import Map_Global from '../Map_Global/Map_Global.jsx'
 import Landing from '../Landing/Landing.jsx';
 import EditAccount from '../EditAccount/EditAccount.jsx';
 
@@ -92,6 +93,7 @@ class App extends Component {
               <Route exact path='/food/new' component={AddFood} />
               <Route exact path='/payment' component={PaymentForm} />
               <Route exact path='/map' component={myMap} />
+              <Route exact path='/global' component={Map_Global} />
             </Switch>
           </div>
         </Router>

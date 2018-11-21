@@ -53,9 +53,9 @@ const Promo = (props) => {
 
     console.log("this is randomly:", randomArr);
     return randomArr.map(item => {
-        console.log(item)
+        // console.log(item)
         let url = `/food/${item.category}`
-        console.log(url)
+        // console.log(url)
         return (
 
             < div className='promo-container' >

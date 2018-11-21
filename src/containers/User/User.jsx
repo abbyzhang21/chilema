@@ -9,25 +9,45 @@ class User extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            users: []
+            users: [],
+            foodItems: []
         }
     }
     componentDidMount() {
         const url = this.props.location;
-        console.log('userlink.....:', url)
+        console.log(url.toString())
+        // let id = url.split("")
+        // console.log(id)
+        // const id = this.props
+        // console.log('userlink.....:', url)
         axios
             .get(url.pathname)
             .then(user => {
-                console.log('user data:', user.data)
+                // console.log('user data:', user.data)
                 this.setState({ users: user.data })
             })
             .catch(err => {
                 console.log('err', err)
             })
+
+        // axios
+        //     .all([
+        //         axios.get(url.pathname),
+        //         axios.get('/food')
+        //     ])
+        //     .then(axios.spread((user, userFood) => {
+        //         this.setState({ users: user.data })
+        //     }))
+
+        //     .catch(err => {
+        //         console.log('err', err)
+        //     })
+
     }
     render() {
         const user = this.state.users;
-        console.log('user....:', user);
+        // console.log('user....:', user);
+        console.log('USER WINDOW.LOCATION: ', window.location.pathname)
         return (
             <div className='user-wrapper'>
                 <GlobalHeader />

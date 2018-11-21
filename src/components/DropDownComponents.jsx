@@ -3,7 +3,7 @@ import '../stylesheets/_dropdowns.css';
 import Select from 'react-select';
 
 export const SearchContainer = (props) => {
-    console.log('search options', props.foodItem)
+    // console.log('search options', props.foodItem)
 
     const items = props.foodItem;
 
@@ -11,8 +11,8 @@ export const SearchContainer = (props) => {
 
     // const newItems = [...new Set(items)];
 
-    console.log('items', items)
-    console.log('distinctCategory', distinctCategory);
+    // console.log('items', items)
+    // console.log('distinctCategory', distinctCategory);
     let options = [];
     distinctCategory.map(e => {
         let local = {};

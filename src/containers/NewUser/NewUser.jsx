@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 // import axios from 'axios';
 
 import GlobalHeader from '../../components/GlobalHeaderComponent';
-import { FirstNameFieldComponent, LastNameFieldComponent, EmailFieldComponent, UsernameFieldComponent, PasswordFieldComponent, AddressFieldComponent } from '../../components/InputComponents';
-import { DietaryRestrictionComponent } from '../../components/DropDownComponents';
-import { GetStartedButtonComponent } from '../../components/ButtonComponents';
+// import { FirstNameFieldComponent, LastNameFieldComponent, EmailFieldComponent, UsernameFieldComponent, PasswordFieldComponent, AddressFieldComponent } from '../../components/InputComponents';
+// import { DietaryRestrictionComponent } from '../../components/DropDownComponents';
+// import { GetStartedButtonComponent } from '../../components/ButtonComponents';
 
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import './NewUser.css';
 import axios from 'axios';

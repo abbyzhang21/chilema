@@ -54,15 +54,9 @@ class Food extends Component {
             <div className='food-page-container'>
                 <GlobalHeader />
                 <div className='food-page-body'>
-                    <div className='food-page-map'>
-                        <MyMap />
-                    </div>
-                    <div>
-                        <FoodList foodItem={this.state.foodItem} />
-                    </div>
-
-
+                    <FoodList foodItem={this.state.foodItem} />
                 </div>
+
             </div>
         )
     }

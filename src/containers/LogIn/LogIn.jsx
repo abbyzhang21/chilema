@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
 
-import { UsernameFieldComponent, PasswordFieldComponent } from '../../components/InputComponents';
-import { GetStartedButtonComponent } from '../../components/ButtonComponents';
+// import { UsernameFieldComponent, PasswordFieldComponent } from '../../components/InputComponents';
+// import { GetStartedButtonComponent } from '../../components/ButtonComponents';
 import './LogIn.css';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 
 // import loginUser from '../../actions/actions.js';

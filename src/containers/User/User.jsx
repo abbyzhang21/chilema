@@ -60,8 +60,13 @@ class User extends Component {
                         <button onClick={this.handleDelete}>DELETE</button>
                         <button onClick=>EDIT</button>
                     </div> */}
-                    <div>
-                        <FoodList foodItem={this.state.foodItem} />
+                    <div className='user-food-list'>
+                        <p className='user-food'>
+                            Food Shared from <span className='user-name'>{user.name}</span>
+                        </p>
+                        <div>
+                            <FoodList foodItem={this.state.foodItem} />
+                        </div>
                     </div>
                 </div>
             </div>

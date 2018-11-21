@@ -8,11 +8,7 @@
         justify-content: flex-start;
         width: 80%;
     }
-    .food-page-map {
-        position: fixed;
-        left: 58%;
-        top: 12%;
-    }
+   
     .foodList {
         width: 80%;
     }
@@ -23,11 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
-}
-.food-page-map {
-    /* width: 90%; */
-    margin: 0 auto;
+    width: 100%;
 }
 
 @media only screen and (max-width: 700px) {

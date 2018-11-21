@@ -18,7 +18,7 @@
 
 .user-container {
     box-shadow: 5px 10px 40px #888888;
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
 
 }
@@ -42,9 +42,29 @@
     margin-top: 2%;
 }
 .user-diet {
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 
+.user-food-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.user-food {
+    color: #d15555;
+    text-transform: uppercase;
+    border-bottom: 2px solid #edeced;
+    width: 30%;
+    /* padding:2% 2% 2% 0; */
+    margin: 2% auto;
+    font-weight: bold;
+}
+.user-name{
+    color: black;
+}
 @media only screen and (max-width: 800px) {
     .user-info{
         margin-top: 25%;

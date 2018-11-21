@@ -5,48 +5,41 @@ import GlobalHeader from '../../components/GlobalHeaderComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 
+import { FoodList } from '../../components/FoodComponent'
+
 class User extends Component {
     constructor(props) {
         super(props)
         this.state = {
             users: [],
-            foodItems: []
+            foodItem: []
         }
     }
     componentDidMount() {
         const url = this.props.location;
-        console.log(url.toString())
-        // let id = url.split("")
-        // console.log(id)
-        // const id = this.props
-        // console.log('userlink.....:', url)
+        const id = JSON.stringify(url.pathname).split('/').pop().slice(0, -1)
+
         axios
-            .get(url.pathname)
-            .then(user => {
-                // console.log('user data:', user.data)
+            .all([
+                axios.get(url.pathname),
+                axios.get('/food')
+            ])
+            .then(axios.spread((user, food) => {
                 this.setState({ users: user.data })
-            })
+                let userFood = food.data.filter((items) => {
+                    return items.user_id === parseInt(id)
+                })
+                this.setState({ foodItem: userFood })
+            }))
+
             .catch(err => {
                 console.log('err', err)
             })
 
-        // axios
-        //     .all([
-        //         axios.get(url.pathname),
-        //         axios.get('/food')
-        //     ])
-        //     .then(axios.spread((user, userFood) => {
-        //         this.setState({ users: user.data })
-        //     }))
-
-        //     .catch(err => {
-        //         console.log('err', err)
-        //     })
-
     }
     render() {
         const user = this.state.users;
-        // console.log('user....:', user);
+        console.log('THIS USERS FOOD: ', this.state.foodItem)
         console.log('USER WINDOW.LOCATION: ', window.location.pathname)
         return (
             <div className='user-wrapper'>
@@ -62,6 +55,9 @@ class User extends Component {
                         <p><FontAwesomeIcon icon={faPhone
                         } color='#666633' className='user-icon' /> {user.phone}</p>
                         <p className='user-diet'>Dietary Restriction {user.diet}</p>
+                    </div>
+                    <div>
+                        <FoodList foodItem={this.state.foodItem} />
                     </div>
                 </div>
             </div>

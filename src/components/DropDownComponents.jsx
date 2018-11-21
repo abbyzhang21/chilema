@@ -7,8 +7,10 @@ export const SearchContainer = (props) => {
     // console.log('search options', props.foodItem)
 
     const items = props.foodItem;
+    console.log('search container items', items)
 
     const distinctCategory = [...new Set(items.map(item => item.category))];
+    console.log('distinctCategory items', distinctCategory)
 
     // const newItems = [...new Set(items)];
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../stylesheets/_dropdowns.css';
 import Select from 'react-select';
+import {BrowserRouter as Link} from 'react-router-dom'
 
 export const SearchContainer = (props) => {
     // console.log('search options', props.foodItem)
@@ -21,14 +22,17 @@ export const SearchContainer = (props) => {
         options.push(local);
     })
 
+    let url = `/food/${items.category}`
     return (
-        <div className="dropdown-container">
+        <div className="dropdown-container">    
             <div className="categories">
+            <Link to={url}>    
                 <Select className='drop-down-elem'
                     placeholder='what would you like to eat ...'
                     options={options}
-                />
-            </div>
+                    />
+            </Link>    
+                </div>  
         </div>
     )
     // })

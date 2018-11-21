@@ -23,21 +23,19 @@ export const SearchContainer = (props) => {
         local.label = e;
         options.push(local);
     })
-
-    let url = `/food/${items.category}`
+    console.log('options', options)
     return (
         <div className="dropdown-container">    
             <div className="categories">
-            <Link to={url}>    
+    
                 <Select className='drop-down-elem'
                     placeholder='what would you like to eat ...'
                     options={options}
                     />
-            </Link>    
                 </div>  
         </div>
     )
-    // })
+
 }
 
 

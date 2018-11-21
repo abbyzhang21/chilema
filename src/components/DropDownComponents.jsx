@@ -24,14 +24,20 @@ export const SearchContainer = (props) => {
         options.push(local);
     })
     console.log('options', options)
+
+    // options.map((item) => {
+    //     window.onclick = () => {
+    //         window.location = `/food/${item.value}`
+    //     }
+    // })
+
     return (
-        <div className="dropdown-container">    
+        <div className="dropdown-container">     
             <div className="categories">
-    
                 <Select className='drop-down-elem'
                     placeholder='what would you like to eat ...'
                     options={options}
-                    />
+                />
                 </div>  
         </div>
     )

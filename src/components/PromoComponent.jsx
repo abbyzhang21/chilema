@@ -51,7 +51,7 @@ const Promo = (props) => {
             user_id: 11
         }];
 
-    console.log("this is randomly:", randomArr);
+    // console.log("this is randomly:", randomArr);
     return randomArr.map(item => {
         // console.log(item)
         let url = `/food/${item.category}`

@@ -16,7 +16,8 @@ class LogIn extends Component {
         super(props)
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            id: ""
         }
         this.handleLogin = this.handleLogin.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -24,6 +25,20 @@ class LogIn extends Component {
 
     handleLogin(event) {
         event.preventDefault()
+
+        axios
+            .get('/users')
+            .then((response) => {
+                console.log('RESPONSE: ', response)
+                // const id = response.data.filter((user) => {
+                //     if (user.email === this.state.email) {
+                //         console.log(user.id)
+                //     }
+                // })
+            })
+            .catch((err) => {
+                console.log('error', err)
+            })
 
         // set the user's email in localStorage
         // execute helper function
@@ -36,10 +51,9 @@ class LogIn extends Component {
         axios
             .post('auth/login', item)
             .then((response) => {
+                console.log('RESPONSE LOG: ', response)
                 localStorage.setItem('LS_email', this.state.email)
                 localStorage.setItem('isAuth', true)
-                console.log("POSTED ITEM: ", item)
-                console.log('response.data: ', response.data)
             })
             .then(() => {
                 window.location = '/'

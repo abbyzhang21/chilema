@@ -30,6 +30,25 @@ class FoodDetail extends Component {
         console.log('err', err)
       })
   }
+
+  handleDelete = () => {
+    // console.log('SANITY')
+    const food_id = this.state.foodItem.id
+    console.log('foodID : ', food_id)
+    const user_id = this.state.foodItem.user_id
+
+    axios
+      .delete('/food/delete/' + food_id)
+      .then((response) => {
+        console.log(response)
+      })
+      .catch((err) => {
+        console.log('error', err)
+      })
+
+
+  }
+
   render() {
     const food = this.state.foodItem;
     return (
@@ -44,6 +63,9 @@ class FoodDetail extends Component {
               <div className='food-detail-info'>
                 <span>{food.price}</span>
                 <span>{food.category}</span>
+              </div>
+              <div>
+                <button onClick={this.handleDelete}>DELETE</button>
               </div>
 
             </div>

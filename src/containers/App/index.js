@@ -67,7 +67,7 @@ class App extends Component {
     axios
       .get('/users')
       .then(user => {
-        console.log('user', user.data)
+        // console.log('user', user.data)
         this.setState({ users: user.data })
       })
       .catch(err => {

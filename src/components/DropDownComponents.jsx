@@ -1,13 +1,16 @@
 import React from 'react';
 import '../stylesheets/_dropdowns.css';
 import Select from 'react-select';
+import {BrowserRouter as Link} from 'react-router-dom'
 
 export const SearchContainer = (props) => {
     // console.log('search options', props.foodItem)
 
     const items = props.foodItem;
+    console.log('search container items', items)
 
     const distinctCategory = [...new Set(items.map(item => item.category))];
+    console.log('distinctCategory items', distinctCategory)
 
     // const newItems = [...new Set(items)];
 
@@ -20,18 +23,19 @@ export const SearchContainer = (props) => {
         local.label = e;
         options.push(local);
     })
-
+    console.log('options', options)
     return (
-        <div className="dropdown-container">
+        <div className="dropdown-container">    
             <div className="categories">
+    
                 <Select className='drop-down-elem'
                     placeholder='what would you like to eat ...'
                     options={options}
-                />
-            </div>
+                    />
+                </div>  
         </div>
     )
-    // })
+
 }
 
 

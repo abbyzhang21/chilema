@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './User.css';
 import axios from 'axios';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 class User extends Component {
     constructor(props) {
@@ -34,10 +36,12 @@ class User extends Component {
                         <img src='https://steamusercontent-a.akamaihd.net/ugc/861733993518665232/612136AA40A2C10742C0796F5F5618CC60457DD3/'></img>
                     </div>
                     <div className='user-info'>
-                        <p>Aloha, {user.name} {user.last}</p>
-                        <p>Email: {user.email}</p>
-                        <p>Phone: {user.phone}</p>
-                        <p>Dietary Restriction {user.diet}</p>
+                        <h3>{user.name} {user.last}</h3>
+                        <p><FontAwesomeIcon icon={faEnvelope
+                        } color='#666633' className='user-icon' /> {user.email}</p>
+                        <p><FontAwesomeIcon icon={faPhone
+                        } color='#666633' className='user-icon' /> {user.phone}</p>
+                        <p className='user-diet'>Dietary Restriction {user.diet}</p>
                     </div>
                 </div>
             </div>

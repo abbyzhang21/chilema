@@ -18,12 +18,11 @@
 
 .user-container {
     box-shadow: 5px 10px 40px #888888;
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
 
 }
 .user-profile-top img {
-    /* width: 30%; */
     height: 80%;
     border-radius: 50%;
     position: absolute;
@@ -35,7 +34,19 @@
 .user-info {
     display: flex;
     flex-direction: column;
-    margin-top: 20%;
+    margin-top: 10%;
+    justify-content: space-around;
     
-    
+}
+.user-info p {
+    margin-top: 2%;
+}
+.user-diet {
+    margin-bottom: 10%;
+}
+
+@media only screen and (max-width: 800px) {
+    .user-info{
+        margin-top: 25%;
+    }
 }

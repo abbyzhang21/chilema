@@ -62,6 +62,7 @@ authRouter.get('/register', (req, res) => {
 
 // register user new user and add them to the database
 authRouter.post('/register', (req, res) => {
+  console.log('SERVER HIT')
 
   const { name, last, email, password, phone, diet } = req.body;
 

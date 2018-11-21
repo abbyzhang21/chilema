@@ -61,10 +61,6 @@ class Map_Global extends Component {
     return (
       <div class='leaflet-container'>
         <Map center={position} zoom={13}>
-          {/* <TileLayer
-            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          /> */}
           <TileLayer
             attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
             url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png"
@@ -82,6 +78,10 @@ class Map_Global extends Component {
 
     )
   }
+}
+
+Map_Global.defaultProps = {
+  position: ["21.3068", "-157.8607"]
 }
 
 export default Map_Global;

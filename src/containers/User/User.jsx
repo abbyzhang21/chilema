@@ -3,7 +3,7 @@ import './User.css';
 import axios from 'axios';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone, faDrumstickBite } from '@fortawesome/free-solid-svg-icons';
 
 import { FoodList } from '../../components/FoodComponent'
 
@@ -56,6 +56,10 @@ class User extends Component {
                         } color='#666633' className='user-icon' /> {user.phone}</p>
                         <p className='user-diet'>Dietary Restriction {user.diet}</p>
                     </div>
+                    {/* <div>
+                        <button onClick={this.handleDelete}>DELETE</button>
+                        <button onClick=>EDIT</button>
+                    </div> */}
                     <div>
                         <FoodList foodItem={this.state.foodItem} />
                     </div>

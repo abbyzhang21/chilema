@@ -49,6 +49,7 @@ class Food extends Component {
             })
     }
     render() {
+        // const baseUrl = 'detail/'
         return (
             <div className='food-page-container'>
                 <GlobalHeader />

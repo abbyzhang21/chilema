@@ -34,16 +34,27 @@ class FoodDetail extends Component {
   handleDelete = () => {
     const food_id = this.state.foodItem.id
     const urlString = `/food/delete/${food_id}`
+
+    // DELETE VALIDATION FLOW
+    // get the id of logged in user from localStorage for validation
+    const tempUser = localStorage.getItem('LS_id')
+    // get the user_id associated to the food id to validate against logged in user
     const user_id = this.state.foodItem.user_id
 
-    axios
-      .delete(urlString)
-      .then((response) => {
-        window.location = `${response.data}${user_id}`
-      })
-      .catch((err) => {
-        console.log('error', err)
-      })
+    if (tempUser === user_id.toString()) {
+      axios
+        .delete(urlString)
+        .then((response) => {
+          window.location = `${response.data}${tempUser}`
+          console.log(response)
+        })
+        .catch((err) => {
+          console.log('error', err)
+        })
+    } else {
+      alert('Sorry, you can only delete your own food items!')
+    }
+
   }
 
   render() {

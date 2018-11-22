@@ -12,6 +12,8 @@ const LocalStrategy = require('passport-local')
 const bcrypt = require('bcrypt')
 const saltRounds = 12;
 
+let tempUser = {}
+
 // upon successful login, retrieve user from db and store in Redis session
 passport.serializeUser((user, done) => {
   console.log('serializing user: ', user)
@@ -40,8 +42,10 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, don
       // validate user input vs decrypted password in db
       bcrypt.compare(password, user.attributes.password)
         .then((result) => {
-          console.log('RESULT', result)
-          console.log(user)
+          // console.log('RESULT', result)
+          // console.log('USER.ATTRIBUTES: ', user.attributes)
+          tempUser = user.attributes
+          // console.log('TEMPUSER: ', tempUser)
           if (result) {
             done(null, user)
           } else {
@@ -99,7 +103,9 @@ authRouter.post('/register', (req, res) => {
 authRouter.post('/login', passport.authenticate('local', { sucessRedirect: '/welcome', failureRedirect: '/' }), (req, res) => {
   console.log('USER AUTHENTICATED')
   // req.session.isAuthenticated = true;
-  res.send('USER AUTHENTICATED')
+  console.log('REQ.BODY: ', req.body)
+  console.log('TEMPUSER : ', tempUser)
+  res.send(tempUser)
 });
 
 // GOOGLE OAUTH

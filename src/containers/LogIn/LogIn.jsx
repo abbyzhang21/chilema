@@ -46,22 +46,18 @@ class LogIn extends Component {
     }
 
     loginUser(item) {
-        console.log(item)
         // call server route to validate credentials against db
         axios
             .post('auth/login', item)
             .then((response) => {
-                console.log('RESPONSE LOG: ', response)
+                localStorage.setItem('LS_id', response.data.id)
                 localStorage.setItem('LS_email', this.state.email)
                 localStorage.setItem('isAuth', true)
-            })
-            .then(() => {
-                window.location = '/'
+                window.location = `/users/detail/${response.data.id}`
             })
             .catch((err) => {
                 console.log('err', err)
             })
-
     }
 
     handleChange(event) {

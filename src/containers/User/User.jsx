@@ -44,6 +44,7 @@ class User extends Component {
     }
 
     render() {
+        console.log('this.state.foodItem', this.state.foodItem)
         const user = this.state.users;
         // console.log('THIS USERS FOOD: ', this.state.foodItem)
         // console.log('USER WINDOW.LOCATION: ', window.location.pathname)

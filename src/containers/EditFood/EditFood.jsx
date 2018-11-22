@@ -5,10 +5,12 @@ import axios from 'axios';
 
 
 
-
 class EditFood extends Component{
     constructor(props) {
         super(props)
+        this.state = {
+
+        }
     }
 
     render() {
@@ -16,7 +18,9 @@ class EditFood extends Component{
             <div>
                 <GlobalHeader />
             <div> 
-                    
+                <h1>
+                    Edit         
+                </h1>
             </div>
             </div>
         )

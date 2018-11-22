@@ -108,8 +108,8 @@ foodRouter.delete('/delete/:id', (req, res) => {
     .where({ id })
     .destroy()
     .then(
-      // res.redirect('/')
-      res.send('some info')
+      res.send('/users/detail/')
+      // res.send('some info')
     )
     .catch(err => {
       console.log('err: ', err)

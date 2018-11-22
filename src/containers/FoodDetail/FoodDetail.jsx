@@ -32,21 +32,18 @@ class FoodDetail extends Component {
   }
 
   handleDelete = () => {
-    // console.log('SANITY')
     const food_id = this.state.foodItem.id
-    console.log('foodID : ', food_id)
+    const urlString = `/food/delete/${food_id}`
     const user_id = this.state.foodItem.user_id
 
     axios
-      .delete('/food/delete/' + food_id)
+      .delete(urlString)
       .then((response) => {
-        console.log(response)
+        window.location = `${response.data}${user_id}`
       })
       .catch((err) => {
         console.log('error', err)
       })
-
-
   }
 
   render() {

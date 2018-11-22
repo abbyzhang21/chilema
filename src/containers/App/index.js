@@ -26,6 +26,12 @@ import Landing from '../Landing/Landing.jsx';
 import EditAccount from '../EditAccount/EditAccount.jsx';
 import _404 from '../404/_404.jsx'
 
+
+// ***** Redux ***** // 
+import { connect } from 'react-redux';
+import { loadAllData } from '../../actions/actions.js';
+
+
 // const isAuthenticated = localStorage.getItem('isAuth')
 // console.log('isAuthenticated', isAuthenticated)
 
@@ -43,6 +49,10 @@ class App extends Component {
     }
   }
   componentDidMount() {
+    // ***** Redux ***** // 
+    this.props.loadAllData(); // step 1
+    // has appended loadAllData to the properties of this page
+
 
     axios
       .get('/food')
@@ -76,6 +86,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('** returning from the reducers **', this.props, '*****') // step 4
     const isAuth = localStorage.isAuth
 
     if (isAuth === "true") {
@@ -138,4 +149,23 @@ class App extends Component {
     }
   }
 }
-export default App;
+
+// ***** Redux *****//
+const mapStateToProps = (state) => {
+  // listening to reducers 
+  // takes the data from the reducers and turns it into an object 
+  return {
+     food: state
+   }
+}
+ 
+const ConnectedApp = connect(
+  // connect App to access the store 
+  // if Connected is appended to the name - it will have access to the store
+  mapStateToProps, 
+  {loadAllData} // gives the app the awareness of this function 
+)(App); 
+// App is in reference to the name that you called the component
+
+
+export default ConnectedApp;

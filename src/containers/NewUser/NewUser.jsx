@@ -53,75 +53,77 @@ class NewUser extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <GlobalHeader />
-                <h1>HUNGRY?
-                    <br />
-                    CREATE AN ACCOUNT
-                </h1>
-                <div className="NewUser">
-                    <div className="NewUser-Container">
-                        <div className="User-Fields">
-                            {/* <FirstNameFieldComponent /> */}
-                            <div className="field-container">
-                                <input type="text" placeholder="Enter First Name" name="name" value={this.state.name} onChange={this.handleChange} />
-                            </div>
-                            {/* <LastNameFieldComponent /> */}
-                            <div className="field-component">
-                                <input type="text" placeholder="Enter Last Name" name="last" value={this.state.last} onChange={this.handleChange} />
-                            </div>
-                            {/* <EmailFieldComponent /> */}
-                            <div className="field-component">
-                                <input type="text" placeholder="Enter Email Address" name="email" value={this.state.email} onChange={this.handleChange} />
-                            </div>
-                            {/* <UsernameFieldComponent /> */}
-                            <div className="field-container">
-                                <input type="text" placeholder="Enter Phone Number" name="phone" value={this.state.phone} onChange={this.handleChange} />
-                            </div>
-                            {/* <PasswordFieldComponent /> */}
-                            <div className="field-container">
-                                <input type="password" placeholder="Enter Password" name="password" value={this.state.password} onChange={this.handleChange} />
-                            </div>
-                        </div>
-                        <div className="Address-Fields">
-                            {/* <AddressFieldComponent /> */}
-                            <div className="address-field-container">
-                                <input type="text" placeholder="Street Address" name="address" />
-                                <input type="text" placeholder="City" name="city" />
-                                <input type="text" placeholder="State" name="state" />
-                                <input type="text" placeholder="Zip Code" name="zip" />
-                            </div>
-                            {/* <DietaryRestrictionComponent /> */}
-                            <div className="dropdown-container">
-                                <select name="diet" onChange={this.handleChange} value={this.state.diet} className="select-container">
-                                    <option name="diet" value="default">
-                                        Any Dietary Restrictions?
-                                    </option>
-                                    <option name="diet" value="true">
-                                        YES
-                                    </option>
-                                    <option selected name="diet" value="false">
-                                        NO
-                                    </option>
-                                </select>
-                            </div>
+        return null;
+        // return ( 
+            // <div>
+            //     <GlobalHeader />
+            //     <h1>HUNGRY?
+            //         <br />
+            //         CREATE AN ACCOUNT
+            //     </h1>
+            //     <div className="NewUser">
+            //         <div className="NewUser-Container">
+            //             <div className="User-Fields">
+            //                 {/* <FirstNameFieldComponent /> */}
+            //                 <div className="field-container">
+            //                     <input type="text" placeholder="Enter First Name" name="name" value={this.state.name} onChange={this.handleChange} />
+            //                 </div>
+            //                 {/* <LastNameFieldComponent /> */}
+            //                 <div className="field-component">
+            //                     <input type="text" placeholder="Enter Last Name" name="last" value={this.state.last} onChange={this.handleChange} />
+            //                 </div>
+            //                 {/* <EmailFieldComponent /> */}
+            //                 <div className="field-component">
+            //                     <input type="text" placeholder="Enter Email Address" name="email" value={this.state.email} onChange={this.handleChange} />
+            //                 </div>
+            //                 {/* <UsernameFieldComponent /> */}
+            //                 <div className="field-container">
+            //                     <input type="text" placeholder="Enter Phone Number" name="phone" value={this.state.phone} onChange={this.handleChange} />
+            //                 </div>
+            //                 {/* <PasswordFieldComponent /> */}
+            //                 <div className="field-container">
+            //                     <input type="password" placeholder="Enter Password" name="password" value={this.state.password} onChange={this.handleChange} />
+            //                 </div>
+            //             </div>
+            //             <div className="Address-Fields">
+            //                 {/* <AddressFieldComponent /> */}
+            //                 <div className="address-field-container">
+            //                     <input type="text" placeholder="Street Address" name="address" />
+            //                     <input type="text" placeholder="City" name="city" />
+            //                     <input type="text" placeholder="State" name="state" />
+            //                     <input type="text" placeholder="Zip Code" name="zip" />
+            //                 </div>
+            //                 {/* <DietaryRestrictionComponent /> */}
+            //                 <div className="dropdown-container">
+            //                     <select name="diet" onChange={this.handleChange} value={this.state.diet} className="select-container">
+            //                         <option name="diet" value="default">
+            //                             Any Dietary Restrictions?
+            //                         </option>
+            //                         <option name="diet" value="true">
+            //                             YES
+            //                         </option>
+            //                         <option selected name="diet" value="false">
+            //                             NO
+            //                         </option>
+            //                     </select>
+            //                 </div>
 
-                        </div>
+            //             </div>
 
-                    </div>
-                    {/* <GetStartedButtonComponent /> */}
-                    <div className="button-containter">
-                        <Link to='/login'>
-                            <button className="button" onClick={this.handleSubmit}>
-                                CREATE ACCOUNT
-                            </button>
-                        </Link>
-                    </div>
-                </div>
-            </div >
+            //         </div>
+            //         {/* <GetStartedButtonComponent /> */}
+            //         <div className="button-containter">
+            //             <Link to='/login'>
+            //                 <button className="button" onClick={this.handleSubmit}>
+            //                     CREATE ACCOUNT
+            //                 </button>
+            //             </Link>
+            //         </div>
+            //     </div>
+            // </div >
 
-        )
+        // )
+
     }
 }
 

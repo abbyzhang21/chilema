@@ -6,18 +6,18 @@ import { faUserCircle, faCircle, faGlobe } from '@fortawesome/free-solid-svg-ico
 export const FoodList = (props) => {
     console.log('food list:', props.foodItem)
 
-    return props.foodItem.map(item => {
+    return props.foodItem.map((item) => {
         const baseUrl = '/food/detail/'
         console.log(baseUrl)
         return (
-            <div className='foodList-container' >
-                <div key={item.id} className="foodList" >
+            <div key={item.id}className='foodList-container' >
+                <div className="foodList" >
                     <div>
                         <img src={item.image} alt="" />
                     </div>
 
                     <div className='food-list-info'>
-                        <a href={baseUrl + item.id}><h3 class='foot-list-title'>{item.item}</h3></a>
+                        <a href={baseUrl + item.id}><h3 className='foot-list-title'>{item.item}</h3></a>
                         <div className='food-list-category'>
                             {item.price}
                             <FontAwesomeIcon icon={faGlobe} color='#666633' size='2px' className='dot-icon' />

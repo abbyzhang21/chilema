@@ -1,20 +1,30 @@
 import axios from 'axios';
 
-const addItem = (item) => {
+export const LOAD_ALL = 'LOAD_ALL';
 
-  console.log('item', item)
+export const loadAllData = () => {
+    //Sanity Check: 
+    console.log('ACTION: loadAllData was called');
 
-  axios
-    .post('/food/new', item)
-    .then((response) => {
-      console.log("POSTED ITEM: ", item)
-      console.log('response.data: ', response.data)
-    })
-    .catch((err) => {
-      console.log('err', err)
-    })
+    return function (dispatch) { 
+        return
+        axios
+        .get('http://192.168.200.87:9000/food')
+            .then(data => { // step 3
+                console.log('data from action', data);
+                dispatch({
+                    //dispatch looks for an object
+                    // two requirements: type & payload
+                    type: LOAD_ALL,
+                    payload: data 
+            })
+            .catch(err => {
+                dispatch({
+                    type: LOAD_ALL,
+                    payload: 'err'
+                })
+            })
+        }) 
+    }
 
 }
-
-export default addItem
-

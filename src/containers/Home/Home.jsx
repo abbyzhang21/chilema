@@ -3,7 +3,7 @@ import axios from 'axios';
 import { SearchContainer } from '../../components/DropDownComponents';
 import './Home.css';
 // import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
-import chilema_white_logo from '../../assets/chilema_logo_rev_white.png';
+// import chilema_white_logo from '../../assets/chilema_logo_rev_white.png';
 import chilema_logo from '../../assets/chilema_logo.png'
 import Header from '../../components/Header.jsx';
 

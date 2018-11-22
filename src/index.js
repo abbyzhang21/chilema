@@ -4,8 +4,25 @@ import './index.css';
 import App from './containers/App';
 import * as serviceWorker from './serviceWorker';
 
+//Redux -----------------------------
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import reducers from './reducers';
+//Redux -----------------------------
 
-ReactDOM.render(<App />, document.getElementById('root'));
+//Store -----------------------------
+const store = createStore(
+    reducers,
+    applyMiddleware(thunk)
+);
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>
+
+    , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

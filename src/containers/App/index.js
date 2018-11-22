@@ -26,6 +26,11 @@ import Landing from '../Landing/Landing.jsx';
 import EditAccount from '../EditAccount/EditAccount.jsx';
 import _404 from '../404/_404.jsx'
 
+//Redux------------------
+import { connect } from 'react-redux';
+import { loadAllData } from '../../actions';
+//Redux------------------
+
 // const isAuthenticated = localStorage.getItem('isAuth')
 // console.log('isAuthenticated', isAuthenticated)
 
@@ -43,7 +48,8 @@ class App extends Component {
     }
   }
   componentDidMount() {
-
+    //Redux ------------------->call our action
+    this.props.loadAllData()
     axios
       .get('/food')
       .then(foods => {
@@ -76,6 +82,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('###########', this.props, '<<<<<<<<<<');
     // console.log('ISAUTH : ', localStorage.getItem('isAuth'))
     const isAuth = localStorage.isAuth
     // console.log('isAuth', isAuth)
@@ -153,4 +160,18 @@ class App extends Component {
     }
   }
 }
-export default App;
+
+//Redux----------------
+const mapStateToProps = (state) => {   // listening to reducers
+  return {
+    food: state
+  }
+}
+
+const ConnectedApp = connect( //connect app to access the 'store'
+  mapStateToProps,
+  { loadAllData }
+)(App);
+
+
+export default ConnectedApp;

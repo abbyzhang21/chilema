@@ -40,9 +40,10 @@ foodRouter.get('/detail/:id', (req, res) => {
 
 // post new food item into 'Food' table
 foodRouter.post('/new', (req, res) => {
+  console.log('FOOD REQ.BODY: ')
   const { id } = req.params;
   const payload = {
-    // id: id,
+    user_id: req.body.user_id,
     category: req.body.category,
     item: req.body.item,
     description: req.body.description,
@@ -50,7 +51,7 @@ foodRouter.post('/new', (req, res) => {
     image: req.body.image,
     fd_lat: Number(req.body.fd_lat),
     fd_long: Number(req.body.fd_long),
-    
+
   }
 
   Food
@@ -99,18 +100,23 @@ foodRouter.put('/update/:id', (req, res) => {
 
 // delete a food item by 'id' from the 'Food' table
 foodRouter.delete('/delete/:id', (req, res) => {
+
   const { id } = req.params
+
+  // console.log()
 
   Food
     .where({ id })
     .destroy()
     .then(
-      res.redirect('/food')
+      res.send('/users/detail/')
+      // res.send('some info')
     )
     .catch(err => {
       console.log('err: ', err)
       res.json(err)
     })
+
 
 })
 

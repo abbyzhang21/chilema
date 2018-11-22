@@ -20,7 +20,7 @@ class AddFood extends Component {
       image: "",
       fd_lat: "",
       fd_long: "",
-      user_id: 1 //TODO: need to link to the local storage with the current user's id if they are logged in
+      user_id: "" //TODO: need to link to the local storage with the current user's id if they are logged in
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -33,28 +33,17 @@ class AddFood extends Component {
     event.preventDefault();
     this.setState({
       [target.name]: event.target.value,
+      user_id: localStorage.getItem('LS_id')
     });
-    console.log('new dish', this.state)
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('INPUT VALUES ', this.state);
     addItem(this.state)
   }
 
   componentDidMount() {
-
-    // axios
-    //     .post('food/new')
-    //     .then( => {
-    //         console.log('foodItem', foods.data)
-    //         this.setState({ foodItem: foods.data })
-    //     })
-    //     .catch(err => {
-    //         console.log('err', err)
-    //     })
-    console.log('this.state: ', this.state)
+    // console.log('this.state: ', this.state)
   }
 
 
@@ -87,8 +76,8 @@ class AddFood extends Component {
               <input type="text" placeholder="Longitude" name="fd_long" value={this.state.fd_long} onChange={this.handleChange} />
             </div>
             {/* <div>
-            <input type="text" placeholder="user_id" name="user_id" value={this.state.user_id} onChange={this.handleChange} />
-          </div> */}
+              <input type="text" placeholder="user_id" name="user_id" value={this.state.user_id} onChange={this.handleChange} />
+            </div> */}
             <div>
               <input type="submit" value="Submit" />
             </div>

@@ -26,7 +26,7 @@ class Home extends Component {
         axios
             .get('/food')
             .then(foods => {
-                console.log('foodItem', foods.data)
+                // console.log('foodItem', foods.data)
                 this.setState({ foodItem: foods.data })
             })
             .catch(err => {

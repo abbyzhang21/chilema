@@ -5,7 +5,7 @@ const addItem = (item) => {
   console.log('item', item)
 
   axios
-    .post('new', item)
+    .post('/food/new', item)
     .then((response) => {
       console.log("POSTED ITEM: ", item)
       console.log('response.data: ', response.data)

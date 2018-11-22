@@ -17,8 +17,6 @@ class GlobalHeader extends Component {
         localStorage.clear()
         axios.get('/auth/logout')
             .then((response) => {
-                // localStorage.clear()
-                // localStorage.setItem('isAuth', false)
                 window.location = '/'
                 console.log(response)
             })
@@ -29,7 +27,10 @@ class GlobalHeader extends Component {
 
     render() {
         const isAuth = localStorage.isAuth;
-        
+        const tempId = localStorage.getItem('LS_id')
+        const profilePath = `/users/detail/${tempId}`
+        // console.log(tempId)
+
         return (
             <div className='header'>
                 <Link className='header-logo' to='/'>
@@ -37,19 +38,24 @@ class GlobalHeader extends Component {
                 </Link>
                 <div className='global-header-button'>
                     {!isAuth ? (
-                    <div>
-                    <Link to='/login'>
-                        <button>Log In</button>
-                    </Link>
-                    <Link to='/newuser'>
-                        <button>Sign Up</button>
-                    </Link>       
-                    </div>
+                        <div>
+                            <Link to='/login'>
+                                <button>Log In</button>
+                            </Link>
+                            <Link to='/newuser'>
+                                <button>Sign Up</button>
+                            </Link>
+                        </div>
                     ) : (
-                    <Link to='/auth/logout'>
-                        <button onClick={this.handleLogout}>Log Out</button>
-                    </Link>
-                    )}
+                            <div>
+                                <Link to='/auth/logout'>
+                                    <button onClick={this.handleLogout}>Log Out</button>
+                                </Link>
+                                <Link to={profilePath}>
+                                    <button>Profile</button>
+                                </Link>
+                            </div>
+                        )}
                 </div>
             </div>
         )

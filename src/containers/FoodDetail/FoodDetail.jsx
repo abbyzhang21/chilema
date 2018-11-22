@@ -30,6 +30,33 @@ class FoodDetail extends Component {
         console.log('err', err)
       })
   }
+
+  handleDelete = () => {
+    const food_id = this.state.foodItem.id
+    const urlString = `/food/delete/${food_id}`
+
+    // DELETE VALIDATION FLOW
+    // get the id of logged in user from localStorage for validation
+    const tempUser = localStorage.getItem('LS_id')
+    // get the user_id associated to the food id to validate against logged in user
+    const user_id = this.state.foodItem.user_id
+
+    if (tempUser === user_id.toString()) {
+      axios
+        .delete(urlString)
+        .then((response) => {
+          window.location = `${response.data}${tempUser}`
+          console.log(response)
+        })
+        .catch((err) => {
+          console.log('error', err)
+        })
+    } else {
+      alert('Sorry, you can only delete your own food items!')
+    }
+
+  }
+
   render() {
     const food = this.state.foodItem;
     return (
@@ -44,6 +71,9 @@ class FoodDetail extends Component {
               <div className='food-detail-info'>
                 <span>{food.price}</span>
                 <span>{food.category}</span>
+              </div>
+              <div>
+                <button onClick={this.handleDelete}>DELETE</button>
               </div>
 
             </div>

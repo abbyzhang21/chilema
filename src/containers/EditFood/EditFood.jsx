@@ -5,6 +5,7 @@ import axios from 'axios';
 
 
 
+
 class EditFood extends Component{
     constructor(props) {
         super(props)
@@ -12,7 +13,12 @@ class EditFood extends Component{
 
     render() {
         return (
-            
+            <div>
+                <GlobalHeader />
+            <div> 
+                    
+            </div>
+            </div>
         )
     }
 }

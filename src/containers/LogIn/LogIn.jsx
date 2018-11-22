@@ -53,7 +53,7 @@ class LogIn extends Component {
                 localStorage.setItem('LS_id', response.data.id)
                 localStorage.setItem('LS_email', this.state.email)
                 localStorage.setItem('isAuth', true)
-                window.location = `/users/detail/${response.data.id}`
+                window.location = '/'
             })
             .catch((err) => {
                 console.log('err', err)

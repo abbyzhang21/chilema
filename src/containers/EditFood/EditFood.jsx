@@ -11,7 +11,8 @@ class EditFood extends Component{
     }
 
     render() {
-        return 
+        return (
+            
         )
     }
 }

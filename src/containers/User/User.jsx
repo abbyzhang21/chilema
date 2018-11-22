@@ -39,6 +39,10 @@ class User extends Component {
 
     }
 
+    addFoodRedirect = () => {
+        window.location = '/food/new'
+    }
+
     render() {
         const user = this.state.users;
         // console.log('THIS USERS FOOD: ', this.state.foodItem)
@@ -58,10 +62,11 @@ class User extends Component {
                         } color='#666633' className='user-icon' /> {user.phone}</p>
                         <p className='user-diet'>Dietary Restriction {user.diet}</p>
                     </div>
-                    {/* <div>
-                        <button onClick={this.handleDelete}>DELETE</button>
-                        <button onClick=>EDIT</button>
-                    </div> */}
+
+                    <div>
+                        <button onClick={this.addFoodRedirect}>CREATE FOOD ITEM</button>
+                    </div>
+
                     <div className='user-food-list'>
                         <p className='user-food'>
                             Food Shared from <span className='user-name'>{user.name}</span>

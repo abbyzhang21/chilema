@@ -40,9 +40,10 @@ foodRouter.get('/detail/:id', (req, res) => {
 
 // post new food item into 'Food' table
 foodRouter.post('/new', (req, res) => {
+  console.log('FOOD REQ.BODY: ')
   const { id } = req.params;
   const payload = {
-    // id: id,
+    user_id: req.body.user_id,
     category: req.body.category,
     item: req.body.item,
     description: req.body.description,

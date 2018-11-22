@@ -76,22 +76,7 @@ class App extends Component {
   }
 
   render() {
-    // console.log('ISAUTH : ', localStorage.getItem('isAuth'))
     const isAuth = localStorage.isAuth
-    // console.log('isAuth', isAuth)
-    // console.log('typeof isAuth', typeof isAuth)
-    // const PrivateRoute = ({ component: Component, ...rest }) => (
-    //   <Route {...rest} render={(props) => (
-    //     isAuth === true
-    //       ? <Component {...props} />
-    //       : <Redirect to='/landing' />
-    //   )} />
-    // )
-
-    // console.log(PrivateRoute)
-
-
-    // console.log("this is the state: ", this.state)
 
     if (isAuth === "true") {
       return (

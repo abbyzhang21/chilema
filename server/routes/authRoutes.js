@@ -102,7 +102,6 @@ authRouter.post('/register', (req, res) => {
 // LOCAL STRATEGY
 authRouter.post('/login', passport.authenticate('local', { sucessRedirect: '/welcome', failureRedirect: '/' }), (req, res) => {
   console.log('USER AUTHENTICATED')
-  // req.session.isAuthenticated = true;
   console.log('REQ.BODY: ', req.body)
   console.log('TEMPUSER : ', tempUser)
   res.send(tempUser)

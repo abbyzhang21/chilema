@@ -12,22 +12,20 @@
 .receipt-top {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     background-color: #cc6666;
     width: 100%;
-    padding-top: 5%;
+    height: 40%;
 
 }
-.receipt-top h1 {
-    color: white;
-}
+
 h3 {
     text-transform: uppercase;
 }
 
 .check-icon {
-    font-size: 24px;
+    font-size: 12px;
     color: white;
 }
 

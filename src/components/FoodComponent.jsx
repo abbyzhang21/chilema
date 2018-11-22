@@ -12,7 +12,7 @@ export const FoodList = (props) => {
         return (
             <div className='foodList-container' >
                 <div key={item.id} className="foodList" >
-                    <div>
+                    <div className='food-list-img'>
                         <img src={item.image} alt="" />
                     </div>
 

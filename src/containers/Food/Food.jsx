@@ -6,6 +6,10 @@ import GlobalHeader from '../../components/GlobalHeaderComponent';
 import MyMap from '../Map/Map.jsx';
 
 
+//Redux----------
+import { loadAllData } from '../../actions';
+import { connect } from 'react-redux';
+
 class Food extends Component {
     constructor(props) {
         super(props)
@@ -14,6 +18,7 @@ class Food extends Component {
         }
     }
     componentDidMount() {
+        this.props.loadAllData();
         // console.log(window.location.pathname)
         let pathname = window.location.pathname
         console.log(pathname)
@@ -49,12 +54,13 @@ class Food extends Component {
             })
     }
     render() {
+        console.log('is this rendering<===========', this.props.food);
         // const baseUrl = 'detail/'
         return (
             <div className='food-page-container'>
                 <GlobalHeader />
                 <div className='food-page-body'>
-                    <FoodList foodItem={this.state.foodItem} />
+                    <FoodList foodItem={this.props.food} />
                 </div>
 
             </div>
@@ -62,4 +68,15 @@ class Food extends Component {
     }
 }
 
-export default Food;
+const mapStatetoProps = (state) => {
+    return {
+        food: state
+    }
+}
+
+const ConnectedFood = connect(
+    mapStatetoProps,
+    { loadAllData }
+)(Food)
+
+export default ConnectedFood;

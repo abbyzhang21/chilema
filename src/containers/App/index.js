@@ -50,15 +50,15 @@ class App extends Component {
   componentDidMount() {
     //Redux ------------------->call our action
     this.props.loadAllData()
-    axios
-      .get('/food')
-      .then(foods => {
-        // console.log('foodItem', foods.data)
-        this.setState({ foodItem: foods.data })
-      })
-      .catch(err => {
-        console.log('err', err)
-      })
+    // axios
+    //   .get('/food')
+    //   .then(foods => {
+    //     // console.log('foodItem', foods.data)
+    //     this.setState({ foodItem: foods.data })
+    //   })
+    //   .catch(err => {
+    //     console.log('err', err)
+    //   })
 
     axios
       .get('/local')

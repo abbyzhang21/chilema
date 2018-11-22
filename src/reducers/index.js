@@ -5,7 +5,7 @@ const food = (state = [], action) => {
     switch (action.type) {
         case LOAD_ALL:
             //do something
-            return state; //[]
+            return action.payload; //[]
         default:
             return state;
 

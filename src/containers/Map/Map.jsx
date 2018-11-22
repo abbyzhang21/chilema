@@ -11,13 +11,7 @@ import axios from 'axios';
 class MyMap extends Component {
   constructor(props) {
     super(props)
-    this.state =
-      []
-    // {
-    //   lat: "21.3068",
-    //   lng: "-157.8607",
-    //   zoom: 13,
-    // }
+    this.state = []
   }
 
   componentDidMount() {
@@ -31,10 +25,6 @@ class MyMap extends Component {
             item.local_long
           ]
           this.state.push(location)
-          // console.log('THIS.STATE: ', this.state)
-          // this.state.forEach((element) => {
-          //   console.log("MAP ELEMENT: ", element)
-          // })
           return 'success'
         })
       })

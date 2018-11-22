@@ -17,7 +17,8 @@ class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            foodItem: []
+            foodItem: [],
+            renderMap: false
         }
     }
 
@@ -31,9 +32,52 @@ class Home extends Component {
             .catch(err => {
                 console.log('err', err)
             })
+
     }
 
+    componentWillMount() {
+
+        ////////////////////////////////////////////////////
+        /// GET CURRENT LOCATION ///
+        ////////////////////////////////////////////////////
+
+        if (navigator.geolocation) {
+            console.log("GEOLOCATION WORKS")
+            navigator.geolocation.getCurrentPosition(displayLocationInfo);
+        } else {
+            console.log("GEOLOCATION NOT SUPPORTED")
+        }
+
+        let obj = {}
+        let arr = []
+
+        function displayLocationInfo(position) {
+            arr.push(position.coords.latitude)
+            arr.push(position.coords.longitude)
+            obj.lng = position.coords.longitude;
+            obj.lat = position.coords.latitude;
+            return arr
+        }
+        console.log('ARR: ', arr)
+        this.state.coords = arr
+        // console.log(this.state.coords.lng)
+
+
+    }
+
+    // showMap = () => {
+    //     console.log('showMap')
+    //     if (this.state.renderMap === false) {
+    //         this.state.renderMap = true;
+    //     } else {
+    //         this.state.renderMap = false;
+    //     }
+    //     console.log(this.state.renderMap)
+    // }
+
     render() {
+        // console.log(this.state)
+        console.log(this.state.renderMap)
         return (
 
             <div className='home-wrapper'>
@@ -52,6 +96,7 @@ class Home extends Component {
 
                 </div>
                 <div className='home-bottom'>
+                    {/* <button onClick={this.showMap}>FIND NEAR ME</button> */}
                     <h2>have you eaten ?</h2>
                     <Promo foodItem={this.state.foodItem} />
                     <Map_Global />
@@ -61,5 +106,9 @@ class Home extends Component {
         )
     }
 }
+
+// Home.defaultProps = {
+//     position: ["21.3068", "-157.8607"]
+// }
 
 export default Home;

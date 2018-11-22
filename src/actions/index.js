@@ -10,7 +10,7 @@ export const loadAllData = () => {
                 console.log('data from action', data)
                 dispatch({
                     type: LOAD_ALL,
-                    payload: data
+                    payload: data.data //the array from the "data from action'"
                 })
             })
             .catch(err => {

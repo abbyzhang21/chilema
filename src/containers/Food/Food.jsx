@@ -5,6 +5,11 @@ import axios from 'axios';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 import MyMap from '../Map/Map.jsx';
 
+// ***** REDUX ***** //
+import { connect } from 'react-redux';
+import { loadAllData } from '../../actions';
+
+
 
 class Food extends Component {
     constructor(props) {
@@ -14,6 +19,7 @@ class Food extends Component {
         }
     }
     componentDidMount() {
+        this.props.loadAllData();
         // console.log(window.location.pathname)
         let pathname = window.location.pathname
         console.log(pathname)
@@ -49,12 +55,13 @@ class Food extends Component {
             })
     }
     render() {
+        console.log('///// this.props.food /////',this.props.food);
         // const baseUrl = 'detail/'
         return (
             <div className='food-page-container'>
                 <GlobalHeader />
                 <div className='food-page-body'>
-                    <FoodList foodItem={this.state.foodItem} />
+                    <FoodList foodItem={this.props.food} />
                 </div>
 
             </div>
@@ -62,4 +69,15 @@ class Food extends Component {
     }
 }
 
-export default Food;
+const mapStateToProps = (state) => {
+    return {
+        food: state
+    }
+}
+
+const ConnectedFood = connect(
+    mapStateToProps,
+    { loadAllData }
+)(Food);
+
+export default ConnectedFood;

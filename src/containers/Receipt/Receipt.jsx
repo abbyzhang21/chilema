@@ -17,7 +17,7 @@ export const Receipt = () => {
                     </h1>
                     <h3>
                         your order was successful
-                </h3>
+                    </h3>
                 </div>
                 <MyMap />
                 <div className='receipt-direction'>

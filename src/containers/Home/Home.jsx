@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { SearchContainer } from '../../components/DropDownComponents';
+// import { SearchContainer } from '../../components/DropDownComponents';
 import './Home.css';
 // import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
 // import chilema_white_logo from '../../assets/chilema_logo_rev_white.png';
@@ -90,9 +90,9 @@ class Home extends Component {
                         <div>
                             <img src={chilema_logo} alt="" className="home-image" />
                         </div>
-                        <div className="searchBar">
+                        {/* <div className="searchBar">
                             <SearchContainer foodItem={this.state.foodItem} />
-                        </div>
+                        </div> */}
                     </div>
 
                 </div>

@@ -20,6 +20,11 @@
 
 }
 
+#receiptThankYou {
+    color: white;
+    /* background-color: white; */
+}
+
 h3 {
     text-transform: uppercase;
 }

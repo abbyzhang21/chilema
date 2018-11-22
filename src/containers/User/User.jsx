@@ -64,7 +64,7 @@ class User extends Component {
                     </div>
 
                     <div>
-                        <button onClick={this.addFoodRedirect}>CREATE FOOD ITEM</button>
+                        <button className="button" onClick={this.addFoodRedirect}>CREATE FOOD ITEM</button>
                     </div>
 
                     <div className='user-food-list'>

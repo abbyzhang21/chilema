@@ -12,7 +12,7 @@ export const Receipt = () => {
             <div className='receipt-wrapper'>
                 <div className='receipt-top'>
                     <FontAwesomeIcon icon={faCheckCircle} className='check-icon' />
-                    <h1>
+                    <h1 id='receiptThankYou'>
                         Thank You !
                     </h1>
                     <h3>

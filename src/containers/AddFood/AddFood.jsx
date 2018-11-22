@@ -39,7 +39,9 @@ class AddFood extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    console.log('WORKING')
     addItem(this.state)
+    // window.location('/')
   }
 
   componentDidMount() {
@@ -51,7 +53,7 @@ class AddFood extends Component {
     return (
       <div>
         <GlobalHeader />
-        <h1>FOOD/NEW SANITY CHECK</h1>
+        <h1>WHAT WILL YOU BE MAKING?</h1>
         <div className="new-food-container">
           <form action="/food/new" method="POST" onSubmit={this.handleSubmit}>
             <div className="field-component">

@@ -22,7 +22,6 @@ export const FoodList = (props) => {
                             {item.price}
                             <FontAwesomeIcon icon={faGlobe} color='#666633' size='2px' className='dot-icon' />
                             <p>
-
                                 {item.category}
                             </p>
                         </div>

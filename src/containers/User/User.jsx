@@ -30,6 +30,7 @@ class User extends Component {
                     return items.user_id === parseInt(id)
                 })
                 this.setState({ foodItem: userFood })
+                // console.log(this.state)
             }))
 
             .catch(err => {
@@ -37,10 +38,11 @@ class User extends Component {
             })
 
     }
+
     render() {
         const user = this.state.users;
-        console.log('THIS USERS FOOD: ', this.state.foodItem)
-        console.log('USER WINDOW.LOCATION: ', window.location.pathname)
+        // console.log('THIS USERS FOOD: ', this.state.foodItem)
+        // console.log('USER WINDOW.LOCATION: ', window.location.pathname)
         return (
             <div className='user-wrapper'>
                 <GlobalHeader />

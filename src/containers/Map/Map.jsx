@@ -32,9 +32,9 @@ class MyMap extends Component {
           ]
           this.state.push(location)
           // console.log('THIS.STATE: ', this.state)
-          this.state.forEach((element) => {
-            console.log("MAP ELEMENT: ", element)
-          })
+          // this.state.forEach((element) => {
+          //   console.log("MAP ELEMENT: ", element)
+          // })
           return 'success'
         })
       })

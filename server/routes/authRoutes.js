@@ -40,6 +40,8 @@ passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, don
       // validate user input vs decrypted password in db
       bcrypt.compare(password, user.attributes.password)
         .then((result) => {
+          console.log('RESULT', result)
+          console.log(user)
           if (result) {
             done(null, user)
           } else {
@@ -62,7 +64,6 @@ authRouter.get('/register', (req, res) => {
 
 // register user new user and add them to the database
 authRouter.post('/register', (req, res) => {
-  console.log('SERVER HIT')
 
   const { name, last, email, password, phone, diet } = req.body;
 

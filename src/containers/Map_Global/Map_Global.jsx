@@ -15,6 +15,7 @@ import './Map_Global.css'
 
 // axios call to database
 import axios from 'axios';
+import { arch } from 'os';
 
 const { BaseLayer, Overlay } = LayersControl
 
@@ -22,16 +23,14 @@ const { BaseLayer, Overlay } = LayersControl
 class Map_Global extends Component {
   constructor(props) {
     super(props)
-    this.state =
-      []
-    // {
-    //   lat: "21.3068",
-    //   lng: "-157.8607",
-    //   zoom: 13,
-    // }
+    this.state = []
   }
 
   componentDidMount() {
+
+    ////////////////////////////////////////////////////
+    /// GET ALL LOCATIONS ///
+    ////////////////////////////////////////////////////
     axios
       .get('/local')
       .then(local => {
@@ -52,36 +51,58 @@ class Map_Global extends Component {
       .catch(err => {
         console.log('err', err)
       })
+
+    ////////////////////////////////////////////////////
+    /// GET CURRENT LOCATION ///
+    ////////////////////////////////////////////////////
+
+    if (navigator.geolocation) {
+      console.log("GEOLOCATION WORKS")
+      navigator.geolocation.getCurrentPosition(displayLocationInfo);
+    } else {
+      console.log("GEOLOCATION NOT SUPPORTED")
+    }
+
+    let obj = {}
+    let arr = []
+
+    function displayLocationInfo(position) {
+      arr.push(position.coords.latitude)
+      arr.push(position.coords.longitude)
+      obj.lng = position.coords.longitude;
+      obj.lat = position.coords.latitude;
+      return arr
+    }
+    console.log('ARR: ', arr)
+    this.state.coords = arr
+    console.log(this.state.coords.lng)
+
   }
 
-
   render() {
-    const position = ["21.3068", "-157.8607"]
+    console.log('CURRENT LOCATION', this.state.coords)
+    const position = this.state.coords
     const geoArr = this.state;
     return (
       <div class='leaflet-container'>
-        <Map center={position} zoom={13}>
+        <Map center={position} zoom={16}>
           <TileLayer
             attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
             url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png"
           />
           <Marker position={position}>
             {geoArr.map((geoPoints) => {
-              return <Marker position={geoPoints} />
+              return <Marker position={geoPoints}>
+                <Popup>WORLD</Popup>
+              </Marker>
             })}
+            <Popup>HELLO</Popup>
           </Marker>
-          {/* <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup> */}
         </Map>
       </div>
 
     )
   }
-}
-
-Map_Global.defaultProps = {
-  position: ["21.3068", "-157.8607"]
 }
 
 export default Map_Global;

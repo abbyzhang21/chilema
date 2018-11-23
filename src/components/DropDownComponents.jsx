@@ -1,13 +1,13 @@
 import React from 'react';
 import '../stylesheets/_dropdowns.css';
 import Select from 'react-select';
-import { BrowserRouter as Link } from 'react-router-dom'
+// import { BrowserRouter as Link } from 'react-router-dom'
 
 export const SearchContainer = (props) => {
     // console.log('search options', props.foodItem)
 
     const items = props.foodItem;
-    console.log('search container items', items)
+    // console.log('search container items', items)
 
     const distinctCategory = [...new Set(items.map(item => item.category))];
     console.log('distinctCategory items', distinctCategory)

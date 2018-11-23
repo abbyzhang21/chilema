@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 import MyMap from '../Map/Map.jsx';
 import './Receipt.css';

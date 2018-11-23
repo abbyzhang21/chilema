@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../stylesheets/_header.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as  Link } from 'react-router-dom';
 // add Router, Route to 'react-router-dom' library if needed
 import chilema_horizontal_logo from '../assets/chilema_horizontal_logo.png';
 import profile_image from '../assets/Default_Avatar.png';

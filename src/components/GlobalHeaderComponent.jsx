@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import '../stylesheets/_globalHeader.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as  Link } from 'react-router-dom';
 // add router later if needed ^^
 import chilema_horizontal_logo from '../assets/chilema_horizontal_logo.png';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 class GlobalHeader extends Component {

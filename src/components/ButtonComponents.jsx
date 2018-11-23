@@ -1,7 +1,7 @@
 import React from 'react';
 import '../stylesheets/_buttons.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 
 export const LetsEatButtonComponent = () => {
 

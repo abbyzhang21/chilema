@@ -35,16 +35,28 @@ class MyMap extends Component {
 
 
   render() {
-    const position = ["21.3068", "-157.8607"]
-    const geoArr = this.state;
+    // const position = ["21.3068", "-157.8607"]
+    // const geoArr = this.state;
+    // console.log('THIS.PROPS', this.props)
+    // console.log([this.props.lat, this.props.lng])
+    let coords = []
+
+    if (!this.props.lat) {
+      coords = ["21.3068", "-157.8607"]
+    } else {
+      coords = [this.props.lat, this.props.lng]
+    }
+
+    console.log(coords)
+
     return (
       <div class='leaflet-container'>
-        <Map center={position} zoom={13}>
+        <Map center={coords} zoom={17}>
           <TileLayer
             attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
             url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png"
           />
-          <Marker position={position}>
+          <Marker position={coords}>
             {/* {geoArr.map((geoPoints) => {
               return <Marker position={geoPoints} >
                 <Popup>WORLD</Popup>

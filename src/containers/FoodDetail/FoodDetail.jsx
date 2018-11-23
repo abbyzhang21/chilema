@@ -59,6 +59,7 @@ class FoodDetail extends Component {
 
   render() {
     const food = this.state.foodItem;
+    // console.log('FOOD ', food.fd_lat)
     return (
       <div className='foodPage-container'>
         <GlobalHeader />
@@ -79,7 +80,7 @@ class FoodDetail extends Component {
 
             </div>
 
-            <MyMap />
+            <MyMap lat={food.fd_lat} lng={food.fd_long} />
 
           </div>
           <div className='food-detail-img'>

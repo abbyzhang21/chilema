@@ -32,13 +32,13 @@ class Map_Global extends Component {
     /// GET ALL LOCATIONS ///
     ////////////////////////////////////////////////////
     axios
-      .get('/local')
-      .then(local => {
+      .get('/food')
+      .then(food => {
         // console.log(food.data)
-        local.data.map((item) => {
+        food.data.map((item) => {
           let location = [
-            item.local_lat,
-            item.local_long
+            item.fd_lat,
+            item.fd_long
           ]
           this.state.push(location)
           // console.log('THIS.STATE: ', this.state)
@@ -80,16 +80,9 @@ class Map_Global extends Component {
   }
 
   render() {
-    console.log('CURRENT LOCATION', this.state.coords)
-    // const position = this.state.coords
     const LS_lat = localStorage.getItem('LS_lat')
     const LS_lng = localStorage.getItem('LS_lng')
-    console.log([LS_lat, LS_lng])
-
-    let position = [LS_lat, LS_lng];
-
-
-
+    const position = [LS_lat, LS_lng];
 
     const geoArr = this.state;
     return (
@@ -99,13 +92,13 @@ class Map_Global extends Component {
             attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
             url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png"
           />
-          <Marker position={position}>
+          <Marker color='red' position={position}>
             {geoArr.map((geoPoints) => {
               return <Marker position={geoPoints}>
-                <Popup>WORLD</Popup>
+                <Popup>Food Item</Popup>
               </Marker>
             })}
-            <Popup>HELLO</Popup>
+            <Popup>Current Location</Popup>
           </Marker>
         </Map>
       </div>

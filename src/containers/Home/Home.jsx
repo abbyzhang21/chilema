@@ -55,15 +55,17 @@ class Home extends Component {
 
     }
 
-    // showMap = () => {
-    //     console.log('showMap')
-    //     if (this.state.renderMap === false) {
-    //         this.state.renderMap = true;
-    //     } else {
-    //         this.state.renderMap = false;
-    //     }
-    //     console.log(this.state.renderMap)
-    // }
+    showMap = () => {
+        console.log('showMap')
+        if (this.state.renderMap === false) {
+            // this.state.renderMap = true;
+            this.setState({ renderMap: true })
+        } else {
+            this.setState({ renderMap: false })
+            // this.state.renderMap = false;
+        }
+        console.log(this.state.renderMap)
+    }
 
     render() {
         // console.log(this.state)
@@ -86,19 +88,16 @@ class Home extends Component {
 
                 </div>
                 <div className='home-bottom'>
-                    {/* <button onClick={this.showMap}>FIND NEAR ME</button> */}
+                    <button onClick={this.showMap}>FIND NEAR ME</button>
                     <h2>have you eaten ?</h2>
                     <Promo foodItem={this.state.foodItem} />
-                    <Map_Global />
+
+                    {this.state.renderMap === false ? (<Map_Global />) : (<div />)}
                 </div>
             </div>
 
         )
     }
 }
-
-// Home.defaultProps = {
-//     position: ["21.3068", "-157.8607"]
-// }
 
 export default Home;

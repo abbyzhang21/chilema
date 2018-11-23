@@ -94,14 +94,14 @@ class NewUser extends Component {
                             </div>
                             {/* <DietaryRestrictionComponent /> */}
                             <div className="dropdown-container">
-                                <select name="diet" onChange={this.handleChange} value={this.state.diet} className="select-container">
-                                    <option name="diet" value="default">
+                                <select name="diet" onChange={this.handleChange} defaultValue={this.state.diet} className="select-container">
+                                    <option name="diet" defaultValue="default">
                                         Any Dietary Restrictions?
                                     </option>
-                                    <option name="diet" value="true">
+                                    <option name="diet" defaultValue="true">
                                         YES
                                     </option>
-                                    <option selected name="diet" value="false">
+                                    <option name="diet" defaultValue="false">
                                         NO
                                     </option>
                                 </select>

@@ -1,4 +1,4 @@
-import { LOAD_ALL } from '../actions';
+import { LOAD_ALL, ADD_NEW_FOOD } from '../actions';
 
 const food = (state = [], action) => {
 
@@ -8,6 +8,8 @@ const food = (state = [], action) => {
             
             // return state; //[]
             return action.payload; 
+        case ADD_NEW_FOOD:
+            return action.payload;    
         default:
             return state;
 

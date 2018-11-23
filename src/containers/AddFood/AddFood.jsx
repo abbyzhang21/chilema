@@ -8,6 +8,10 @@ import './AddFood.css';
 import addItem from '../../actions/actions.js';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 
+// ***** REDUX ***** //
+import {connect} from 'react-redux';
+import { addNewFood } from '../../actions';
+
 class AddFood extends Component {
 
   constructor(props) {
@@ -44,6 +48,7 @@ class AddFood extends Component {
   }
 
   componentDidMount() {
+    this.props.addNewFood();
 
     // axios
     //     .post('food/new')
@@ -59,6 +64,7 @@ class AddFood extends Component {
 
 
   render() {
+    console.log('^^^^^^^ this.props ^^^^^', this.props)
     return (
       <div>
         <GlobalHeader />
@@ -98,5 +104,11 @@ class AddFood extends Component {
     )
   }
 }
+
+// const mapStateToProps = (state) => {
+//   return {
+
+//   }
+// }
 
 export default AddFood;

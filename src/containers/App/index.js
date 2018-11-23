@@ -28,7 +28,8 @@ import _404 from '../404/_404.jsx'
 
 //Redux------------------
 import { connect } from 'react-redux';
-import { loadAllData } from '../../actions';
+import { loadAllData, addNewFood } from '../../actions';
+
 //Redux------------------
 
 // const isAuthenticated = localStorage.getItem('isAuth')
@@ -49,7 +50,8 @@ class App extends Component {
   }
   componentDidMount() {
     //Redux ------------------->call our action
-    this.props.loadAllData()
+    this.props.loadAllData();
+    this.props.addNewFood();
     // axios
     //   .get('/food')
     //   .then(foods => {
@@ -170,7 +172,7 @@ const mapStateToProps = (state) => {   // listening to reducers
 
 const ConnectedApp = connect( //connect app to access the 'store'
   mapStateToProps,
-  { loadAllData }
+  { loadAllData, addNewFood }
 )(App);
 
 

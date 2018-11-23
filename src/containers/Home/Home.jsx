@@ -45,24 +45,13 @@ class Home extends Component {
         if (navigator.geolocation) {
             console.log("GEOLOCATION WORKS")
             navigator.geolocation.getCurrentPosition(displayLocationInfo);
+            function displayLocationInfo(position) {
+                localStorage.setItem('LS_lat', position.coords.latitude)
+                localStorage.setItem('LS_lng', position.coords.longitude)
+            }
         } else {
             console.log("GEOLOCATION NOT SUPPORTED")
         }
-
-        let obj = {}
-        let arr = []
-
-        function displayLocationInfo(position) {
-            arr.push(position.coords.latitude)
-            arr.push(position.coords.longitude)
-            obj.lng = position.coords.longitude;
-            obj.lat = position.coords.latitude;
-            return arr
-        }
-        console.log('ARR: ', arr)
-        this.state.coords = arr
-        // console.log(this.state.coords.lng)
-
 
     }
 

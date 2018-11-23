@@ -81,7 +81,16 @@ class Map_Global extends Component {
 
   render() {
     console.log('CURRENT LOCATION', this.state.coords)
-    const position = this.state.coords
+    // const position = this.state.coords
+    const LS_lat = localStorage.getItem('LS_lat')
+    const LS_lng = localStorage.getItem('LS_lng')
+    console.log([LS_lat, LS_lng])
+
+    let position = [LS_lat, LS_lng];
+
+
+
+
     const geoArr = this.state;
     return (
       <div class='leaflet-container'>

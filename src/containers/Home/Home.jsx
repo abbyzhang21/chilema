@@ -3,6 +3,8 @@ import axios from 'axios';
 // import { SearchContainer } from '../../components/DropDownComponents';
 import './Home.css';
 import '../../stylesheets/_buttons.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 // import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
 // import chilema_white_logo from '../../assets/chilema_logo_rev_white.png';
 import chilema_logo from '../../assets/chilema_logo.png'
@@ -100,7 +102,9 @@ class Home extends Component {
 
                 </div>
                 <div className='home-bottom'>
-                    <button className="button" onClick={this.showMap}>FIND NEAR ME</button>
+                    <button className="button" onClick={this.showMap}>FIND NEAR ME
+                    <FontAwesomeIcon icon={faMapMarkerAlt} color='white' size='2px' className='dot-icon fa' />
+                    </button>
                     <h2>have you eaten ?</h2>
                     <Promo foodItem={this.state.foodItem} />
                     {this.state.renderMap === false ? (<div />) : (<Map_Global geoArr={this.state.locationArr} />)}

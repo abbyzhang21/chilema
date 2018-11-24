@@ -8,4 +8,17 @@
     font-size: 80%;
     font-weight: bold;
     padding: 1%;
+    
+}
+
+@media only screen and (max-width: 660px) {
+    .button {
+        width: 20%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .button {
+        width: 35%;
+    }
 }

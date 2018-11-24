@@ -13,6 +13,7 @@ import Food from '../Food/Food.jsx';
 import User from '../User/User.jsx';
 import FoodDetail from '../FoodDetail/FoodDetail.jsx'
 import AddFood from '../AddFood/AddFood.jsx'
+import EditFood from '../EditFood/EditFood.jsx'
 // import { SearchContainer } from '../../components/DropDownComponents';
 // import { Promo } from '../../components/PromoComponent.jsx';
 import Home from '../../containers/Home/Home.jsx';
@@ -92,6 +93,11 @@ class App extends Component {
               <Route exact path='/food/japanese' component={Food} />
               <Route exact path='/receipt' component={Receipt} />
               <Route exact path='/food/detail/:id' component={FoodDetail} />
+
+
+              <Route exact path='/food/update/:id' component={EditFood} />
+
+
               <Route exact path='/users/detail/:id' component={User} />
               <Route exact path='/food/new' component={AddFood} />
               <Route exact path='/payment' component={PaymentForm} />

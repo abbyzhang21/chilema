@@ -5,7 +5,7 @@ import './AddFood.css';
 // import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
 // import Header from '../../components/Header.jsx';
 
-import addItem from '../../actions/actions.js';
+import {addItem} from '../../actions/actions.js';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 
 class AddFood extends Component {

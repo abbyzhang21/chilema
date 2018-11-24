@@ -110,8 +110,8 @@ class FoodDetail extends Component {
               </div>
               <div>
                 <br />
-                <button class="button" onClick={this.handleDelete}>DELETE</button>
-                <button class="button" onClick={this.handleEdit}>EDIT</button>
+                <button className="button" onClick={this.handleDelete}>DELETE</button>
+                <button className="button" onClick={this.handleEdit}>EDIT</button>
               </div>
             </div>
 

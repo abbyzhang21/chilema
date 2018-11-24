@@ -5,7 +5,8 @@ import './EditFood.css';
 // import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
 // import Header from '../../components/Header.jsx';
 
-import addItem from '../../actions/actions.js';
+// import addItem from '../../actions/actions.js';
+import {editFood} from '../../actions/actions.js';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 
 import axios from 'axios';
@@ -23,7 +24,7 @@ class EditFood extends Component {
       fd_lat: localStorage.getItem('LS_lat'),
       fd_long: localStorage.getItem('LS_lng'),
       user_id: "", //TODO: need to link to the local storage with the current user's id if they are logged in
-      foodItem: {}
+      foodItem: []
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -44,7 +45,8 @@ class EditFood extends Component {
     event.preventDefault();
     const id = localStorage.getItem('LS_id')
     // console.log(id)
-    addItem(this.state)
+    // addItem(this.state)
+    editFood(this.state)
 
     window.location = `/users/detail/${id}`
   }
@@ -61,6 +63,17 @@ class EditFood extends Component {
       .catch(err => {
         console.log('err', err)
       })
+    
+  //   axios
+  //     .put(url, item)
+  //     .then((response) => {
+  //       console.log('EDITING ITEM', item)
+  //       console.log('edit response.data', response.data)
+  //     })
+  //     .catch(err => {
+  //       console.log('err', err)
+  //     });
+    
   }
 
 

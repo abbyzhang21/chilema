@@ -96,19 +96,19 @@ class EditFood extends Component {
         <div className="new-food-container">
           <form action="/food/new" method="POST" onSubmit={this.handleSubmit}>
             <div className="field-component">
-              <input type="text" placeholder="Select Category" name="category" value={this.state.category} onChange={this.handleChange} />
+              <input type="text" placeholder="Select Category" name="category" value={this.state.category} onChange={this.handleChange} required />
             </div>
             <div className="field-component">
-              <input type="text" placeholder="Enter name of dish" name="item" value={this.state.item} onChange={this.handleChange} />
+              <input type="text" placeholder="Enter name of dish" name="item" value={this.state.item} onChange={this.handleChange} required />
             </div>
             <div className="field-component">
-              <input type="text" placeholder="Enter your dish description" name="description" value={this.state.description} onChange={this.handleChange} />
+              <input type="text" placeholder="Enter your dish description" name="description" value={this.state.description} onChange={this.handleChange} required />
             </div>
             <div className="field-component">
-              <input type="text" placeholder="Enter your dish price" name="price" value={this.state.price} onChange={this.handleChange} />
+              <input type="text" placeholder="Enter your dish price" name="price" value={this.state.price} onChange={this.handleChange} required />
             </div>
             <div className="field-component">
-              <input type="text" placeholder="Image Upload" name="image" value={this.state.image} onChange={this.handleChange} />
+              <input type="text" placeholder="Image Upload" name="image" value={this.state.image} onChange={this.handleChange} required />
             </div>
             <div>
               <input type="submit" value="Submit" />

@@ -72,22 +72,22 @@ class EditFood extends Component {
       <div>
         <GlobalHeader />
         <h1>EDIT DISH: {foodItem.item}</h1>
-        <div className="new-food-container">
+        <div className="new-food-container" >
           <form action="/food/new" method="POST" onSubmit={this.handleSubmit}>
             <div className="field-component">
-              <input type="text" placeholder="Select Category" name="category" value={this.state.category} onChange={this.handleChange} />
+              <input type="text" placeholder={foodItem.category} name="category" value={this.state.category} onChange={this.handleChange} />
             </div>
             <div className="field-component">
-              <input type="text" placeholder="Enter name of dish" name="item" value={this.state.item} onChange={this.handleChange} />
+              <input type="text" placeholder={foodItem.item} name="item" value={this.state.item} onChange={this.handleChange} />
             </div>
             <div className="field-component">
-              <input type="text" placeholder="Enter your dish description" name="description" value={this.state.description} onChange={this.handleChange} />
+              <input type="text" placeholder={foodItem.description} name="description" value={this.state.description} onChange={this.handleChange} />
             </div>
             <div className="field-component">
-              <input type="text" placeholder="Enter your dish price" name="price" value={this.state.price} onChange={this.handleChange} />
+              <input type="text" placeholder={foodItem.price} name="price" value={this.state.price} onChange={this.handleChange} />
             </div>
             <div className="field-component">
-              <input type="text" placeholder="Image Upload" name="image" value={this.state.image} onChange={this.handleChange} />
+              <input type="text" placeholder={foodItem.image} name="image" value={this.state.image} onChange={this.handleChange} />
             </div>
             <div>
               <input type="submit" value="Submit" />

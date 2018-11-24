@@ -23,68 +23,23 @@ const { BaseLayer, Overlay } = LayersControl
 class Map_Global extends Component {
   constructor(props) {
     super(props)
-    this.state = []
+    this.state = {
+      locationArr: []
+    }
   }
 
-  componentDidMount() {
-
-    ////////////////////////////////////////////////////
-    /// GET ALL LOCATIONS ///
-    ////////////////////////////////////////////////////
-    axios
-      .get('/food')
-      .then(food => {
-        // console.log(food.data)
-        food.data.map((item) => {
-          let location = [
-            item.fd_lat,
-            item.fd_long
-          ]
-          this.state.push(location)
-          // console.log('THIS.STATE: ', this.state)
-          this.state.forEach((element) => {
-            // console.log("MAP ELEMENT: ", element)
-          })
-          return 'success'
-        })
-      })
-      .catch(err => {
-        console.log('err', err)
-      })
-
-    ////////////////////////////////////////////////////
-    /// GET CURRENT LOCATION ///
-    ////////////////////////////////////////////////////
-
-    if (navigator.geolocation) {
-      console.log("GEOLOCATION WORKS")
-      navigator.geolocation.getCurrentPosition(displayLocationInfo);
-    } else {
-      console.log("GEOLOCATION NOT SUPPORTED")
-    }
-
-    let obj = {}
-    let arr = []
-
-    function displayLocationInfo(position) {
-      arr.push(position.coords.latitude)
-      arr.push(position.coords.longitude)
-      obj.lng = position.coords.longitude;
-      obj.lat = position.coords.latitude;
-      return arr
-    }
-    console.log('ARR: ', arr)
-    this.state.coords = arr
-    console.log(this.state.coords.lng)
-
-  }
+  componentDidMount() { }
 
   render() {
+
+    // get the current location of user from localStorage as center of map
     const LS_lat = localStorage.getItem('LS_lat')
     const LS_lng = localStorage.getItem('LS_lng')
-    const position = [LS_lat, LS_lng];
+    const position = [LS_lat, LS_lng]
 
-    const geoArr = this.state;
+    // get the locations of food items as props passed down from Home Component to render on map
+    const geoArr = this.props.geoArr
+
     return (
       <div class='leaflet-container'>
         <Map center={position} zoom={16}>

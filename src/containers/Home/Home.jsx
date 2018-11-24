@@ -19,6 +19,7 @@ class Home extends Component {
         super(props)
         this.state = {
             foodItem: [],
+            locationArr: [],
             renderMap: false
         }
     }
@@ -26,9 +27,25 @@ class Home extends Component {
     componentDidMount() {
         axios
             .get('/food')
-            .then(foods => {
-                // console.log('foodItem', foods.data)
-                this.setState({ foodItem: foods.data })
+            .then(food => {
+                this.setState({ foodItem: food.data })
+            })
+            .catch(err => {
+                console.log('err', err)
+            })
+
+        axios
+            .get('/food')
+            .then(food => {
+                food.data.map((item) => {
+                    let location = [
+                        item.fd_lat,
+                        item.fd_long
+                    ]
+                    this.setState({
+                        locationArr: [...this.state.locationArr, location]
+                    })
+                })
             })
             .catch(err => {
                 console.log('err', err)
@@ -36,12 +53,8 @@ class Home extends Component {
 
     }
 
+    // geolocation web api, get current location and store in localSotrage
     componentWillMount() {
-
-        ////////////////////////////////////////////////////
-        /// GET CURRENT LOCATION ///
-        ////////////////////////////////////////////////////
-
         if (navigator.geolocation) {
             console.log("GEOLOCATION WORKS")
             navigator.geolocation.getCurrentPosition(displayLocationInfo);
@@ -54,22 +67,17 @@ class Home extends Component {
         }
 
     }
-
+    // toggle map helper function
     showMap = () => {
-        console.log('showMap')
         if (this.state.renderMap === false) {
-            // this.state.renderMap = true;
             this.setState({ renderMap: true })
         } else {
             this.setState({ renderMap: false })
-            // this.state.renderMap = false;
         }
-        console.log(this.state.renderMap)
     }
 
     render() {
-        // console.log(this.state)
-        console.log(this.state.renderMap)
+
         return (
 
             <div className='home-wrapper'>
@@ -88,11 +96,10 @@ class Home extends Component {
 
                 </div>
                 <div className='home-bottom'>
-                    <button onClick={this.showMap}>FIND NEAR ME</button>
+                    <button class="button" onClick={this.showMap}>FIND NEAR ME</button>
                     <h2>have you eaten ?</h2>
                     <Promo foodItem={this.state.foodItem} />
-
-                    {this.state.renderMap === false ? (<Map_Global />) : (<div />)}
+                    {this.state.renderMap === false ? (<div />) : (<Map_Global geoArr={this.state.locationArr} />)}
                 </div>
             </div>
 

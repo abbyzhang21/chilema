@@ -45,10 +45,22 @@
     height: 90%;
 }
 .food-detail-description{
+    margin: auto;
     height: 20%;
-    padding:10px 0;
+    padding: 2% 0;
+    width: 80%;
 }
-.food-detail-button {
+/* .food-detail-button {
     padding: 2%;
+} */
+
+.button-container {
+    width: 100%;
+}
+.description {
+    padding-top: 0.5%;
 }
 
+span {
+    padding: 2%;
+}

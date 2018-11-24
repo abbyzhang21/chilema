@@ -38,6 +38,24 @@ foodRouter.get('/detail/:id', (req, res) => {
 
 })
 
+foodRouter.get('/update/:id', (req, res) => {
+  const { id } = req.params
+
+  console.log('FOOD SERVER HIT')
+
+  Food
+    .where({ id })
+    .fetch()
+    .then((foodItem) => {
+      res.json(foodItem)
+    })
+    .catch((err) => {
+      console.log(err)
+      res.json(err)
+    })
+
+})
+
 // post new food item into 'Food' table
 foodRouter.post('/new', (req, res) => {
   console.log('FOOD REQ.BODY: ')

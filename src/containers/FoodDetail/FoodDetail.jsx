@@ -8,6 +8,10 @@ import { LetsEatButtonComponent } from '../../components/ButtonComponents';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
+import { BrowserRouter as Router, Route, Switch, Redirect, withRouter, Link } from 'react-router-dom'
+import Home from '../Home/Home.jsx'
+
+
 
 
 class FoodDetail extends Component {
@@ -57,9 +61,40 @@ class FoodDetail extends Component {
 
   }
 
+  handleEdit = () => {
+    const food_id = this.state.foodItem.id
+    const urlString = `/food/update/${food_id}`
+
+    console.log('EDIT')
+
+    // EDIT VALIDATION FLOW
+    // get the id of logged in user from localStorage for validation
+    const tempUser = localStorage.getItem('LS_id')
+    // get the user_id associated to the food id to validate against logged in user
+    const user_id = this.state.foodItem.user_id
+
+    if (tempUser === user_id.toString()) {
+      console.log('URL String', urlString)
+      // axios
+      //   .put(urlString)
+      //   .then((response) => {
+      //     window.location = `${response.data}${tempUser}`
+      //     console.log(response)
+      //   })
+      //   .catch((err) => {
+      //     console.log('error', err)
+      //   })
+      window.location = urlString
+    } else {
+      alert('Sorry, you can only edit your own food items!')
+    }
+
+  }
+
   render() {
     const food = this.state.foodItem;
-    // console.log('FOOD ', food.fd_lat)
+    const url = `food/update/${food.id}`
+    console.log(url)
     return (
       <div className='foodPage-container'>
         <GlobalHeader />
@@ -76,8 +111,8 @@ class FoodDetail extends Component {
               <div>
                 <br />
                 <button class="button" onClick={this.handleDelete}>DELETE</button>
+                <button class="button" onClick={this.handleEdit}>EDIT</button>
               </div>
-
             </div>
 
             <MyMap lat={food.fd_lat} lng={food.fd_long} />

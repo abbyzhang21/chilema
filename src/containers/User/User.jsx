@@ -71,7 +71,7 @@ class User extends Component {
                         <p className='user-food'>
                             Food Shared from <span className='user-name'>{user.name}</span>
                         </p>
-                        <div>
+                        <div className="food-list">
                             <FoodList foodItem={this.state.foodItem} />
                         </div>
                     </div>

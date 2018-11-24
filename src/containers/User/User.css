@@ -53,6 +53,10 @@
     width: 100%;
 }
 
+.food-list {
+    width: 100%;
+}
+
 .user-food {
     color: #d15555;
     text-transform: uppercase;

@@ -18,8 +18,8 @@ class AddFood extends Component {
       description: "",
       price: "",
       image: "",
-      fd_lat: "",
-      fd_long: "",
+      fd_lat: localStorage.getItem('LS_lat'),
+      fd_long: localStorage.getItem('LS_lng'),
       user_id: "" //TODO: need to link to the local storage with the current user's id if they are logged in
     }
 
@@ -39,14 +39,14 @@ class AddFood extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('WORKING')
+    const id = localStorage.getItem('LS_id')
+    // console.log(id)
     addItem(this.state)
-    // window.location('/')
+
+    window.location = `/users/detail/${id}`
   }
 
-  componentDidMount() {
-    // console.log('this.state: ', this.state)
-  }
+  componentDidMount() { }
 
 
   render() {
@@ -71,15 +71,6 @@ class AddFood extends Component {
             <div className="field-component">
               <input type="text" placeholder="Image Upload" name="image" value={this.state.image} onChange={this.handleChange} />
             </div>
-            <div className="field-component">
-              <input type="text" placeholder="Latitude" name="fd_lat" value={this.state.fd_lat} onChange={this.handleChange} />
-            </div>
-            <div className="field-component">
-              <input type="text" placeholder="Longitude" name="fd_long" value={this.state.fd_long} onChange={this.handleChange} />
-            </div>
-            {/* <div>
-              <input type="text" placeholder="user_id" name="user_id" value={this.state.user_id} onChange={this.handleChange} />
-            </div> */}
             <div>
               <input type="submit" value="Submit" />
             </div>

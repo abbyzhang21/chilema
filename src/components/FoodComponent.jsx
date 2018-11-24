@@ -28,7 +28,9 @@ export const FoodList = (props) => {
                         </div>
                         <div className='description'>
                             <FontAwesomeIcon icon={faUserCircle} color='#666633' className='user-icon' />
-                            "{item.description}"
+                            <div className="item-description">
+                                "{item.description}"
+                            </div>        
                         </div>
                     </div>
 

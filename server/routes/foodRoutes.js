@@ -98,7 +98,7 @@ foodRouter.put('/update/:id', (req, res) => {
     price: req.body.price,
     image: req.body.image,
     fd_lat: Number(req.body.fd_lat),
-    fd_long: Number(req.body.food_long),
+    fd_long: Number(req.body.fd_long),
     user_id: Number(req.body.user_id)
   }
 

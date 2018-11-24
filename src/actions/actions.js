@@ -19,7 +19,7 @@ export const addItem = (item) => {
 export const editFood = (item) => {
   console.log('edited Item', item)
   axios
-  .put(`/food/update/:id`, item)
+  .put(`/food/update/${item.id}`, item)
   .then((response) => {
     console.log('EDITING ITEM', item)
     console.log('edit response.data', response.data)

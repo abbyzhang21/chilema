@@ -6,7 +6,7 @@ import './EditFood.css';
 // import Header from '../../components/Header.jsx';
 
 // import addItem from '../../actions/actions.js';
-import {editFood} from '../../actions/actions.js';
+import { editFood } from '../../actions/actions.js';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 
 import axios from 'axios';
@@ -48,7 +48,7 @@ class EditFood extends Component {
     // addItem(this.state)
     editFood(this.state)
 
-    window.location = `/users/detail/${id}`
+    // window.location = `/users/detail/${id}`
   }
 
   componentDidMount() {
@@ -78,6 +78,8 @@ class EditFood extends Component {
 
 
   render() {
+    const url = this.props.location;
+    console.log('editing location', url)
     console.log(this.state.foodItem)
     const foodItem = this.state.foodItem
     console.log(foodItem.item)
@@ -86,7 +88,7 @@ class EditFood extends Component {
         <GlobalHeader />
         <h1>EDIT DISH: {foodItem.item}</h1>
         <div className="new-food-container" >
-          <form action="/food/new" method="POST" onSubmit={this.handleSubmit}>
+          <form action={url} method="PUT" onSubmit={this.handleSubmit}>
             <div className="field-component">
               <input type="text" placeholder={foodItem.category} name="category" value={this.state.category} onChange={this.handleChange} />
             </div>

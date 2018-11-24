@@ -100,7 +100,7 @@ class Home extends Component {
 
                 </div>
                 <div className='home-bottom'>
-                    <button class="button" onClick={this.showMap}>FIND NEAR ME</button>
+                    <button className="button" onClick={this.showMap}>FIND NEAR ME</button>
                     <h2>have you eaten ?</h2>
                     <Promo foodItem={this.state.foodItem} />
                     {this.state.renderMap === false ? (<div />) : (<Map_Global geoArr={this.state.locationArr} />)}

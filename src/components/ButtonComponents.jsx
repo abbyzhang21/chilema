@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom';
 export const LetsEatButtonComponent = () => {
 
     return (
-        <div className="button-containter">
+        <div className="button-container">
             <Link to='/payment'>
                 <button className="button">
                     LET'S EAT !
@@ -20,7 +20,7 @@ export const LetsEatButtonComponent = () => {
 export const UploadButtonComponent = () => {
 
     return (
-        <div className="button-containter">
+        <div className="button-container">
             <button className="button">
                 UPLOAD
             </button>
@@ -32,7 +32,7 @@ export const UploadButtonComponent = () => {
 export const GetStartedButtonComponent = () => {
 
     return (
-        <div className="button-containter">
+        <div className="button-container">
             <Link to='/'>
                 <button className="button">
                     GET STARTED

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FoodList } from '../../components/FoodComponent';
 import './FoodDetail.css';
+import '../../stylesheets/_buttons.css'
 import axios from 'axios';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 import MyMap from '../Map/Map.jsx';
@@ -93,18 +94,20 @@ class FoodDetail extends Component {
 
         <div key={food.id} className='food-detail-wrapper'>
           <div className='food-detail-title'>
+
             <div>
-              <h2>{food.item}</h2>
+            <h2>{food.item}</h2>
               <div className='food-detail-info'>
                 <span>{food.price}</span>
                 <span>{food.category}</span>
               </div>
-              <div>
-                <br />
-                <button class="button" onClick={this.handleDelete}>DELETE</button>
-                <button class="button" onClick={this.handleEdit}>EDIT</button>
-              </div>
             </div>
+
+              <div className="button-container">
+                  <br />
+                <button className="button" onClick={this.handleDelete}>DELETE</button>
+                <button className="button" onClick={this.handleEdit}>EDIT</button>
+              </div>
 
             <MyMap lat={food.fd_lat} lng={food.fd_long} />
 
@@ -114,12 +117,16 @@ class FoodDetail extends Component {
             <img src={food.image} alt='' className='promo-elem'></img>
             <img src={food.image} alt='' className='promo-elem'></img>
           </div>
+          <div>
           <div className='food-detail-description'>
-            <FontAwesomeIcon icon={faUserCircle} color='#666633' className='user-icon' />
-            {food.description}
+              <FontAwesomeIcon icon={faUserCircle} color='#666633' className='user-icon' />
+              {food.description}
+ 
           </div>
-          <div className='food-detail-button'>
-            <LetsEatButtonComponent />
+          </div>
+
+          <div className="button-container">
+            <LetsEatButtonComponent/>
           </div>
         </div>
       </div>

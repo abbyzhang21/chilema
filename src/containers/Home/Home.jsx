@@ -12,6 +12,7 @@ import Map_Global from '../Map_Global/Map_Global.jsx';
 
 import Promo from '../../components/PromoComponent.jsx';
 // import CheckoutForm from '../../components/CheckoutForm.jsx'
+import _404 from '../404/_404'
 
 
 
@@ -50,6 +51,7 @@ class Home extends Component {
             })
             .catch(err => {
                 console.log('err', err)
+                return (<_404/>)
             })
 
     }

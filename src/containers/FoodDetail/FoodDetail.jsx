@@ -65,7 +65,7 @@ class FoodDetail extends Component {
         <GlobalHeader />
         {/* <DetailFood foodItem={this.state.foodItem} /> */}
 
-        <div key={food.id} className='food-detail-wrapper'>
+        <div key={food.id} className='food-detail-wrapper'> 
           <div className='food-detail-title'>
             <div>
               <h2>{food.item}</h2>

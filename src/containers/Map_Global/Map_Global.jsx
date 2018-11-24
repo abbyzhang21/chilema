@@ -36,17 +36,11 @@ class Map_Global extends Component {
     const LS_lng = localStorage.getItem('LS_lng')
     const position = [LS_lat, LS_lng]
 
-    let tempRedirect = ""
-    let tempName = ""
-
     // get the locations of food items as props passed down from Home Component to render on map
     const geoArr = this.props.geoArr
     // helper function to parse redirect url
-    // this could probably be done in a cleaner way, but was having difficulty passing a fourth index as props from the parent 'Home' component
     geoArr.forEach((element) => {
-      let temp = element[2]
-      tempRedirect = `/food/detail/${temp[0]}`
-      tempName = temp[1]
+      element[2] = `/food/detail/${element[2]}`
     })
 
     return (
@@ -60,7 +54,7 @@ class Map_Global extends Component {
             {geoArr.map((geoPoints) => {
               return <Marker position={geoPoints}>
                 <Popup>
-                  <a href={tempRedirect}>{tempName}</a>
+                  <a href={geoPoints[2]}>LINK</a>
                 </Popup>
               </Marker>
             })}

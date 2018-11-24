@@ -58,7 +58,7 @@ const Promo = (props) => {
         // console.log(url)
         return (
 
-            < div className='promo-container' >
+            < div key={item.id} className='promo-container' >
                 <Link to={url}>
                     <div className='promo-elem'>
                         <img src={item.image} className='promo-image' alt=""></img>

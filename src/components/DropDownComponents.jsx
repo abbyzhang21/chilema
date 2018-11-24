@@ -40,10 +40,14 @@ export const SearchContainer = (props) => {
 
 
 export const DietaryRestrictionComponent = () => {
+    let dietaryOptions = ['yes', 'no'];
 
     return (
         <div className="dropdown-container">
-            <select className="select-container">
+            <Select className='select-container'
+                options={dietaryOptions}
+            />    
+            {/* <select className="select-container">
                 <option value="default">
                     Any Dietary Restrictions?
                 </option>
@@ -53,7 +57,7 @@ export const DietaryRestrictionComponent = () => {
                 <option value="No">
                     NO
                 </option>
-            </select>
+            </select> */}
         </div>
     )
 }

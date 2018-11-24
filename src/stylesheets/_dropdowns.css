@@ -14,3 +14,18 @@
     margin-top: 0;
     
 }
+
+
+select {
+    background-color: #cc6666;
+
+    /* color: #cc6666; */
+    color: white;
+    font-weight: bold;
+    border: 1px solid #cc6666;
+}
+ 
+option {
+    padding: 10%;
+}
+

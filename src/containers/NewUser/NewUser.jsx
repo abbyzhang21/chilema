@@ -8,6 +8,7 @@ import GlobalHeader from '../../components/GlobalHeaderComponent';
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
+import '../../stylesheets/_buttons.css'
 import './NewUser.css';
 import axios from 'axios';
 

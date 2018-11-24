@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 // import { UsernameFieldComponent, PasswordFieldComponent } from '../../components/InputComponents';
 // import { GetStartedButtonComponent } from '../../components/ButtonComponents';
 import './LogIn.css';
+import '../../stylesheets/_buttons.css';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';

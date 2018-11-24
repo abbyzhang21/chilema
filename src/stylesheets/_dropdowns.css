@@ -1,11 +1,11 @@
 
-.drop-down-elem{
+/* .drop-down-elem{
     color: #d15555;
     text-transform: capitalize;
     background: transparent;
-    font-weight: bold;
+    font-weight: bold; */
     /* margin: 5% auto; */
-    box-shadow:10px 15px 30px  #cc666666;
+    /* box-shadow:10px 15px 30px  #cc666666;
     opacity: 0.8;
 
 }
@@ -13,4 +13,25 @@
 .drop-down-elem div {
     margin-top: 0;
     
+} */
+
+select {
+    outline: none;
+    border: 1px solid #cc6666;
+    width: 100%;
+    /* background: transparent; */
+    z-index: 10;
+    appearance: none;
+    padding: 2%;
+    margin-top: 2%;
+    color: grey;
+    /* font-weight: bold;
+    background-color: #cc6666; */
+    /* border: none; */
+}
+
+.select-container {
+    background: url('../assets/down-arrow.png') no-repeat;
+    background-size: 2%;
+    background-position: 95% center;
 }

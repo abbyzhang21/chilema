@@ -39,9 +39,11 @@ class Home extends Component {
             .get('/food')
             .then(food => {
                 food.data.map((item) => {
+                    console.log(item.item)
                     let location = [
                         item.fd_lat,
-                        item.fd_long
+                        item.fd_long,
+                        [item.id, item.item]
                     ]
                     this.setState({
                         locationArr: [...this.state.locationArr, location]
@@ -78,6 +80,7 @@ class Home extends Component {
     }
 
     render() {
+        // console.log('LOCATIONARR: ', this.state.locationArr)
 
         return (
 

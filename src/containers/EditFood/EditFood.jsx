@@ -24,7 +24,7 @@ class EditFood extends Component {
       fd_lat: localStorage.getItem('LS_lat'),
       fd_long: localStorage.getItem('LS_lng'),
       user_id: "", //TODO: need to link to the local storage with the current user's id if they are logged in
-      foodItem: []
+      foodItem: {}
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -46,7 +46,7 @@ class EditFood extends Component {
     const id = localStorage.getItem('LS_id')
     // console.log(id)
     // addItem(this.state)
-    editFood(this.state)
+    editFood(this.foodItem)
 
     // window.location = `/users/detail/${id}`
   }
@@ -82,7 +82,7 @@ class EditFood extends Component {
     console.log('editing location', url)
     console.log(this.state.foodItem)
     const foodItem = this.state.foodItem
-    console.log(foodItem.item)
+    console.log('fooditem.item' ,foodItem.item)
     return (
       <div>
         <GlobalHeader />

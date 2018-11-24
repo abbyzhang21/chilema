@@ -11,14 +11,14 @@ export const FoodList = (props) => {
         // console.log(baseUrl)
         // console.log(item.id)
         return (
-            <div className='foodList-container' >
-                <div key={item.id} className="foodList" >
+            <div key={item.id} className='foodList-container' >
+                <div className="foodList" >
                     <div className='food-list-img'>
                         <img src={item.image} alt="" />
                     </div>
 
                     <div className='food-list-info'>
-                        <a href={baseUrl + item.id}><h3 class='foot-list-title'>{item.item}</h3></a>
+                        <a href={baseUrl + item.id}><h3 className='foot-list-title'>{item.item}</h3></a>
                         <div className='food-list-category'>
                             {item.price}
                             <FontAwesomeIcon icon={faGlobe} color='#666633' size='2px' className='dot-icon' />

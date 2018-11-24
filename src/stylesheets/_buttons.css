@@ -1,13 +1,13 @@
 .button { 
     margin: 2%;
     height: 100%;
-    width: 15%;
+    width: 20%;
     background-color: #cc6666;
     color: white;
     border-radius: 5px;
     font-size: 80%;
     font-weight: bold;
-    padding: 1%;
+    padding: 2%
     
 }
 

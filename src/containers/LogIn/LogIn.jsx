@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 // import { UsernameFieldComponent, PasswordFieldComponent } from '../../components/InputComponents';
 // import { GetStartedButtonComponent } from '../../components/ButtonComponents';
 import './LogIn.css';
-import '../../stylesheets/_buttons.css';
+// import '../../stylesheets/_buttons.css';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
@@ -123,7 +123,7 @@ class LogIn extends Component {
                     {/* <GetStartedButtonComponent /> */}
                     <div className="button-containter">
                         {/* <Link to='/'> */}
-                        <button className="button" onClick={this.handleLogin}>
+                        <button className="login-button" onClick={this.handleLogin}>
                             GET STARTED
                         </button>
                         {/* </Link> */}

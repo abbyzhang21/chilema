@@ -135,7 +135,7 @@ class FoodDetail extends Component {
           </div>
 
           <div className="button-container">
-            <button className="button">LET'S EAT!</button>
+            <LetsEatButtonComponent/>
           </div>
         </div>
       </div>

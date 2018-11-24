@@ -65,8 +65,40 @@
 .user-name{
     color: black;
 }
+
+
+.user-button { 
+    margin: 2%;
+    height: 100%;
+    width: 30%;
+    background-color: #cc6666;
+    color: white;
+    border-radius: 5px;
+    font-size: 80%;
+    font-weight: bold;
+    padding: 2%
+    
+}
+
+.user-button:hover {
+    box-shadow: 0px 3px 10px #838383;
+}
+
+
 @media only screen and (max-width: 800px) {
     .user-info{
         margin-top: 25%;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    .user-button {
+        width: 35%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .user-button {
+        width: 45%;
     }
 }

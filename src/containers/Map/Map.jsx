@@ -62,9 +62,9 @@ class MyMap extends Component {
                 <Popup>WORLD</Popup>
               </Marker>
             })} */}
-            <Popup>
+            {/* <Popup>
               Food Detail
-          </Popup>
+          </Popup> */}
           </Marker>
         </Map>
       </div>

@@ -65,29 +65,20 @@ class FoodDetail extends Component {
     const food_id = this.state.foodItem.id
     const urlString = `/food/update/${food_id}`
 
-    console.log('EDIT')
-
     // EDIT VALIDATION FLOW
     // get the id of logged in user from localStorage for validation
     const tempUser = localStorage.getItem('LS_id')
     // get the user_id associated to the food id to validate against logged in user
     const user_id = this.state.foodItem.user_id
 
+
     if (tempUser === user_id.toString()) {
       console.log('URL String', urlString)
-      // axios
-      //   .put(urlString)
-      //   .then((response) => {
-      //     window.location = `${response.data}${tempUser}`
-      //     console.log(response)
-      //   })
-      //   .catch((err) => {
-      //     console.log('error', err)
-      //   })
       window.location = urlString
     } else {
       alert('Sorry, you can only edit your own food items!')
     }
+
 
   }
 

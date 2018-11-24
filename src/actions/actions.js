@@ -16,5 +16,21 @@ const addItem = (item) => {
 
 }
 
+const editItem = (item) => {
+
+  console.log('item', item)
+
+  axios
+    .put('/food/update/:id', item)
+    .then((response) => {
+      console.log("POSTED ITEM: ", item)
+      console.log('response.data: ', response.data)
+    })
+    .catch((err) => {
+      console.log('err', err)
+    })
+
+}
+
 export default addItem
 

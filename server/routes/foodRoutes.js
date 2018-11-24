@@ -89,6 +89,8 @@ foodRouter.post('/new', (req, res) => {
 foodRouter.put('/update/:id', (req, res) => {
   const { id } = req.params
 
+  console.log('REQ.BODY', req.body)
+
   // define constraints of put request
   const payload = {
     id: id,
@@ -97,8 +99,8 @@ foodRouter.put('/update/:id', (req, res) => {
     description: req.body.description,
     price: req.body.price,
     image: req.body.image,
-    fd_lat: Number(req.body.fd_lat),
-    fd_long: Number(req.body.food_long),
+    fd_lat: req.body.fd_lat,
+    fd_long: req.body.fd_long,
     user_id: Number(req.body.user_id)
   }
 

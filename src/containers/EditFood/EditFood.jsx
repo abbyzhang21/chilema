@@ -5,7 +5,7 @@ import './EditFood.css';
 // import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
 // import Header from '../../components/Header.jsx';
 
-import addItem from '../../actions/actions.js';
+// import editItem from '../../actions/actions.js';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 
 import axios from 'axios';
@@ -22,7 +22,7 @@ class EditFood extends Component {
       image: "",
       fd_lat: localStorage.getItem('LS_lat'),
       fd_long: localStorage.getItem('LS_lng'),
-      user_id: "", //TODO: need to link to the local storage with the current user's id if they are logged in
+      user_id: localStorage.getItem('LS_user_id'),
       foodItem: {}
     }
 
@@ -38,18 +38,41 @@ class EditFood extends Component {
       [target.name]: event.target.value,
       user_id: localStorage.getItem('LS_id')
     });
+    console.log(this.state)
   }
 
   handleSubmit(event) {
     event.preventDefault();
     const id = localStorage.getItem('LS_id')
     // console.log(id)
-    addItem(this.state)
+    this.editItem(this.state)
 
     window.location = `/users/detail/${id}`
   }
 
+  editItem = (item) => {
+    console.log('THIS.STATE: ', this.state)
+    const id = this.props.location.pathname.split('/').pop()
+    console.log('locationID:', id)
+
+    axios
+      .put(`/food/update/${id}`, item)
+      .then((response) => {
+        console.log("POSTED ITEM: ", item)
+        console.log('response.data: ', response.data)
+      })
+      .catch((err) => {
+        console.log('err', err)
+      })
+
+  }
+
   componentDidMount() {
+
+    // this.setState({
+    //   fd_lat: localStorage.getItem('LS_lat'),
+    //   fd_long: localStorage.getItem('LS_lng')
+    // })
     const url = this.props.location
     console.log('location:', url)
     axios
@@ -65,13 +88,11 @@ class EditFood extends Component {
 
 
   render() {
-    console.log(this.state.foodItem)
-    const foodItem = this.state.foodItem
-    console.log(foodItem.item)
+    console.log(this.state)
     return (
       <div>
         <GlobalHeader />
-        <h1>EDIT DISH: {foodItem.item}</h1>
+        <h1>EDIT DISH</h1>
         <div className="new-food-container">
           <form action="/food/new" method="POST" onSubmit={this.handleSubmit}>
             <div className="field-component">

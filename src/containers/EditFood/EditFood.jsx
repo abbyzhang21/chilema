@@ -43,23 +43,24 @@ class EditFood extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const id = localStorage.getItem('LS_id')
     // console.log(id)
     this.editItem(this.state)
 
-    window.location = `/users/detail/${id}`
   }
 
   editItem = (item) => {
+    const userId = localStorage.getItem('LS_id')
+    console.log('userId', userId)
     console.log('THIS.STATE: ', this.state)
     const id = this.props.location.pathname.split('/').pop()
     console.log('locationID:', id)
 
     axios
-      .put(`/food/update/${id}`, item)
+      .put(`http://52.36.183.53:5000/food/update/${id}`, item)
       .then((response) => {
         console.log("POSTED ITEM: ", item)
         console.log('response.data: ', response.data)
+        window.location = `/users/detail/${userId}`
       })
       .catch((err) => {
         console.log('err', err)
@@ -76,7 +77,7 @@ class EditFood extends Component {
     const url = this.props.location
     console.log('location:', url)
     axios
-      .get(url.pathname)
+      .get(`http://52.36.183.53:5000${url.pathname}`)
       .then(foodItem => {
         console.log('FOOD ITEM.DATA ', foodItem.data)
         this.setState({ foodItem: foodItem.data })

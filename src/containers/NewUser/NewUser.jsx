@@ -42,7 +42,7 @@ class NewUser extends Component {
     handleSubmit(event) {
         console.log('NEWUSER handleSubmit', this.state)
         event.preventDefault();
-        axios.post('/auth/register', this.state)
+        axios.post('http://52.36.183.53:5000/auth/register', this.state)
             .then((response) => {
                 console.log(response)
                 window.location = '/login'

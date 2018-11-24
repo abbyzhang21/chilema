@@ -18,7 +18,8 @@ class Food extends Component {
         let pathname = window.location.pathname
         console.log(pathname)
         axios
-            .get('/food')
+            .get('http://52.36.183.53:5000/food')
+            // .get('/food')
             .then(food => {
                 if (pathname === '/food/italian') {
                     let italianFood = food.data.filter((item) => {

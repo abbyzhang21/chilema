@@ -25,8 +25,10 @@ class FoodDetail extends Component {
   componentDidMount() {
     const url = this.props.location
     console.log('location:', url)
+    const id = url.pathname.split('/').pop()
+    console.log('id', id)
     axios
-      .get(url.pathname)
+      .get(`http://52.36.183.53:5000/food/detail/${id}`)
       .then(foodItem => {
         console.log(foodItem.data)
         this.setState({ foodItem: foodItem.data })
@@ -38,7 +40,7 @@ class FoodDetail extends Component {
 
   handleDelete = () => {
     const food_id = this.state.foodItem.id
-    const urlString = `/food/delete/${food_id}`
+    const str = `http://52.36.183.53:5000/food/delete/${food_id}`
 
     // DELETE VALIDATION FLOW
     // get the id of logged in user from localStorage for validation
@@ -48,7 +50,7 @@ class FoodDetail extends Component {
 
     if (tempUser === user_id.toString()) {
       axios
-        .delete(urlString)
+        .delete(str)
         .then((response) => {
           window.location = `${response.data}${tempUser}`
           console.log(response)
@@ -64,7 +66,7 @@ class FoodDetail extends Component {
 
   handleEdit = () => {
     const food_id = this.state.foodItem.id
-    const urlString = `/food/update/${food_id}`
+    const urlString = `https://djpdf80z4r1av.cloudfront.net/food/update/${food_id}`
 
     // EDIT VALIDATION FLOW
     // get the id of logged in user from localStorage for validation
@@ -96,18 +98,18 @@ class FoodDetail extends Component {
           <div className='food-detail-title'>
 
             <div>
-            <h2>{food.item}</h2>
+              <h2>{food.item}</h2>
               <div className='food-detail-info'>
                 <span>{food.price}</span>
                 <span>{food.category}</span>
               </div>
             </div>
 
-              <div className="button-container">
-                  <br />
-                <button className="button" onClick={this.handleDelete}>DELETE</button>
-                <button className="button" onClick={this.handleEdit}>EDIT</button>
-              </div>
+            <div className="button-container">
+              <br />
+              <button className="button" onClick={this.handleDelete}>DELETE</button>
+              <button className="button" onClick={this.handleEdit}>EDIT</button>
+            </div>
 
             <MyMap lat={food.fd_lat} lng={food.fd_long} />
 
@@ -118,15 +120,15 @@ class FoodDetail extends Component {
             <img src={food.image} alt='' className='promo-elem'></img>
           </div>
           <div>
-          <div className='food-detail-description'>
+            <div className='food-detail-description'>
               <FontAwesomeIcon icon={faUserCircle} color='#666633' className='user-icon' />
               {food.description}
- 
-          </div>
+
+            </div>
           </div>
 
           <div className="button-container">
-            <LetsEatButtonComponent/>
+            <LetsEatButtonComponent />
           </div>
         </div>
       </div>

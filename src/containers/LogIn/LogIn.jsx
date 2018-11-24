@@ -57,7 +57,7 @@ class LogIn extends Component {
         event.preventDefault()
 
         axios
-            .get('/users')
+            .get('http://52.36.183.53:5000/users')
             .then((response) => {
                 console.log('RESPONSE: ', response)
                 // const id = response.data.filter((user) => {
@@ -78,7 +78,7 @@ class LogIn extends Component {
     loginUser(item) {
         // call server route to validate credentials against db
         axios
-            .post('auth/login', item)
+            .post('http://52.36.183.53:5000/auth/login', item)
             .then((response) => {
                 localStorage.setItem('LS_id', response.data.id)
                 localStorage.setItem('LS_email', this.state.email)

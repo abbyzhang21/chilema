@@ -16,7 +16,7 @@ class MyMap extends Component {
 
   componentDidMount() {
     axios
-      .get('/local')
+      .get('http://52.36.183.53:5000/local')
       .then(local => {
         // console.log(food.data)
         local.data.map((item) => {
@@ -53,7 +53,7 @@ class MyMap extends Component {
       <div class='leaflet-container'>
         <Map center={coords} zoom={17}>
           <TileLayer
-            attribution='&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>'
             url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png"
           />
           <Marker position={coords}>

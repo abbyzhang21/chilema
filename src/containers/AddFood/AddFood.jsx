@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 // import { SearchContainer } from '../../components/DropDownComponents';
 import './AddFood.css';
 // import chilema_logo_rev from '../../assets/chilema_logo_rev.png';
 // import Header from '../../components/Header.jsx';
 
-import addItem from '../../actions/actions.js';
+// import addItem from '../../actions/actions.js';
 import GlobalHeader from '../../components/GlobalHeaderComponent';
 
 class AddFood extends Component {
@@ -38,12 +38,31 @@ class AddFood extends Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault();
     const id = localStorage.getItem('LS_id')
-    // console.log(id)
-    addItem(this.state)
 
-    window.location = `/users/detail/${id}`
+    event.preventDefault();
+    console.log('id: ', id)
+    console.log('this.state', this.state)
+    this.addItem(this.state)
+
+  }
+
+  addItem = (item) => {
+    const id = localStorage.getItem('LS_id')
+
+    console.log('item', item)
+
+    axios
+      .post('http://52.36.183.53:5000/food/new', item)
+      .then((response) => {
+        console.log("POSTED ITEM: ", item)
+        console.log('response.data: ', response.data)
+        window.location = `/users/detail/${id}`
+      })
+      .catch((err) => {
+        console.log('err', err)
+      })
+
   }
 
   componentDidMount() { }

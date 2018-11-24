@@ -46,7 +46,7 @@ class App extends Component {
   componentDidMount() {
 
     axios
-      .get('/food')
+      .get('http://52.36.183.53:5000/food')
       .then(foods => {
         // console.log('foodItem', foods.data)
         this.setState({ foodItem: foods.data })
@@ -56,7 +56,7 @@ class App extends Component {
       })
 
     axios
-      .get('/local')
+      .get('http://52.36.183.53:5000/local')
       .then(location => {
         // console.log('location', location.data)
         this.setState({ itemLocation: location.data })
@@ -66,7 +66,7 @@ class App extends Component {
       })
 
     axios
-      .get('/users')
+      .get('http://52.36.183.53:5000/users')
       .then(user => {
         // console.log('user', user.data)
         this.setState({ users: user.data })
@@ -93,11 +93,7 @@ class App extends Component {
               <Route exact path='/food/japanese' component={Food} />
               <Route exact path='/receipt' component={Receipt} />
               <Route exact path='/food/detail/:id' component={FoodDetail} />
-
-
               <Route exact path='/food/update/:id' component={EditFood} />
-
-
               <Route exact path='/users/detail/:id' component={User} />
               <Route exact path='/food/new' component={AddFood} />
               <Route exact path='/payment' component={PaymentForm} />

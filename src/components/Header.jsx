@@ -15,7 +15,7 @@ class Header extends Component {
     handleLogout() {
         console.log('handleLogout')
         localStorage.clear()
-        axios.get('/auth/logout')
+        axios.get('http://52.36.183.53:5000/auth/logout')
             .then((response) => {
                 // localStorage.clear()
                 // localStorage.setItem('isAuth', false)

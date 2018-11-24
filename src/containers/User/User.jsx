@@ -19,10 +19,15 @@ class User extends Component {
         const url = this.props.location;
         const id = JSON.stringify(url.pathname).split('/').pop().slice(0, -1)
 
+        // console.log('url.pathname', url.pathname)
+
+        // const idUSER = url.pathname.split('/').pop()
+        // console.log('idUSER', id)
+
         axios
             .all([
-                axios.get(url.pathname),
-                axios.get('/food')
+                axios.get(`http://52.36.183.53:5000${url.pathname}`),
+                axios.get('http://52.36.183.53:5000/food')
             ])
             .then(axios.spread((user, food) => {
                 this.setState({ users: user.data })

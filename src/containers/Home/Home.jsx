@@ -27,7 +27,7 @@ class Home extends Component {
 
     componentDidMount() {
         axios
-            .get('/food')
+            .get('http://52.36.183.53:5000/food')
             .then(food => {
                 this.setState({ foodItem: food.data })
             })
@@ -36,7 +36,7 @@ class Home extends Component {
             })
 
         axios
-            .get('/food')
+            .get('http://52.36.183.53:5000/food')
             .then(food => {
                 food.data.map((item) => {
                     // console.log(item.item)
@@ -62,8 +62,8 @@ class Home extends Component {
             console.log("GEOLOCATION WORKS")
             navigator.geolocation.getCurrentPosition(displayLocationInfo);
             function displayLocationInfo(position) {
-                localStorage.setItem('LS_lat', position.coords.latitude)
-                localStorage.setItem('LS_lng', position.coords.longitude)
+                window.localStorage.setItem('LS_lat', position.coords.latitude)
+                window.localStorage.setItem('LS_lng', position.coords.longitude)
             }
         } else {
             console.log("GEOLOCATION NOT SUPPORTED")

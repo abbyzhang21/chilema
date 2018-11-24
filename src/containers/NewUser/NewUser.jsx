@@ -8,7 +8,7 @@ import GlobalHeader from '../../components/GlobalHeaderComponent';
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import '../../stylesheets/_buttons.css'
+// import '../../stylesheets/_buttons.css'
 import './NewUser.css';
 import axios from 'axios';
 
@@ -114,7 +114,7 @@ class NewUser extends Component {
                     {/* <GetStartedButtonComponent /> */}
                     <div className="button-containter">
                         <Link to='/login'>
-                            <button className="button" onClick={this.handleSubmit}>
+                            <button className="sign-up-button" onClick={this.handleSubmit}>
                                 CREATE ACCOUNT
                             </button>
                         </Link>
